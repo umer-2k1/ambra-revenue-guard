@@ -1,16 +1,23 @@
 import { useCallback, useEffect, useState } from 'react'
+import { BookOpen } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
 import { TooltipProvider } from '@/components/ui/tooltip'
-import { getStatus } from '@/api'
+import { getDenials, getStatus } from '@/api'
 import DenialsTable from '@/components/DenialsTable'
 import AnalyzeView from '@/components/AnalyzeView'
 import KnowledgeBase from '@/components/KnowledgeBase'
 import ScoreClaim from '@/components/ScoreClaim'
+import DenialDetail from '@/components/DenialDetail'
+import GlossarySheet from '@/components/GlossarySheet'
 
 export default function App() {
   const [tab, setTab] = useState('denials')
   const [status, setStatus] = useState(null)
+  const [denials, setDenials] = useState(null)
+  const [selectedDenial, setSelectedDenial] = useState(null)
+  const [glossaryOpen, setGlossaryOpen] = useState(false)
 
   const refreshStatus = useCallback(async () => {
     try {
@@ -25,6 +32,23 @@ export default function App() {
     const id = setInterval(refreshStatus, 15000)
     return () => clearInterval(id)
   }, [refreshStatus])
+
+  useEffect(() => {
+    getDenials().then(setDenials).catch(() => setDenials([]))
+  }, [])
+
+  // Open the case-file drawer from anywhere: pass a denial object OR an id.
+  const openDenial = useCallback(
+    (idOrCase) => {
+      if (idOrCase && typeof idOrCase === 'object') {
+        setSelectedDenial(idOrCase)
+        return
+      }
+      const found = (denials || []).find((d) => d.id === idOrCase)
+      if (found) setSelectedDenial(found)
+    },
+    [denials],
+  )
 
   const rulesCount = status?.total_rules ?? 0
 
@@ -41,9 +65,12 @@ export default function App() {
                 Denial-to-Prevention Feedback Loop
               </span>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
+              <Button variant="ghost" size="sm" onClick={() => setGlossaryOpen(true)}>
+                <BookOpen className="size-4" /> Glossary
+              </Button>
               {status?.vector_store && (
-                <span className="hidden text-xs text-muted-foreground md:inline">
+                <span className="hidden text-xs text-muted-foreground lg:inline">
                   {status.llm_provider} · {status.embedding_provider} · {status.vector_store}
                 </span>
               )}
@@ -64,7 +91,7 @@ export default function App() {
             </TabsList>
 
             <TabsContent value="denials">
-              <DenialsTable />
+              <DenialsTable denials={denials} onOpenDenial={openDenial} />
             </TabsContent>
             <TabsContent value="analyze">
               <AnalyzeView
@@ -74,13 +101,16 @@ export default function App() {
               />
             </TabsContent>
             <TabsContent value="knowledge">
-              <KnowledgeBase status={status} />
+              <KnowledgeBase status={status} onOpenDenial={openDenial} />
             </TabsContent>
             <TabsContent value="score">
               <ScoreClaim status={status} />
             </TabsContent>
           </Tabs>
         </main>
+
+        <DenialDetail denial={selectedDenial} onClose={() => setSelectedDenial(null)} />
+        <GlossarySheet open={glossaryOpen} onOpenChange={setGlossaryOpen} />
       </div>
     </TooltipProvider>
   )

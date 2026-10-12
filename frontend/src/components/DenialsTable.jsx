@@ -5,10 +5,9 @@ import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from '@
 import { Badge } from '@/components/ui/badge'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { Skeleton } from '@/components/ui/skeleton'
-import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
-import { getDenials, getDenialStats } from '@/api'
+import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip'
+import { getDenialStats } from '@/api'
 import { carcMeaning } from '@/lib/glossary'
-import DenialDetail from '@/components/DenialDetail'
 
 const outcomeVariant = (o = '') => {
   if (o === 'overturned') return 'green'
@@ -29,13 +28,10 @@ function Stat({ value, label }) {
   )
 }
 
-export default function DenialsTable() {
-  const [denials, setDenials] = useState(null)
+export default function DenialsTable({ denials, onOpenDenial }) {
   const [stats, setStats] = useState(null)
-  const [selected, setSelected] = useState(null)
 
   useEffect(() => {
-    getDenials().then(setDenials).catch(() => setDenials([]))
     getDenialStats().then(setStats).catch(() => setStats(null))
   }, [])
 
@@ -84,7 +80,7 @@ export default function DenialsTable() {
               {denials.map((d) => (
                 <TableRow
                   key={d.id}
-                  onClick={() => setSelected(d)}
+                  onClick={() => onOpenDenial(d)}
                   className="cursor-pointer even:bg-secondary/25"
                 >
                   <TableCell className="font-semibold text-primary">{d.id}</TableCell>
@@ -128,8 +124,6 @@ export default function DenialsTable() {
           separate pipelines.
         </AlertDescription>
       </Alert>
-
-      <DenialDetail denial={selected} onClose={() => setSelected(null)} />
     </div>
   )
 }

@@ -27,10 +27,9 @@ function Term({ children, meaning }) {
   )
 }
 
-function RuleCard({ rule }) {
+function RuleCard({ rule, onOpenDenial }) {
   const [open, setOpen] = useState(false)
   const title = rule.plain_title || rule.rule_title
-  const summary = rule.plain_summary
 
   return (
     <Card className="overflow-hidden">
@@ -42,7 +41,7 @@ function RuleCard({ rule }) {
         </div>
 
         <h3 className="mt-2 text-lg leading-snug">{title}</h3>
-        {summary && <p className="mt-1.5 text-sm leading-relaxed text-foreground/70">{summary}</p>}
+        {rule.plain_summary && <p className="mt-1.5 text-sm leading-relaxed text-foreground/70">{rule.plain_summary}</p>}
 
         {rule.required_elements?.length > 0 && (
           <div className="mt-4">
@@ -64,10 +63,26 @@ function RuleCard({ rule }) {
           <Term>{rule.payer_pattern}</Term>
         </div>
 
-        <p className="mt-3 text-sm text-muted-foreground">
-          Learned from {rule.source_count} denials · average{' '}
-          <span className="font-semibold text-accent">{money(rule.avg_denied_amount)}</span>
-        </p>
+        <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2">
+          <span className="text-sm text-muted-foreground">
+            Learned from {rule.source_count} denials · average{' '}
+            <span className="font-semibold text-accent">{money(rule.avg_denied_amount)}</span>
+          </span>
+          {rule.source_denials?.length > 0 && (
+            <span className="flex flex-wrap items-center gap-1.5">
+              <span className="text-xs text-muted-foreground">taught by</span>
+              {rule.source_denials.map((id) => (
+                <button
+                  key={id}
+                  onClick={() => onOpenDenial(id)}
+                  className="rounded-full border bg-card px-2 py-0.5 text-xs font-semibold text-primary transition-colors hover:bg-secondary"
+                >
+                  {id}
+                </button>
+              ))}
+            </span>
+          )}
+        </div>
       </div>
 
       <button
@@ -114,7 +129,7 @@ function RuleCard({ rule }) {
   )
 }
 
-export default function KnowledgeBase({ status }) {
+export default function KnowledgeBase({ status, onOpenDenial }) {
   const [rules, setRules] = useState(null)
 
   useEffect(() => {
@@ -158,7 +173,7 @@ export default function KnowledgeBase({ status }) {
       </div>
       <div className="space-y-4">
         {rules.map((rule) => (
-          <RuleCard key={rule.rule_id} rule={rule} />
+          <RuleCard key={rule.rule_id} rule={rule} onOpenDenial={onOpenDenial} />
         ))}
       </div>
     </div>
