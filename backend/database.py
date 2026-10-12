@@ -39,6 +39,9 @@ CREATE TABLE IF NOT EXISTS denial_cases (
     appeal_outcome  TEXT,
     days_to_appeal  INTEGER,
     region          TEXT,
+    timeline        TEXT,
+    appeal_letter   TEXT,
+    payer_notes     TEXT,
     ingested_at     TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -78,6 +81,7 @@ CREATE TABLE IF NOT EXISTS claim_scores (
 # Columns preserved as JSON inside the DB.
 _RULE_JSON_FIELDS = ("source_denials", "required_elements", "recommended_phrases")
 _SCORE_JSON_FIELDS = ("flags_detail", "rules_matched")
+_DENIAL_JSON_FIELDS = ("timeline", "payer_notes")
 
 # Seed JSON key -> denial_cases column.
 _SEED_FIELD_MAP = {
@@ -108,10 +112,23 @@ def _load(value: Any) -> Any:
 
 
 # ── Setup ────────────────────────────────────────────────────────────────────
+def _ensure_columns(conn: sqlite3.Connection, table: str, columns: dict[str, str]) -> None:
+    """Add any missing columns (lightweight migration for an existing DB file)."""
+    existing = {row["name"] for row in conn.execute(f"PRAGMA table_info({table})")}
+    for name, ddl in columns.items():
+        if name not in existing:
+            conn.execute(f"ALTER TABLE {table} ADD COLUMN {name} {ddl}")
+
+
 def init_db() -> None:
-    """Create the three tables (idempotent)."""
+    """Create the three tables and apply lightweight migrations (idempotent)."""
     with _connect() as conn:
         conn.executescript(SCHEMA)
+        _ensure_columns(
+            conn,
+            "denial_cases",
+            {"timeline": "TEXT", "appeal_letter": "TEXT", "payer_notes": "TEXT"},
+        )
 
 
 def load_seed_data() -> int:
@@ -120,9 +137,14 @@ def load_seed_data() -> int:
     Returns the number of rows inserted. Safe to call repeatedly.
     """
     with _connect() as conn:
-        existing = conn.execute("SELECT COUNT(*) AS n FROM denial_cases").fetchone()["n"]
-        if existing:
+        row = conn.execute(
+            "SELECT COUNT(*) AS n, SUM(CASE WHEN timeline IS NULL THEN 1 ELSE 0 END) AS unenriched "
+            "FROM denial_cases"
+        ).fetchone()
+        if row["n"] and not row["unenriched"]:
             return 0
+        if row["n"]:  # existing rows predate the case-file fields -> reseed
+            conn.execute("DELETE FROM denial_cases")
 
         with open(SEED_DATA_PATH, encoding="utf-8") as fh:
             cases = json.load(fh)
@@ -133,12 +155,16 @@ def load_seed_data() -> int:
             "denied_amount", "paid_after_appeal", "carc_code", "rarc_code",
             "denial_reason", "pcr_excerpt", "missing_element", "appeal_strategy",
             "appeal_outcome", "days_to_appeal", "region",
+            "timeline", "appeal_letter", "payer_notes",
         ]
 
         rows = []
         for case in cases:
             normalized = {_SEED_FIELD_MAP.get(k, k): v for k, v in case.items()}
-            rows.append({col: normalized.get(col) for col in columns})
+            row = {col: normalized.get(col) for col in columns}
+            for field in _DENIAL_JSON_FIELDS:
+                row[field] = _dump(row.get(field))
+            rows.append(row)
 
         placeholders = ", ".join(f":{c}" for c in columns)
         conn.executemany(
@@ -150,10 +176,16 @@ def load_seed_data() -> int:
 
 # ── Denial queries ───────────────────────────────────────────────────────────
 def get_all_denials() -> list[dict]:
-    """Return all denial cases (ordered by id) as dicts."""
+    """Return all denial cases (ordered by id) as dicts, JSON fields parsed."""
     with _connect() as conn:
         rows = conn.execute("SELECT * FROM denial_cases ORDER BY id").fetchall()
-    return [dict(r) for r in rows]
+    cases = []
+    for row in rows:
+        case = dict(row)
+        for field in _DENIAL_JSON_FIELDS:
+            case[field] = _load(case.get(field))
+        cases.append(case)
+    return cases
 
 
 def get_denials_by_cluster() -> dict[str, list[dict]]:
