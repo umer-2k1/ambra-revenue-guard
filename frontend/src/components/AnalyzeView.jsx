@@ -33,7 +33,7 @@ function FeedLine({ evt }) {
                 confidence {Math.round((evt.rule.confidence ?? 0) * 100)}% · {evt.rule.source_count} denials
               </span>
             </div>
-            <div className="mt-1 font-medium text-primary">{evt.rule.rule_title}</div>
+            <div className="mt-1 font-medium text-primary">{evt.rule.plain_title || evt.rule.rule_title}</div>
           </div>
         )}
       </div>

@@ -7,6 +7,7 @@ import { Alert, AlertDescription } from '@/components/ui/alert'
 import { Skeleton } from '@/components/ui/skeleton'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import { getDenials, getDenialStats } from '@/api'
+import { carcMeaning } from '@/lib/glossary'
 import DenialDetail from '@/components/DenialDetail'
 
 const outcomeVariant = (o = '') => {
@@ -97,7 +98,12 @@ export default function DenialsTable() {
                       <TooltipTrigger asChild>
                         <span className="cursor-help font-medium">{d.carc_code}</span>
                       </TooltipTrigger>
-                      <TooltipContent>{d.denial_reason}</TooltipContent>
+                      <TooltipContent>
+                        <div className="space-y-1">
+                          <div>{carcMeaning(d.carc_code) || d.carc_code}</div>
+                          <div className="opacity-80">{d.denial_reason}</div>
+                        </div>
+                      </TooltipContent>
                     </Tooltip>
                   </TableCell>
                   <TableCell className="text-right font-medium">{money(d.denied_amount)}</TableCell>
