@@ -9,7 +9,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from database import get_all_denials, get_denials_by_cluster, get_status
-from vector_store import close_client, get_collection_counts, init_vector_store
+from vector_store import close_client, get_collection_counts, init_vector_store, reset_vectors, store_mode
 
 # Test 1: denial cases loaded
 denials = get_all_denials()
@@ -35,10 +35,11 @@ print("✓ seed field mapping (denial_reason_text→denial_reason, pcr_narrative
 
 # Test 5: vector store initialised and empty
 init_vector_store()
+reset_vectors()  # guarantee a clean slate regardless of earlier runs
 counts = get_collection_counts()
 assert counts["denial_narratives"] == 0, "denial_narratives should start empty"
 assert counts["rule_embeddings"] == 0, "rule_embeddings should start empty"
-print("✓ vector store initialised (empty)")
+print(f"✓ vector store initialised ({store_mode()} mode, empty)")
 
 # Test 6: status
 status = get_status()
