@@ -20,11 +20,27 @@ RULE_COLLECTION = "rule_embeddings"
 _client: QdrantClient | None = None
 
 
+def store_mode() -> str:
+    """'cloud' when a Qdrant server URL is configured, otherwise 'local'."""
+    return "cloud" if config.QDRANT_URL else "local"
+
+
 def get_client() -> QdrantClient:
-    """Return the process-wide Qdrant client (created lazily)."""
+    """Return the process-wide Qdrant client (created lazily).
+
+    Uses Qdrant Cloud / a remote server when ``QDRANT_URL`` is set, otherwise
+    the embedded local store on disk.
+    """
     global _client
     if _client is None:
-        _client = QdrantClient(path=config.QDRANT_PATH)
+        if config.QDRANT_URL:
+            _client = QdrantClient(
+                url=config.QDRANT_URL,
+                api_key=config.QDRANT_API_KEY or None,
+                timeout=30,
+            )
+        else:
+            _client = QdrantClient(path=config.QDRANT_PATH)
     return _client
 
 

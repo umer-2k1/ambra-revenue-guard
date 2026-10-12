@@ -38,6 +38,12 @@ DATABASE_PATH = _path("DATABASE_PATH", "data/ambra_demo.db")
 QDRANT_PATH = _path("QDRANT_PATH", "data/qdrant_db")
 SEED_DATA_PATH = os.path.join(BASE_DIR, "data", "seed_denials.json")
 
+# ── Vector store mode ────────────────────────────────────────────────────────
+# Set QDRANT_URL (+ QDRANT_API_KEY) to use Qdrant Cloud or any Qdrant server.
+# Leave QDRANT_URL empty to fall back to the embedded local store at QDRANT_PATH.
+QDRANT_URL = os.getenv("QDRANT_URL", "").strip()
+QDRANT_API_KEY = os.getenv("QDRANT_API_KEY", "").strip()
+
 # ── Embeddings (768-dim from either provider) ────────────────────────────────
 EMBEDDING_PROVIDER = os.getenv("EMBEDDING_PROVIDER", "gemini").strip().lower()
 EMBEDDING_DIM = int(os.getenv("EMBEDDING_DIM", "768"))

@@ -28,7 +28,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from sse_starlette.sse import EventSourceResponse
-from vector_store import get_collection_counts, init_vector_store, reset_vectors
+from vector_store import get_collection_counts, init_vector_store, reset_vectors, store_mode
 
 app = FastAPI(title="Ambra - Denial-to-Prevention Feedback Loop")
 
@@ -44,6 +44,7 @@ app.add_middleware(
 @app.on_event("startup")
 def _startup() -> None:
     init_vector_store()
+    print(f"[startup] vector store: {store_mode()} | LLM: {config.LLM_PROVIDER} | embeddings: {config.EMBEDDING_PROVIDER}")
 
 
 # ── Denials ──────────────────────────────────────────────────────────────────
@@ -132,7 +133,12 @@ async def score_claim_endpoint(request: ScoreRequest):
 @app.get("/api/status")
 def system_status() -> dict:
     db = get_status()
-    counts = get_collection_counts()
+    try:
+        counts = get_collection_counts()
+        vector_error = None
+    except Exception as exc:  # e.g. bad Qdrant Cloud URL/key
+        counts = {"denial_narratives": None, "rule_embeddings": None}
+        vector_error = f"{type(exc).__name__}: {str(exc)[:180]}"
     return {
         "total_denials": db["total_denials"],
         "total_rules": db["total_rules"],
@@ -142,6 +148,8 @@ def system_status() -> dict:
         "analysis_complete": db["total_rules"] > 0,
         "llm_provider": config.LLM_PROVIDER,
         "embedding_provider": config.EMBEDDING_PROVIDER,
+        "vector_store": store_mode(),
+        "vector_store_error": vector_error,
     }
 
 
