@@ -9,9 +9,9 @@
     "resolution_date": "2026-07-18",
     "service_type": "ALS-1 Emergency",
     "cpt_code": "A0427",
-    "billed_amount": 1850.00,
-    "denied_amount": 1850.00,
-    "paid_after_appeal": 1247.00,
+    "billed_amount": 1850.0,
+    "denied_amount": 1850.0,
+    "paid_after_appeal": 1247.0,
     "carc_code": "CO-16",
     "rarc_code": "N479",
     "denial_reason_text": "Claim/service lacks information which is needed for adjudication. Missing documentation to support medical necessity for ALS level of service.",
@@ -20,7 +20,51 @@
     "appeal_strategy": "Added language: 'Patient required continuous cardiac monitoring and IV medication administration during transport. Patient's acute cardiac symptoms and hemodynamic instability precluded safe transport by BLS unit, wheelchair van, or private vehicle. ALS intervention and monitoring were medically necessary throughout transport.'",
     "appeal_outcome": "overturned",
     "days_to_appeal": 6,
-    "region": "NJ"
+    "region": "NJ",
+    "timeline": [
+      {
+        "date": "2026-06-15",
+        "kind": "claim",
+        "title": "Claim submitted",
+        "detail": "ALS-1 Emergency transport (A0427) billed to UnitedHealthcare for $1,850."
+      },
+      {
+        "date": "2026-07-02",
+        "kind": "denial",
+        "title": "Denial received — CO-16",
+        "detail": "Claim/service lacks information which is needed for adjudication. Missing documentation to support medical necessity for ALS level of service."
+      },
+      {
+        "date": "2026-07-08",
+        "kind": "appeal",
+        "title": "Appeal filed",
+        "detail": "First-level appeal submitted 6 days after the denial, with the PCR and supporting documentation attached."
+      },
+      {
+        "date": "2026-07-18",
+        "kind": "resolution",
+        "title": "Overturned on appeal",
+        "detail": "$1,247 recovered of $1,850 denied."
+      }
+    ],
+    "appeal_letter": "Date: 2026-07-08\nTo: UnitedHealthcare — Appeals Department\nRe: Denial of ALS-1 Emergency transport · CPT A0427 · DOS 2026-06-15 · CO-16\n\nTo whom it may concern,\n\nWe are formally appealing the denial of the above claim, denied with the reason: \"Claim/service lacks information which is needed for adjudication. Missing documentation to support medical necessity for ALS level of service.\"\n\nThe transport was medically necessary and properly documented. Patient required continuous cardiac monitoring and IV medication administration during transport. Patient's acute cardiac symptoms and hemodynamic instability precluded safe transport by BLS unit, wheelchair van, or private vehicle. ALS intervention and monitoring were medically necessary throughout transport.\n\nWe respectfully request reprocessing and payment of $1,850. The patient care report, physician documentation, and applicable medical-necessity criteria are attached.\n\nSincerely,\nAmbra Revenue Recovery — Appeals Team",
+    "payer_notes": [
+      {
+        "date": "2026-07-03",
+        "channel": "call",
+        "text": "Called UnitedHealthcare provider services. Representative confirmed the denial (CO-16) is documentation-based and directed us to file a first-level appeal with the PCR attached."
+      },
+      {
+        "date": "2026-07-08",
+        "channel": "portal",
+        "text": "First-level appeal uploaded to the UnitedHealthcare provider portal with the PCR and medical-necessity statement."
+      },
+      {
+        "date": "2026-07-18",
+        "channel": "remit",
+        "text": "Payer response received: Overturned on appeal, $1,247 recovered."
+      }
+    ]
   },
   {
     "id": "D-002",
@@ -32,9 +76,9 @@
     "resolution_date": "2026-07-28",
     "service_type": "ALS-1 Emergency",
     "cpt_code": "A0427",
-    "billed_amount": 1850.00,
-    "denied_amount": 1850.00,
-    "paid_after_appeal": 1320.00,
+    "billed_amount": 1850.0,
+    "denied_amount": 1850.0,
+    "paid_after_appeal": 1320.0,
     "carc_code": "CO-16",
     "rarc_code": "N479",
     "denial_reason_text": "Claim/service lacks information which is needed for adjudication. Insufficient documentation of medical necessity.",
@@ -43,7 +87,51 @@
     "appeal_strategy": "Added language: 'Patient required continuous oxygen therapy and nebulizer treatment during transport. Respiratory distress with SpO2 of 88% required ALS-level monitoring and intervention capability. Patient could not maintain adequate oxygenation without supplemental oxygen and was unable to safely travel by private vehicle or BLS unit without ALS respiratory monitoring.'",
     "appeal_outcome": "overturned",
     "days_to_appeal": 5,
-    "region": "NJ"
+    "region": "NJ",
+    "timeline": [
+      {
+        "date": "2026-06-22",
+        "kind": "claim",
+        "title": "Claim submitted",
+        "detail": "ALS-1 Emergency transport (A0427) billed to UnitedHealthcare for $1,850."
+      },
+      {
+        "date": "2026-07-10",
+        "kind": "denial",
+        "title": "Denial received — CO-16",
+        "detail": "Claim/service lacks information which is needed for adjudication. Insufficient documentation of medical necessity."
+      },
+      {
+        "date": "2026-07-15",
+        "kind": "appeal",
+        "title": "Appeal filed",
+        "detail": "First-level appeal submitted 5 days after the denial, with the PCR and supporting documentation attached."
+      },
+      {
+        "date": "2026-07-28",
+        "kind": "resolution",
+        "title": "Overturned on appeal",
+        "detail": "$1,320 recovered of $1,850 denied."
+      }
+    ],
+    "appeal_letter": "Date: 2026-07-15\nTo: UnitedHealthcare — Appeals Department\nRe: Denial of ALS-1 Emergency transport · CPT A0427 · DOS 2026-06-22 · CO-16\n\nTo whom it may concern,\n\nWe are formally appealing the denial of the above claim, denied with the reason: \"Claim/service lacks information which is needed for adjudication. Insufficient documentation of medical necessity.\"\n\nThe transport was medically necessary and properly documented. Patient required continuous oxygen therapy and nebulizer treatment during transport. Respiratory distress with SpO2 of 88% required ALS-level monitoring and intervention capability. Patient could not maintain adequate oxygenation without supplemental oxygen and was unable to safely travel by private vehicle or BLS unit without ALS respiratory monitoring.\n\nWe respectfully request reprocessing and payment of $1,850. The patient care report, physician documentation, and applicable medical-necessity criteria are attached.\n\nSincerely,\nAmbra Revenue Recovery — Appeals Team",
+    "payer_notes": [
+      {
+        "date": "2026-07-11",
+        "channel": "call",
+        "text": "Called UnitedHealthcare provider services. Representative confirmed the denial (CO-16) is documentation-based and directed us to file a first-level appeal with the PCR attached."
+      },
+      {
+        "date": "2026-07-15",
+        "channel": "portal",
+        "text": "First-level appeal uploaded to the UnitedHealthcare provider portal with the PCR and medical-necessity statement."
+      },
+      {
+        "date": "2026-07-28",
+        "channel": "remit",
+        "text": "Payer response received: Overturned on appeal, $1,320 recovered."
+      }
+    ]
   },
   {
     "id": "D-003",
@@ -55,9 +143,9 @@
     "resolution_date": "2026-08-05",
     "service_type": "ALS-1 Emergency",
     "cpt_code": "A0427",
-    "billed_amount": 1850.00,
-    "denied_amount": 1850.00,
-    "paid_after_appeal": 1247.00,
+    "billed_amount": 1850.0,
+    "denied_amount": 1850.0,
+    "paid_after_appeal": 1247.0,
     "carc_code": "CO-50",
     "rarc_code": "M76",
     "denial_reason_text": "These are non-covered services because this is not deemed a medical necessity by the payer.",
@@ -66,7 +154,51 @@
     "appeal_strategy": "Added language: 'Despite improvement after dextrose administration, patient remained at risk for recurrent hypoglycemia requiring IV access and continuous blood glucose monitoring during transport. Altered mental status with GCS of 12 on initial contact constituted an emergency requiring ALS assessment and intervention. Ongoing IV access and ALS monitoring were medically necessary for safe transport.'",
     "appeal_outcome": "overturned",
     "days_to_appeal": 4,
-    "region": "NJ"
+    "region": "NJ",
+    "timeline": [
+      {
+        "date": "2026-07-01",
+        "kind": "claim",
+        "title": "Claim submitted",
+        "detail": "ALS-1 Emergency transport (A0427) billed to UnitedHealthcare for $1,850."
+      },
+      {
+        "date": "2026-07-19",
+        "kind": "denial",
+        "title": "Denial received — CO-50",
+        "detail": "These are non-covered services because this is not deemed a medical necessity by the payer."
+      },
+      {
+        "date": "2026-07-23",
+        "kind": "appeal",
+        "title": "Appeal filed",
+        "detail": "First-level appeal submitted 4 days after the denial, with the PCR and supporting documentation attached."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "resolution",
+        "title": "Overturned on appeal",
+        "detail": "$1,247 recovered of $1,850 denied."
+      }
+    ],
+    "appeal_letter": "Date: 2026-07-23\nTo: UnitedHealthcare — Appeals Department\nRe: Denial of ALS-1 Emergency transport · CPT A0427 · DOS 2026-07-01 · CO-50\n\nTo whom it may concern,\n\nWe are formally appealing the denial of the above claim, denied with the reason: \"These are non-covered services because this is not deemed a medical necessity by the payer.\"\n\nThe transport was medically necessary and properly documented. Despite improvement after dextrose administration, patient remained at risk for recurrent hypoglycemia requiring IV access and continuous blood glucose monitoring during transport. Altered mental status with GCS of 12 on initial contact constituted an emergency requiring ALS assessment and intervention. Ongoing IV access and ALS monitoring were medically necessary for safe transport.\n\nWe respectfully request reprocessing and payment of $1,850. The patient care report, physician documentation, and applicable medical-necessity criteria are attached.\n\nSincerely,\nAmbra Revenue Recovery — Appeals Team",
+    "payer_notes": [
+      {
+        "date": "2026-07-20",
+        "channel": "call",
+        "text": "Called UnitedHealthcare provider services. Representative confirmed the denial (CO-50) is documentation-based and directed us to file a first-level appeal with the PCR attached."
+      },
+      {
+        "date": "2026-07-23",
+        "channel": "portal",
+        "text": "First-level appeal uploaded to the UnitedHealthcare provider portal with the PCR and medical-necessity statement."
+      },
+      {
+        "date": "2026-08-05",
+        "channel": "remit",
+        "text": "Payer response received: Overturned on appeal, $1,247 recovered."
+      }
+    ]
   },
   {
     "id": "D-004",
@@ -78,9 +210,9 @@
     "resolution_date": "2026-08-22",
     "service_type": "ALS-1 Emergency",
     "cpt_code": "A0427",
-    "billed_amount": 1850.00,
-    "denied_amount": 1850.00,
-    "paid_after_appeal": 1247.00,
+    "billed_amount": 1850.0,
+    "denied_amount": 1850.0,
+    "paid_after_appeal": 1247.0,
     "carc_code": "CO-16",
     "rarc_code": "N479",
     "denial_reason_text": "Claim/service lacks information which is needed for adjudication. Insufficient documentation to establish medical necessity for ALS level of service.",
@@ -89,7 +221,51 @@
     "appeal_strategy": "Added language: 'Patient presented in acute decompensated heart failure with hypoxia (SpO2 86% on room air) requiring CPAP, high-flow oxygen, and continuous cardiac monitoring during transport. Patient was unable to lie flat or protect her own airway without assistance and could not be safely transported by private vehicle, wheelchair van, or BLS unit without ALS-level respiratory and hemodynamic monitoring.'",
     "appeal_outcome": "overturned",
     "days_to_appeal": 6,
-    "region": "NJ"
+    "region": "NJ",
+    "timeline": [
+      {
+        "date": "2026-07-14",
+        "kind": "claim",
+        "title": "Claim submitted",
+        "detail": "ALS-1 Emergency transport (A0427) billed to UnitedHealthcare for $1,850."
+      },
+      {
+        "date": "2026-08-01",
+        "kind": "denial",
+        "title": "Denial received — CO-16",
+        "detail": "Claim/service lacks information which is needed for adjudication. Insufficient documentation to establish medical necessity for ALS level of service."
+      },
+      {
+        "date": "2026-08-07",
+        "kind": "appeal",
+        "title": "Appeal filed",
+        "detail": "First-level appeal submitted 6 days after the denial, with the PCR and supporting documentation attached."
+      },
+      {
+        "date": "2026-08-22",
+        "kind": "resolution",
+        "title": "Overturned on appeal",
+        "detail": "$1,247 recovered of $1,850 denied."
+      }
+    ],
+    "appeal_letter": "Date: 2026-08-07\nTo: UnitedHealthcare — Appeals Department\nRe: Denial of ALS-1 Emergency transport · CPT A0427 · DOS 2026-07-14 · CO-16\n\nTo whom it may concern,\n\nWe are formally appealing the denial of the above claim, denied with the reason: \"Claim/service lacks information which is needed for adjudication. Insufficient documentation to establish medical necessity for ALS level of service.\"\n\nThe transport was medically necessary and properly documented. Patient presented in acute decompensated heart failure with hypoxia (SpO2 86% on room air) requiring CPAP, high-flow oxygen, and continuous cardiac monitoring during transport. Patient was unable to lie flat or protect her own airway without assistance and could not be safely transported by private vehicle, wheelchair van, or BLS unit without ALS-level respiratory and hemodynamic monitoring.\n\nWe respectfully request reprocessing and payment of $1,850. The patient care report, physician documentation, and applicable medical-necessity criteria are attached.\n\nSincerely,\nAmbra Revenue Recovery — Appeals Team",
+    "payer_notes": [
+      {
+        "date": "2026-08-02",
+        "channel": "call",
+        "text": "Called UnitedHealthcare provider services. Representative confirmed the denial (CO-16) is documentation-based and directed us to file a first-level appeal with the PCR attached."
+      },
+      {
+        "date": "2026-08-07",
+        "channel": "portal",
+        "text": "First-level appeal uploaded to the UnitedHealthcare provider portal with the PCR and medical-necessity statement."
+      },
+      {
+        "date": "2026-08-22",
+        "channel": "remit",
+        "text": "Payer response received: Overturned on appeal, $1,247 recovered."
+      }
+    ]
   },
   {
     "id": "D-005",
@@ -101,9 +277,9 @@
     "resolution_date": "2026-09-04",
     "service_type": "ALS-1 Emergency",
     "cpt_code": "A0427",
-    "billed_amount": 1850.00,
-    "denied_amount": 1850.00,
-    "paid_after_appeal": 1247.00,
+    "billed_amount": 1850.0,
+    "denied_amount": 1850.0,
+    "paid_after_appeal": 1247.0,
     "carc_code": "CO-16",
     "rarc_code": "N479",
     "denial_reason_text": "Claim/service lacks information needed for adjudication. Additional documentation required to support level of service.",
@@ -112,7 +288,51 @@
     "appeal_strategy": "Added language: 'Patient was in postictal state with altered consciousness and inability to follow commands, precluding safe transport by any means other than ALS ambulance. Active seizure risk required continuous ALS monitoring and IV access for emergent benzodiazepine administration if seizure recurred during transport. Patient could not sit upright safely or protect own airway.'",
     "appeal_outcome": "overturned",
     "days_to_appeal": 5,
-    "region": "NJ"
+    "region": "NJ",
+    "timeline": [
+      {
+        "date": "2026-08-03",
+        "kind": "claim",
+        "title": "Claim submitted",
+        "detail": "ALS-1 Emergency transport (A0427) billed to UnitedHealthcare for $1,850."
+      },
+      {
+        "date": "2026-08-20",
+        "kind": "denial",
+        "title": "Denial received — CO-16",
+        "detail": "Claim/service lacks information needed for adjudication. Additional documentation required to support level of service."
+      },
+      {
+        "date": "2026-08-25",
+        "kind": "appeal",
+        "title": "Appeal filed",
+        "detail": "First-level appeal submitted 5 days after the denial, with the PCR and supporting documentation attached."
+      },
+      {
+        "date": "2026-09-04",
+        "kind": "resolution",
+        "title": "Overturned on appeal",
+        "detail": "$1,247 recovered of $1,850 denied."
+      }
+    ],
+    "appeal_letter": "Date: 2026-08-25\nTo: UnitedHealthcare — Appeals Department\nRe: Denial of ALS-1 Emergency transport · CPT A0427 · DOS 2026-08-03 · CO-16\n\nTo whom it may concern,\n\nWe are formally appealing the denial of the above claim, denied with the reason: \"Claim/service lacks information needed for adjudication. Additional documentation required to support level of service.\"\n\nThe transport was medically necessary and properly documented. Patient was in postictal state with altered consciousness and inability to follow commands, precluding safe transport by any means other than ALS ambulance. Active seizure risk required continuous ALS monitoring and IV access for emergent benzodiazepine administration if seizure recurred during transport. Patient could not sit upright safely or protect own airway.\n\nWe respectfully request reprocessing and payment of $1,850. The patient care report, physician documentation, and applicable medical-necessity criteria are attached.\n\nSincerely,\nAmbra Revenue Recovery — Appeals Team",
+    "payer_notes": [
+      {
+        "date": "2026-08-21",
+        "channel": "call",
+        "text": "Called UnitedHealthcare provider services. Representative confirmed the denial (CO-16) is documentation-based and directed us to file a first-level appeal with the PCR attached."
+      },
+      {
+        "date": "2026-08-25",
+        "channel": "portal",
+        "text": "First-level appeal uploaded to the UnitedHealthcare provider portal with the PCR and medical-necessity statement."
+      },
+      {
+        "date": "2026-09-04",
+        "channel": "remit",
+        "text": "Payer response received: Overturned on appeal, $1,247 recovered."
+      }
+    ]
   },
   {
     "id": "D-006",
@@ -124,9 +344,9 @@
     "resolution_date": "2026-09-19",
     "service_type": "ALS-1 Emergency",
     "cpt_code": "A0427",
-    "billed_amount": 1850.00,
-    "denied_amount": 1850.00,
-    "paid_after_appeal": 1350.00,
+    "billed_amount": 1850.0,
+    "denied_amount": 1850.0,
+    "paid_after_appeal": 1350.0,
     "carc_code": "CO-16",
     "rarc_code": "N479",
     "denial_reason_text": "Claim/service lacks information which is needed for adjudication. Missing medical necessity documentation.",
@@ -135,9 +355,52 @@
     "appeal_strategy": "Added language: 'Patient presented with signs of acute abdomen with hemodynamic instability (hypotension, tachycardia) requiring IV fluid resuscitation and IV pain management during transport. Patient's condition required supine positioning, continuous monitoring, and ALS intervention capability. Transport by private vehicle or BLS unit was contraindicated due to need for ongoing IV therapy and hemodynamic monitoring.'",
     "appeal_outcome": "overturned",
     "days_to_appeal": 4,
-    "region": "NJ"
+    "region": "NJ",
+    "timeline": [
+      {
+        "date": "2026-08-18",
+        "kind": "claim",
+        "title": "Claim submitted",
+        "detail": "ALS-1 Emergency transport (A0427) billed to UnitedHealthcare for $1,850."
+      },
+      {
+        "date": "2026-09-05",
+        "kind": "denial",
+        "title": "Denial received — CO-16",
+        "detail": "Claim/service lacks information which is needed for adjudication. Missing medical necessity documentation."
+      },
+      {
+        "date": "2026-09-09",
+        "kind": "appeal",
+        "title": "Appeal filed",
+        "detail": "First-level appeal submitted 4 days after the denial, with the PCR and supporting documentation attached."
+      },
+      {
+        "date": "2026-09-19",
+        "kind": "resolution",
+        "title": "Overturned on appeal",
+        "detail": "$1,350 recovered of $1,850 denied."
+      }
+    ],
+    "appeal_letter": "Date: 2026-09-09\nTo: UnitedHealthcare — Appeals Department\nRe: Denial of ALS-1 Emergency transport · CPT A0427 · DOS 2026-08-18 · CO-16\n\nTo whom it may concern,\n\nWe are formally appealing the denial of the above claim, denied with the reason: \"Claim/service lacks information which is needed for adjudication. Missing medical necessity documentation.\"\n\nThe transport was medically necessary and properly documented. Patient presented with signs of acute abdomen with hemodynamic instability (hypotension, tachycardia) requiring IV fluid resuscitation and IV pain management during transport. Patient's condition required supine positioning, continuous monitoring, and ALS intervention capability. Transport by private vehicle or BLS unit was contraindicated due to need for ongoing IV therapy and hemodynamic monitoring.\n\nWe respectfully request reprocessing and payment of $1,850. The patient care report, physician documentation, and applicable medical-necessity criteria are attached.\n\nSincerely,\nAmbra Revenue Recovery — Appeals Team",
+    "payer_notes": [
+      {
+        "date": "2026-09-06",
+        "channel": "call",
+        "text": "Called UnitedHealthcare provider services. Representative confirmed the denial (CO-16) is documentation-based and directed us to file a first-level appeal with the PCR attached."
+      },
+      {
+        "date": "2026-09-09",
+        "channel": "portal",
+        "text": "First-level appeal uploaded to the UnitedHealthcare provider portal with the PCR and medical-necessity statement."
+      },
+      {
+        "date": "2026-09-19",
+        "channel": "remit",
+        "text": "Payer response received: Overturned on appeal, $1,350 recovered."
+      }
+    ]
   },
-
   {
     "id": "D-007",
     "cluster": "aetna_prior_auth",
@@ -148,9 +411,9 @@
     "resolution_date": "2026-06-30",
     "service_type": "BLS Non-Emergency",
     "cpt_code": "A0425",
-    "billed_amount": 950.00,
-    "denied_amount": 950.00,
-    "paid_after_appeal": 680.00,
+    "billed_amount": 950.0,
+    "denied_amount": 950.0,
+    "paid_after_appeal": 680.0,
     "carc_code": "CO-197",
     "rarc_code": "N517",
     "denial_reason_text": "Precertification/authorization/notification absent. Prior authorization was not obtained for non-emergency transport.",
@@ -159,7 +422,51 @@
     "appeal_strategy": "Submitted retroactive authorization request with physician certification of medical necessity stating patient's physical condition requires stretcher-level transport. Included physician's order for ambulance transport and documentation of patient's inability to use wheelchair van due to spinal deformity.",
     "appeal_outcome": "overturned",
     "days_to_appeal": 8,
-    "region": "PA"
+    "region": "PA",
+    "timeline": [
+      {
+        "date": "2026-05-20",
+        "kind": "claim",
+        "title": "Claim submitted",
+        "detail": "BLS Non-Emergency transport (A0425) billed to Aetna for $950."
+      },
+      {
+        "date": "2026-06-08",
+        "kind": "denial",
+        "title": "Denial received — CO-197",
+        "detail": "Precertification/authorization/notification absent. Prior authorization was not obtained for non-emergency transport."
+      },
+      {
+        "date": "2026-06-16",
+        "kind": "appeal",
+        "title": "Appeal filed",
+        "detail": "First-level appeal submitted 8 days after the denial, with the PCR and supporting documentation attached."
+      },
+      {
+        "date": "2026-06-30",
+        "kind": "resolution",
+        "title": "Overturned on appeal",
+        "detail": "$680 recovered of $950 denied."
+      }
+    ],
+    "appeal_letter": "Date: 2026-06-16\nTo: Aetna — Appeals Department\nRe: Denial of BLS Non-Emergency transport · CPT A0425 · DOS 2026-05-20 · CO-197\n\nTo whom it may concern,\n\nWe are formally appealing the denial of the above claim, denied with the reason: \"Precertification/authorization/notification absent. Prior authorization was not obtained for non-emergency transport.\"\n\nThe transport was medically necessary and properly documented. Submitted retroactive authorization request with physician certification of medical necessity stating patient's physical condition requires stretcher-level transport. Included physician's order for ambulance transport and documentation of patient's inability to use wheelchair van due to spinal deformity.\n\nWe respectfully request reprocessing and payment of $950. The patient care report, physician documentation, and applicable medical-necessity criteria are attached.\n\nSincerely,\nAmbra Revenue Recovery — Appeals Team",
+    "payer_notes": [
+      {
+        "date": "2026-06-09",
+        "channel": "call",
+        "text": "Called Aetna provider services. Representative confirmed the denial (CO-197) is documentation-based and directed us to file a first-level appeal with the PCR attached."
+      },
+      {
+        "date": "2026-06-16",
+        "channel": "portal",
+        "text": "First-level appeal uploaded to the Aetna provider portal with the PCR and medical-necessity statement."
+      },
+      {
+        "date": "2026-06-30",
+        "channel": "remit",
+        "text": "Payer response received: Overturned on appeal, $680 recovered."
+      }
+    ]
   },
   {
     "id": "D-008",
@@ -171,9 +478,9 @@
     "resolution_date": "2026-07-15",
     "service_type": "BLS Non-Emergency",
     "cpt_code": "A0425",
-    "billed_amount": 950.00,
-    "denied_amount": 950.00,
-    "paid_after_appeal": 680.00,
+    "billed_amount": 950.0,
+    "denied_amount": 950.0,
+    "paid_after_appeal": 680.0,
     "carc_code": "CO-197",
     "rarc_code": "N517",
     "denial_reason_text": "Precertification/authorization/notification absent.",
@@ -182,7 +489,51 @@
     "appeal_strategy": "Filed retroactive auth request with physician certification form (CMS-1500 Box 19 documentation), letter of medical necessity from attending physician at rehab facility, and patient mobility assessment documenting bed-bound status.",
     "appeal_outcome": "overturned",
     "days_to_appeal": 10,
-    "region": "PA"
+    "region": "PA",
+    "timeline": [
+      {
+        "date": "2026-06-03",
+        "kind": "claim",
+        "title": "Claim submitted",
+        "detail": "BLS Non-Emergency transport (A0425) billed to Aetna for $950."
+      },
+      {
+        "date": "2026-06-22",
+        "kind": "denial",
+        "title": "Denial received — CO-197",
+        "detail": "Precertification/authorization/notification absent."
+      },
+      {
+        "date": "2026-07-02",
+        "kind": "appeal",
+        "title": "Appeal filed",
+        "detail": "First-level appeal submitted 10 days after the denial, with the PCR and supporting documentation attached."
+      },
+      {
+        "date": "2026-07-15",
+        "kind": "resolution",
+        "title": "Overturned on appeal",
+        "detail": "$680 recovered of $950 denied."
+      }
+    ],
+    "appeal_letter": "Date: 2026-07-02\nTo: Aetna — Appeals Department\nRe: Denial of BLS Non-Emergency transport · CPT A0425 · DOS 2026-06-03 · CO-197\n\nTo whom it may concern,\n\nWe are formally appealing the denial of the above claim, denied with the reason: \"Precertification/authorization/notification absent.\"\n\nThe transport was medically necessary and properly documented. Filed retroactive auth request with physician certification form (CMS-1500 Box 19 documentation), letter of medical necessity from attending physician at rehab facility, and patient mobility assessment documenting bed-bound status.\n\nWe respectfully request reprocessing and payment of $950. The patient care report, physician documentation, and applicable medical-necessity criteria are attached.\n\nSincerely,\nAmbra Revenue Recovery — Appeals Team",
+    "payer_notes": [
+      {
+        "date": "2026-06-23",
+        "channel": "call",
+        "text": "Called Aetna provider services. Representative confirmed the denial (CO-197) is documentation-based and directed us to file a first-level appeal with the PCR attached."
+      },
+      {
+        "date": "2026-07-02",
+        "channel": "portal",
+        "text": "First-level appeal uploaded to the Aetna provider portal with the PCR and medical-necessity statement."
+      },
+      {
+        "date": "2026-07-15",
+        "channel": "remit",
+        "text": "Payer response received: Overturned on appeal, $680 recovered."
+      }
+    ]
   },
   {
     "id": "D-009",
@@ -194,8 +545,8 @@
     "resolution_date": "2026-07-28",
     "service_type": "BLS Non-Emergency",
     "cpt_code": "A0425",
-    "billed_amount": 950.00,
-    "denied_amount": 950.00,
+    "billed_amount": 950.0,
+    "denied_amount": 950.0,
     "paid_after_appeal": 0,
     "carc_code": "CO-197",
     "rarc_code": "N517",
@@ -205,7 +556,51 @@
     "appeal_strategy": "Attempted retroactive auth but denied again. Patient was ambulatory with walker — medical necessity for ambulance transport not established. Recommended agency bill patient directly or absorb the cost. Flagged for future: verify auth before all scheduled Aetna non-emergency transports.",
     "appeal_outcome": "denied",
     "days_to_appeal": 12,
-    "region": "PA"
+    "region": "PA",
+    "timeline": [
+      {
+        "date": "2026-06-17",
+        "kind": "claim",
+        "title": "Claim submitted",
+        "detail": "BLS Non-Emergency transport (A0425) billed to Aetna for $950."
+      },
+      {
+        "date": "2026-07-05",
+        "kind": "denial",
+        "title": "Denial received — CO-197",
+        "detail": "Precertification/authorization/notification absent. Non-emergency transport requires prior authorization."
+      },
+      {
+        "date": "2026-07-17",
+        "kind": "appeal",
+        "title": "Appeal filed",
+        "detail": "First-level appeal submitted 12 days after the denial, with the PCR and supporting documentation attached."
+      },
+      {
+        "date": "2026-07-28",
+        "kind": "resolution",
+        "title": "Appeal upheld — denial stands",
+        "detail": "$950 written off."
+      }
+    ],
+    "appeal_letter": "Date: 2026-07-17\nTo: Aetna — Appeals Department\nRe: Denial of BLS Non-Emergency transport · CPT A0425 · DOS 2026-06-17 · CO-197\n\nTo whom it may concern,\n\nWe are formally appealing the denial of the above claim, denied with the reason: \"Precertification/authorization/notification absent. Non-emergency transport requires prior authorization.\"\n\nThe transport was medically necessary and properly documented. Attempted retroactive auth but denied again. Patient was ambulatory with walker — medical necessity for ambulance transport not established. Recommended agency bill patient directly or absorb the cost. Flagged for future: verify auth before all scheduled Aetna non-emergency transports.\n\nWe respectfully request reprocessing and payment of $950. The patient care report, physician documentation, and applicable medical-necessity criteria are attached.\n\nSincerely,\nAmbra Revenue Recovery — Appeals Team",
+    "payer_notes": [
+      {
+        "date": "2026-07-06",
+        "channel": "call",
+        "text": "Called Aetna provider services. Representative confirmed the denial (CO-197) is documentation-based and directed us to file a first-level appeal with the PCR attached."
+      },
+      {
+        "date": "2026-07-17",
+        "channel": "portal",
+        "text": "First-level appeal uploaded to the Aetna provider portal with the PCR and medical-necessity statement."
+      },
+      {
+        "date": "2026-07-28",
+        "channel": "remit",
+        "text": "Payer response received: Appeal upheld — denial stands."
+      }
+    ]
   },
   {
     "id": "D-010",
@@ -217,9 +612,9 @@
     "resolution_date": "2026-08-10",
     "service_type": "BLS Non-Emergency",
     "cpt_code": "A0425",
-    "billed_amount": 950.00,
-    "denied_amount": 950.00,
-    "paid_after_appeal": 690.00,
+    "billed_amount": 950.0,
+    "denied_amount": 950.0,
+    "paid_after_appeal": 690.0,
     "carc_code": "CO-197",
     "rarc_code": "N517",
     "denial_reason_text": "Precertification/authorization/notification absent.",
@@ -228,7 +623,51 @@
     "appeal_strategy": "Submitted retroactive authorization with orthopedic surgeon's order specifying non-weight-bearing status, oncologist's treatment schedule showing recurring transport need, and facility mobility assessment. Emphasized patient safety risk if transported by non-medical vehicle.",
     "appeal_outcome": "overturned",
     "days_to_appeal": 6,
-    "region": "PA"
+    "region": "PA",
+    "timeline": [
+      {
+        "date": "2026-07-08",
+        "kind": "claim",
+        "title": "Claim submitted",
+        "detail": "BLS Non-Emergency transport (A0425) billed to Aetna for $950."
+      },
+      {
+        "date": "2026-07-25",
+        "kind": "denial",
+        "title": "Denial received — CO-197",
+        "detail": "Precertification/authorization/notification absent."
+      },
+      {
+        "date": "2026-07-31",
+        "kind": "appeal",
+        "title": "Appeal filed",
+        "detail": "First-level appeal submitted 6 days after the denial, with the PCR and supporting documentation attached."
+      },
+      {
+        "date": "2026-08-10",
+        "kind": "resolution",
+        "title": "Overturned on appeal",
+        "detail": "$690 recovered of $950 denied."
+      }
+    ],
+    "appeal_letter": "Date: 2026-07-31\nTo: Aetna — Appeals Department\nRe: Denial of BLS Non-Emergency transport · CPT A0425 · DOS 2026-07-08 · CO-197\n\nTo whom it may concern,\n\nWe are formally appealing the denial of the above claim, denied with the reason: \"Precertification/authorization/notification absent.\"\n\nThe transport was medically necessary and properly documented. Submitted retroactive authorization with orthopedic surgeon's order specifying non-weight-bearing status, oncologist's treatment schedule showing recurring transport need, and facility mobility assessment. Emphasized patient safety risk if transported by non-medical vehicle.\n\nWe respectfully request reprocessing and payment of $950. The patient care report, physician documentation, and applicable medical-necessity criteria are attached.\n\nSincerely,\nAmbra Revenue Recovery — Appeals Team",
+    "payer_notes": [
+      {
+        "date": "2026-07-26",
+        "channel": "call",
+        "text": "Called Aetna provider services. Representative confirmed the denial (CO-197) is documentation-based and directed us to file a first-level appeal with the PCR attached."
+      },
+      {
+        "date": "2026-07-31",
+        "channel": "portal",
+        "text": "First-level appeal uploaded to the Aetna provider portal with the PCR and medical-necessity statement."
+      },
+      {
+        "date": "2026-08-10",
+        "channel": "remit",
+        "text": "Payer response received: Overturned on appeal, $690 recovered."
+      }
+    ]
   },
   {
     "id": "D-011",
@@ -240,9 +679,9 @@
     "resolution_date": "2026-09-02",
     "service_type": "BLS Non-Emergency",
     "cpt_code": "A0425",
-    "billed_amount": 950.00,
-    "denied_amount": 950.00,
-    "paid_after_appeal": 680.00,
+    "billed_amount": 950.0,
+    "denied_amount": 950.0,
+    "paid_after_appeal": 680.0,
     "carc_code": "CO-197",
     "rarc_code": "N517",
     "denial_reason_text": "Precertification/authorization/notification absent for scheduled ambulance transport.",
@@ -251,9 +690,52 @@
     "appeal_strategy": "Filed retroactive auth with nursing facility physician order, cognitive assessment documenting severe dementia, physical therapy assessment documenting contractures preventing wheelchair positioning, and sedation order for MRI requiring medical monitoring.",
     "appeal_outcome": "overturned",
     "days_to_appeal": 5,
-    "region": "PA"
+    "region": "PA",
+    "timeline": [
+      {
+        "date": "2026-08-01",
+        "kind": "claim",
+        "title": "Claim submitted",
+        "detail": "BLS Non-Emergency transport (A0425) billed to Aetna for $950."
+      },
+      {
+        "date": "2026-08-18",
+        "kind": "denial",
+        "title": "Denial received — CO-197",
+        "detail": "Precertification/authorization/notification absent for scheduled ambulance transport."
+      },
+      {
+        "date": "2026-08-23",
+        "kind": "appeal",
+        "title": "Appeal filed",
+        "detail": "First-level appeal submitted 5 days after the denial, with the PCR and supporting documentation attached."
+      },
+      {
+        "date": "2026-09-02",
+        "kind": "resolution",
+        "title": "Overturned on appeal",
+        "detail": "$680 recovered of $950 denied."
+      }
+    ],
+    "appeal_letter": "Date: 2026-08-23\nTo: Aetna — Appeals Department\nRe: Denial of BLS Non-Emergency transport · CPT A0425 · DOS 2026-08-01 · CO-197\n\nTo whom it may concern,\n\nWe are formally appealing the denial of the above claim, denied with the reason: \"Precertification/authorization/notification absent for scheduled ambulance transport.\"\n\nThe transport was medically necessary and properly documented. Filed retroactive auth with nursing facility physician order, cognitive assessment documenting severe dementia, physical therapy assessment documenting contractures preventing wheelchair positioning, and sedation order for MRI requiring medical monitoring.\n\nWe respectfully request reprocessing and payment of $950. The patient care report, physician documentation, and applicable medical-necessity criteria are attached.\n\nSincerely,\nAmbra Revenue Recovery — Appeals Team",
+    "payer_notes": [
+      {
+        "date": "2026-08-19",
+        "channel": "call",
+        "text": "Called Aetna provider services. Representative confirmed the denial (CO-197) is documentation-based and directed us to file a first-level appeal with the PCR attached."
+      },
+      {
+        "date": "2026-08-23",
+        "channel": "portal",
+        "text": "First-level appeal uploaded to the Aetna provider portal with the PCR and medical-necessity statement."
+      },
+      {
+        "date": "2026-09-02",
+        "channel": "remit",
+        "text": "Payer response received: Overturned on appeal, $680 recovered."
+      }
+    ]
   },
-
   {
     "id": "D-012",
     "cluster": "anthem_mileage",
@@ -264,9 +746,9 @@
     "resolution_date": "2026-07-20",
     "service_type": "ALS-1 Emergency",
     "cpt_code": "A0427",
-    "billed_amount": 2100.00,
-    "denied_amount": 450.00,
-    "paid_after_appeal": 380.00,
+    "billed_amount": 2100.0,
+    "denied_amount": 450.0,
+    "paid_after_appeal": 380.0,
     "carc_code": "CO-16",
     "rarc_code": "MA130",
     "denial_reason_text": "Your claim requires further justification. Mileage charges exceed expected distance for origin/destination pair.",
@@ -275,7 +757,51 @@
     "appeal_strategy": "Added documentation: 'Patient transported to University Hospital (Level 1 Trauma Center) per regional trauma protocol for mechanism of injury (high-speed MVC). Closest facility (Community Medical Center, 8 miles) is a Level 3 facility without neurosurgical capability. Regional trauma triage protocol requires transport to Level 1 center for high-mechanism injuries. Route documentation and protocol citation attached.'",
     "appeal_outcome": "overturned",
     "days_to_appeal": 7,
-    "region": "NJ"
+    "region": "NJ",
+    "timeline": [
+      {
+        "date": "2026-06-10",
+        "kind": "claim",
+        "title": "Claim submitted",
+        "detail": "ALS-1 Emergency transport (A0427) billed to Anthem BCBS for $2,100."
+      },
+      {
+        "date": "2026-06-28",
+        "kind": "denial",
+        "title": "Denial received — CO-16",
+        "detail": "Your claim requires further justification. Mileage charges exceed expected distance for origin/destination pair."
+      },
+      {
+        "date": "2026-07-05",
+        "kind": "appeal",
+        "title": "Appeal filed",
+        "detail": "First-level appeal submitted 7 days after the denial, with the PCR and supporting documentation attached."
+      },
+      {
+        "date": "2026-07-20",
+        "kind": "resolution",
+        "title": "Overturned on appeal",
+        "detail": "$380 recovered of $450 denied."
+      }
+    ],
+    "appeal_letter": "Date: 2026-07-05\nTo: Anthem BCBS — Appeals Department\nRe: Denial of ALS-1 Emergency transport · CPT A0427 · DOS 2026-06-10 · CO-16\n\nTo whom it may concern,\n\nWe are formally appealing the denial of the above claim, denied with the reason: \"Your claim requires further justification. Mileage charges exceed expected distance for origin/destination pair.\"\n\nThe transport was medically necessary and properly documented. Added documentation: 'Patient transported to University Hospital (Level 1 Trauma Center) per regional trauma protocol for mechanism of injury (high-speed MVC). Closest facility (Community Medical Center, 8 miles) is a Level 3 facility without neurosurgical capability. Regional trauma triage protocol requires transport to Level 1 center for high-mechanism injuries. Route documentation and protocol citation attached.'\n\nWe respectfully request reprocessing and payment of $450. The patient care report, physician documentation, and applicable medical-necessity criteria are attached.\n\nSincerely,\nAmbra Revenue Recovery — Appeals Team",
+    "payer_notes": [
+      {
+        "date": "2026-06-29",
+        "channel": "call",
+        "text": "Called Anthem BCBS provider services. Representative confirmed the denial (CO-16) is documentation-based and directed us to file a first-level appeal with the PCR attached."
+      },
+      {
+        "date": "2026-07-05",
+        "channel": "portal",
+        "text": "First-level appeal uploaded to the Anthem BCBS provider portal with the PCR and medical-necessity statement."
+      },
+      {
+        "date": "2026-07-20",
+        "channel": "remit",
+        "text": "Payer response received: Overturned on appeal, $380 recovered."
+      }
+    ]
   },
   {
     "id": "D-013",
@@ -287,9 +813,9 @@
     "resolution_date": "2026-08-08",
     "service_type": "BLS Emergency",
     "cpt_code": "A0428",
-    "billed_amount": 1400.00,
-    "denied_amount": 320.00,
-    "paid_after_appeal": 290.00,
+    "billed_amount": 1400.0,
+    "denied_amount": 320.0,
+    "paid_after_appeal": 290.0,
     "carc_code": "CO-16",
     "rarc_code": "MA130",
     "denial_reason_text": "Mileage documentation insufficient. Unable to verify loaded miles claimed.",
@@ -298,7 +824,51 @@
     "appeal_strategy": "Resubmitted with complete pickup address (412 Elm Court, Township), destination (Mercy Hospital), Google Maps route verification showing 16.8 miles via shortest route, and patient's stated preference for Mercy Hospital where her orthopedic surgeon has privileges. Attached screenshot of route.",
     "appeal_outcome": "overturned",
     "days_to_appeal": 5,
-    "region": "NJ"
+    "region": "NJ",
+    "timeline": [
+      {
+        "date": "2026-07-02",
+        "kind": "claim",
+        "title": "Claim submitted",
+        "detail": "BLS Emergency transport (A0428) billed to Anthem BCBS for $1,400."
+      },
+      {
+        "date": "2026-07-21",
+        "kind": "denial",
+        "title": "Denial received — CO-16",
+        "detail": "Mileage documentation insufficient. Unable to verify loaded miles claimed."
+      },
+      {
+        "date": "2026-07-26",
+        "kind": "appeal",
+        "title": "Appeal filed",
+        "detail": "First-level appeal submitted 5 days after the denial, with the PCR and supporting documentation attached."
+      },
+      {
+        "date": "2026-08-08",
+        "kind": "resolution",
+        "title": "Overturned on appeal",
+        "detail": "$290 recovered of $320 denied."
+      }
+    ],
+    "appeal_letter": "Date: 2026-07-26\nTo: Anthem BCBS — Appeals Department\nRe: Denial of BLS Emergency transport · CPT A0428 · DOS 2026-07-02 · CO-16\n\nTo whom it may concern,\n\nWe are formally appealing the denial of the above claim, denied with the reason: \"Mileage documentation insufficient. Unable to verify loaded miles claimed.\"\n\nThe transport was medically necessary and properly documented. Resubmitted with complete pickup address (412 Elm Court, Township), destination (Mercy Hospital), Google Maps route verification showing 16.8 miles via shortest route, and patient's stated preference for Mercy Hospital where her orthopedic surgeon has privileges. Attached screenshot of route.\n\nWe respectfully request reprocessing and payment of $320. The patient care report, physician documentation, and applicable medical-necessity criteria are attached.\n\nSincerely,\nAmbra Revenue Recovery — Appeals Team",
+    "payer_notes": [
+      {
+        "date": "2026-07-22",
+        "channel": "call",
+        "text": "Called Anthem BCBS provider services. Representative confirmed the denial (CO-16) is documentation-based and directed us to file a first-level appeal with the PCR attached."
+      },
+      {
+        "date": "2026-07-26",
+        "channel": "portal",
+        "text": "First-level appeal uploaded to the Anthem BCBS provider portal with the PCR and medical-necessity statement."
+      },
+      {
+        "date": "2026-08-08",
+        "channel": "remit",
+        "text": "Payer response received: Overturned on appeal, $290 recovered."
+      }
+    ]
   },
   {
     "id": "D-014",
@@ -310,9 +880,9 @@
     "resolution_date": "2026-08-25",
     "service_type": "ALS-1 Emergency",
     "cpt_code": "A0427",
-    "billed_amount": 2300.00,
-    "denied_amount": 580.00,
-    "paid_after_appeal": 510.00,
+    "billed_amount": 2300.0,
+    "denied_amount": 580.0,
+    "paid_after_appeal": 510.0,
     "carc_code": "CO-4",
     "rarc_code": "MA130",
     "denial_reason_text": "Procedure code is inconsistent with the modifier used or a required modifier is missing. Origin/destination modifier does not match documented origin and destination.",
@@ -321,7 +891,51 @@
     "appeal_strategy": "Corrected the claim to report the required origin/destination modifier SH (scene of accident to hospital). Attached route documentation from the construction site (GPS coordinates provided) to Regional Medical Center showing 27.6 miles. Included trauma protocol justification for bypassing two closer non-trauma facilities.",
     "appeal_outcome": "overturned",
     "days_to_appeal": 6,
-    "region": "NJ"
+    "region": "NJ",
+    "timeline": [
+      {
+        "date": "2026-07-19",
+        "kind": "claim",
+        "title": "Claim submitted",
+        "detail": "ALS-1 Emergency transport (A0427) billed to Anthem BCBS for $2,300."
+      },
+      {
+        "date": "2026-08-06",
+        "kind": "denial",
+        "title": "Denial received — CO-4",
+        "detail": "Procedure code is inconsistent with the modifier used or a required modifier is missing. Origin/destination modifier does not match documented origin and destination."
+      },
+      {
+        "date": "2026-08-12",
+        "kind": "appeal",
+        "title": "Appeal filed",
+        "detail": "First-level appeal submitted 6 days after the denial, with the PCR and supporting documentation attached."
+      },
+      {
+        "date": "2026-08-25",
+        "kind": "resolution",
+        "title": "Overturned on appeal",
+        "detail": "$510 recovered of $580 denied."
+      }
+    ],
+    "appeal_letter": "Date: 2026-08-12\nTo: Anthem BCBS — Appeals Department\nRe: Denial of ALS-1 Emergency transport · CPT A0427 · DOS 2026-07-19 · CO-4\n\nTo whom it may concern,\n\nWe are formally appealing the denial of the above claim, denied with the reason: \"Procedure code is inconsistent with the modifier used or a required modifier is missing. Origin/destination modifier does not match documented origin and destination.\"\n\nThe transport was medically necessary and properly documented. Corrected the claim to report the required origin/destination modifier SH (scene of accident to hospital). Attached route documentation from the construction site (GPS coordinates provided) to Regional Medical Center showing 27.6 miles. Included trauma protocol justification for bypassing two closer non-trauma facilities.\n\nWe respectfully request reprocessing and payment of $580. The patient care report, physician documentation, and applicable medical-necessity criteria are attached.\n\nSincerely,\nAmbra Revenue Recovery — Appeals Team",
+    "payer_notes": [
+      {
+        "date": "2026-08-07",
+        "channel": "call",
+        "text": "Called Anthem BCBS provider services. Representative confirmed the denial (CO-4) is documentation-based and directed us to file a first-level appeal with the PCR attached."
+      },
+      {
+        "date": "2026-08-12",
+        "channel": "portal",
+        "text": "First-level appeal uploaded to the Anthem BCBS provider portal with the PCR and medical-necessity statement."
+      },
+      {
+        "date": "2026-08-25",
+        "channel": "remit",
+        "text": "Payer response received: Overturned on appeal, $510 recovered."
+      }
+    ]
   },
   {
     "id": "D-015",
@@ -333,8 +947,8 @@
     "resolution_date": "2026-09-15",
     "service_type": "BLS Non-Emergency",
     "cpt_code": "A0425",
-    "billed_amount": 1200.00,
-    "denied_amount": 280.00,
+    "billed_amount": 1200.0,
+    "denied_amount": 280.0,
     "paid_after_appeal": 0,
     "carc_code": "CO-16",
     "rarc_code": "MA130",
@@ -344,9 +958,52 @@
     "appeal_strategy": "Investigated internally. Billing error confirmed — mileage was entered as round-trip instead of loaded (one-way) miles. Corrected to 6 loaded miles and resubmitted. Internal process updated to flag mileage entries exceeding 150% of calculated route distance.",
     "appeal_outcome": "corrected_resubmitted",
     "days_to_appeal": 4,
-    "region": "NJ"
+    "region": "NJ",
+    "timeline": [
+      {
+        "date": "2026-08-11",
+        "kind": "claim",
+        "title": "Claim submitted",
+        "detail": "BLS Non-Emergency transport (A0425) billed to Anthem BCBS for $1,200."
+      },
+      {
+        "date": "2026-08-29",
+        "kind": "denial",
+        "title": "Denial received — CO-16",
+        "detail": "Loaded mileage does not match origin and destination. Documentation insufficient."
+      },
+      {
+        "date": "2026-09-02",
+        "kind": "appeal",
+        "title": "Appeal filed",
+        "detail": "First-level appeal submitted 4 days after the denial, with the PCR and supporting documentation attached."
+      },
+      {
+        "date": "2026-09-15",
+        "kind": "resolution",
+        "title": "Corrected and resubmitted",
+        "detail": "$280 written off."
+      }
+    ],
+    "appeal_letter": null,
+    "payer_notes": [
+      {
+        "date": "2026-08-30",
+        "channel": "call",
+        "text": "Called Anthem BCBS provider services. Representative confirmed the denial (CO-16) is documentation-based and directed us to file a first-level appeal with the PCR attached."
+      },
+      {
+        "date": "2026-09-02",
+        "channel": "portal",
+        "text": "First-level appeal uploaded to the Anthem BCBS provider portal with the PCR and medical-necessity statement."
+      },
+      {
+        "date": "2026-09-15",
+        "channel": "note",
+        "text": "Investigated internally. Billing error confirmed — mileage was entered as round-trip instead of loaded (one-way) miles. Corrected to 6 loaded miles and resubmitted. Internal process updated to flag mileage entries exceeding 150% of calculated route distance."
+      }
+    ]
   },
-
   {
     "id": "D-016",
     "cluster": "medicare_documentation",
@@ -357,9 +1014,9 @@
     "resolution_date": "2026-07-10",
     "service_type": "BLS Emergency",
     "cpt_code": "A0428",
-    "billed_amount": 1100.00,
-    "denied_amount": 1100.00,
-    "paid_after_appeal": 780.00,
+    "billed_amount": 1100.0,
+    "denied_amount": 1100.0,
+    "paid_after_appeal": 780.0,
     "carc_code": "CO-16",
     "rarc_code": "MA04",
     "denial_reason_text": "Incomplete/invalid information. Physician certification statement missing for ambulance transport.",
@@ -368,7 +1025,51 @@
     "appeal_strategy": "Obtained PCS from nursing facility attending physician certifying medical necessity of emergency ambulance transport. PCS states: patient's condition required emergency transport due to acute sepsis presentation with hemodynamic instability. Submitted with appeal letter citing 42 CFR 410.40 requirements.",
     "appeal_outcome": "overturned",
     "days_to_appeal": 8,
-    "region": "PA"
+    "region": "PA",
+    "timeline": [
+      {
+        "date": "2026-05-28",
+        "kind": "claim",
+        "title": "Claim submitted",
+        "detail": "BLS Emergency transport (A0428) billed to Medicare (Novitas MAC) for $1,100."
+      },
+      {
+        "date": "2026-06-15",
+        "kind": "denial",
+        "title": "Denial received — CO-16",
+        "detail": "Incomplete/invalid information. Physician certification statement missing for ambulance transport."
+      },
+      {
+        "date": "2026-06-23",
+        "kind": "appeal",
+        "title": "Appeal filed",
+        "detail": "First-level appeal submitted 8 days after the denial, with the PCR and supporting documentation attached."
+      },
+      {
+        "date": "2026-07-10",
+        "kind": "resolution",
+        "title": "Overturned on appeal",
+        "detail": "$780 recovered of $1,100 denied."
+      }
+    ],
+    "appeal_letter": "Date: 2026-06-23\nTo: Medicare (Novitas MAC) — Appeals Department\nRe: Denial of BLS Emergency transport · CPT A0428 · DOS 2026-05-28 · CO-16\n\nTo whom it may concern,\n\nWe are formally appealing the denial of the above claim, denied with the reason: \"Incomplete/invalid information. Physician certification statement missing for ambulance transport.\"\n\nThe transport was medically necessary and properly documented. Obtained PCS from nursing facility attending physician certifying medical necessity of emergency ambulance transport. PCS states: patient's condition required emergency transport due to acute sepsis presentation with hemodynamic instability. Submitted with appeal letter citing 42 CFR 410.40 requirements.\n\nWe respectfully request reprocessing and payment of $1,100. The patient care report, physician documentation, and applicable medical-necessity criteria are attached.\n\nSincerely,\nAmbra Revenue Recovery — Appeals Team",
+    "payer_notes": [
+      {
+        "date": "2026-06-16",
+        "channel": "call",
+        "text": "Called Medicare (Novitas MAC) provider services. Representative confirmed the denial (CO-16) is documentation-based and directed us to file a first-level appeal with the PCR attached."
+      },
+      {
+        "date": "2026-06-23",
+        "channel": "portal",
+        "text": "First-level appeal uploaded to the Medicare (Novitas MAC) provider portal with the PCR and medical-necessity statement."
+      },
+      {
+        "date": "2026-07-10",
+        "channel": "remit",
+        "text": "Payer response received: Overturned on appeal, $780 recovered."
+      }
+    ]
   },
   {
     "id": "D-017",
@@ -380,9 +1081,9 @@
     "resolution_date": "2026-07-25",
     "service_type": "BLS Non-Emergency",
     "cpt_code": "A0425",
-    "billed_amount": 980.00,
-    "denied_amount": 980.00,
-    "paid_after_appeal": 710.00,
+    "billed_amount": 980.0,
+    "denied_amount": 980.0,
+    "paid_after_appeal": 710.0,
     "carc_code": "CO-16",
     "rarc_code": "MA04",
     "denial_reason_text": "Physician certification statement not received. Required for non-emergency scheduled ambulance transport.",
@@ -391,7 +1092,51 @@
     "appeal_strategy": "Obtained corrected PCS with attending physician (MD) signature. Submitted with appeal letter explaining the original PCS was completed by the NP in error. Included facility attestation letter and physician's signed order for ambulance transport.",
     "appeal_outcome": "overturned",
     "days_to_appeal": 10,
-    "region": "PA"
+    "region": "PA",
+    "timeline": [
+      {
+        "date": "2026-06-12",
+        "kind": "claim",
+        "title": "Claim submitted",
+        "detail": "BLS Non-Emergency transport (A0425) billed to Medicare (Novitas MAC) for $980."
+      },
+      {
+        "date": "2026-06-30",
+        "kind": "denial",
+        "title": "Denial received — CO-16",
+        "detail": "Physician certification statement not received. Required for non-emergency scheduled ambulance transport."
+      },
+      {
+        "date": "2026-07-10",
+        "kind": "appeal",
+        "title": "Appeal filed",
+        "detail": "First-level appeal submitted 10 days after the denial, with the PCR and supporting documentation attached."
+      },
+      {
+        "date": "2026-07-25",
+        "kind": "resolution",
+        "title": "Overturned on appeal",
+        "detail": "$710 recovered of $980 denied."
+      }
+    ],
+    "appeal_letter": "Date: 2026-07-10\nTo: Medicare (Novitas MAC) — Appeals Department\nRe: Denial of BLS Non-Emergency transport · CPT A0425 · DOS 2026-06-12 · CO-16\n\nTo whom it may concern,\n\nWe are formally appealing the denial of the above claim, denied with the reason: \"Physician certification statement not received. Required for non-emergency scheduled ambulance transport.\"\n\nThe transport was medically necessary and properly documented. Obtained corrected PCS with attending physician (MD) signature. Submitted with appeal letter explaining the original PCS was completed by the NP in error. Included facility attestation letter and physician's signed order for ambulance transport.\n\nWe respectfully request reprocessing and payment of $980. The patient care report, physician documentation, and applicable medical-necessity criteria are attached.\n\nSincerely,\nAmbra Revenue Recovery — Appeals Team",
+    "payer_notes": [
+      {
+        "date": "2026-07-01",
+        "channel": "call",
+        "text": "Called Medicare (Novitas MAC) provider services. Representative confirmed the denial (CO-16) is documentation-based and directed us to file a first-level appeal with the PCR attached."
+      },
+      {
+        "date": "2026-07-10",
+        "channel": "portal",
+        "text": "First-level appeal uploaded to the Medicare (Novitas MAC) provider portal with the PCR and medical-necessity statement."
+      },
+      {
+        "date": "2026-07-25",
+        "channel": "remit",
+        "text": "Payer response received: Overturned on appeal, $710 recovered."
+      }
+    ]
   },
   {
     "id": "D-018",
@@ -403,9 +1148,9 @@
     "resolution_date": "2026-08-12",
     "service_type": "ALS-1 Emergency",
     "cpt_code": "A0427",
-    "billed_amount": 1600.00,
-    "denied_amount": 1600.00,
-    "paid_after_appeal": 1120.00,
+    "billed_amount": 1600.0,
+    "denied_amount": 1600.0,
+    "paid_after_appeal": 1120.0,
     "carc_code": "CO-16",
     "rarc_code": "N362",
     "denial_reason_text": "Missing/incomplete/invalid patient condition code. Condition code P1-P7 required for ambulance claims.",
@@ -414,7 +1159,51 @@
     "appeal_strategy": "Resubmitted claim with condition code P1 (patient was transported to nearest appropriate facility for required medical services) added to CMS-1500 Box 10d. Included PCR documenting patient's unresponsive state requiring emergency transport.",
     "appeal_outcome": "overturned",
     "days_to_appeal": 7,
-    "region": "PA"
+    "region": "PA",
+    "timeline": [
+      {
+        "date": "2026-07-05",
+        "kind": "claim",
+        "title": "Claim submitted",
+        "detail": "ALS-1 Emergency transport (A0427) billed to Medicare (Novitas MAC) for $1,600."
+      },
+      {
+        "date": "2026-07-22",
+        "kind": "denial",
+        "title": "Denial received — CO-16",
+        "detail": "Missing/incomplete/invalid patient condition code. Condition code P1-P7 required for ambulance claims."
+      },
+      {
+        "date": "2026-07-29",
+        "kind": "appeal",
+        "title": "Appeal filed",
+        "detail": "First-level appeal submitted 7 days after the denial, with the PCR and supporting documentation attached."
+      },
+      {
+        "date": "2026-08-12",
+        "kind": "resolution",
+        "title": "Overturned on appeal",
+        "detail": "$1,120 recovered of $1,600 denied."
+      }
+    ],
+    "appeal_letter": "Date: 2026-07-29\nTo: Medicare (Novitas MAC) — Appeals Department\nRe: Denial of ALS-1 Emergency transport · CPT A0427 · DOS 2026-07-05 · CO-16\n\nTo whom it may concern,\n\nWe are formally appealing the denial of the above claim, denied with the reason: \"Missing/incomplete/invalid patient condition code. Condition code P1-P7 required for ambulance claims.\"\n\nThe transport was medically necessary and properly documented. Resubmitted claim with condition code P1 (patient was transported to nearest appropriate facility for required medical services) added to CMS-1500 Box 10d. Included PCR documenting patient's unresponsive state requiring emergency transport.\n\nWe respectfully request reprocessing and payment of $1,600. The patient care report, physician documentation, and applicable medical-necessity criteria are attached.\n\nSincerely,\nAmbra Revenue Recovery — Appeals Team",
+    "payer_notes": [
+      {
+        "date": "2026-07-23",
+        "channel": "call",
+        "text": "Called Medicare (Novitas MAC) provider services. Representative confirmed the denial (CO-16) is documentation-based and directed us to file a first-level appeal with the PCR attached."
+      },
+      {
+        "date": "2026-07-29",
+        "channel": "portal",
+        "text": "First-level appeal uploaded to the Medicare (Novitas MAC) provider portal with the PCR and medical-necessity statement."
+      },
+      {
+        "date": "2026-08-12",
+        "channel": "remit",
+        "text": "Payer response received: Overturned on appeal, $1,120 recovered."
+      }
+    ]
   },
   {
     "id": "D-019",
@@ -426,9 +1215,9 @@
     "resolution_date": "2026-08-28",
     "service_type": "BLS Non-Emergency",
     "cpt_code": "A0425",
-    "billed_amount": 980.00,
-    "denied_amount": 980.00,
-    "paid_after_appeal": 710.00,
+    "billed_amount": 980.0,
+    "denied_amount": 980.0,
+    "paid_after_appeal": 710.0,
     "carc_code": "CO-151",
     "rarc_code": "N479",
     "denial_reason_text": "Information from another provider was not provided or was insufficient. Admit/discharge orders not received.",
@@ -437,7 +1226,51 @@
     "appeal_strategy": "Obtained discharge summary and physician transport order from hospital medical records. Submitted with appeal showing physician's signed order for ambulance transport at discharge, including medical necessity statement regarding patient's non-weight-bearing status.",
     "appeal_outcome": "overturned",
     "days_to_appeal": 6,
-    "region": "PA"
+    "region": "PA",
+    "timeline": [
+      {
+        "date": "2026-07-20",
+        "kind": "claim",
+        "title": "Claim submitted",
+        "detail": "BLS Non-Emergency transport (A0425) billed to Medicare (Novitas MAC) for $980."
+      },
+      {
+        "date": "2026-08-07",
+        "kind": "denial",
+        "title": "Denial received — CO-151",
+        "detail": "Information from another provider was not provided or was insufficient. Admit/discharge orders not received."
+      },
+      {
+        "date": "2026-08-13",
+        "kind": "appeal",
+        "title": "Appeal filed",
+        "detail": "First-level appeal submitted 6 days after the denial, with the PCR and supporting documentation attached."
+      },
+      {
+        "date": "2026-08-28",
+        "kind": "resolution",
+        "title": "Overturned on appeal",
+        "detail": "$710 recovered of $980 denied."
+      }
+    ],
+    "appeal_letter": "Date: 2026-08-13\nTo: Medicare (Novitas MAC) — Appeals Department\nRe: Denial of BLS Non-Emergency transport · CPT A0425 · DOS 2026-07-20 · CO-151\n\nTo whom it may concern,\n\nWe are formally appealing the denial of the above claim, denied with the reason: \"Information from another provider was not provided or was insufficient. Admit/discharge orders not received.\"\n\nThe transport was medically necessary and properly documented. Obtained discharge summary and physician transport order from hospital medical records. Submitted with appeal showing physician's signed order for ambulance transport at discharge, including medical necessity statement regarding patient's non-weight-bearing status.\n\nWe respectfully request reprocessing and payment of $980. The patient care report, physician documentation, and applicable medical-necessity criteria are attached.\n\nSincerely,\nAmbra Revenue Recovery — Appeals Team",
+    "payer_notes": [
+      {
+        "date": "2026-08-08",
+        "channel": "call",
+        "text": "Called Medicare (Novitas MAC) provider services. Representative confirmed the denial (CO-151) is documentation-based and directed us to file a first-level appeal with the PCR attached."
+      },
+      {
+        "date": "2026-08-13",
+        "channel": "portal",
+        "text": "First-level appeal uploaded to the Medicare (Novitas MAC) provider portal with the PCR and medical-necessity statement."
+      },
+      {
+        "date": "2026-08-28",
+        "channel": "remit",
+        "text": "Payer response received: Overturned on appeal, $710 recovered."
+      }
+    ]
   },
   {
     "id": "D-020",
@@ -449,9 +1282,9 @@
     "resolution_date": "2026-09-20",
     "service_type": "BLS Non-Emergency",
     "cpt_code": "A0425",
-    "billed_amount": 980.00,
-    "denied_amount": 980.00,
-    "paid_after_appeal": 710.00,
+    "billed_amount": 980.0,
+    "denied_amount": 980.0,
+    "paid_after_appeal": 710.0,
     "carc_code": "CO-16",
     "rarc_code": "MA04",
     "denial_reason_text": "Physician certification statement expired. PCS must be recertified every 60 days for recurring non-emergency transports.",
@@ -460,9 +1293,52 @@
     "appeal_strategy": "Obtained fresh PCS from attending physician dated within the transport period. Submitted with appeal citing administrative oversight in tracking the 60-day recertification window. Implemented internal tracking system to flag PCS expiration 14 days before due date.",
     "appeal_outcome": "overturned",
     "days_to_appeal": 5,
-    "region": "PA"
+    "region": "PA",
+    "timeline": [
+      {
+        "date": "2026-08-15",
+        "kind": "claim",
+        "title": "Claim submitted",
+        "detail": "BLS Non-Emergency transport (A0425) billed to Medicare (Novitas MAC) for $980."
+      },
+      {
+        "date": "2026-09-02",
+        "kind": "denial",
+        "title": "Denial received — CO-16",
+        "detail": "Physician certification statement expired. PCS must be recertified every 60 days for recurring non-emergency transports."
+      },
+      {
+        "date": "2026-09-07",
+        "kind": "appeal",
+        "title": "Appeal filed",
+        "detail": "First-level appeal submitted 5 days after the denial, with the PCR and supporting documentation attached."
+      },
+      {
+        "date": "2026-09-20",
+        "kind": "resolution",
+        "title": "Overturned on appeal",
+        "detail": "$710 recovered of $980 denied."
+      }
+    ],
+    "appeal_letter": "Date: 2026-09-07\nTo: Medicare (Novitas MAC) — Appeals Department\nRe: Denial of BLS Non-Emergency transport · CPT A0425 · DOS 2026-08-15 · CO-16\n\nTo whom it may concern,\n\nWe are formally appealing the denial of the above claim, denied with the reason: \"Physician certification statement expired. PCS must be recertified every 60 days for recurring non-emergency transports.\"\n\nThe transport was medically necessary and properly documented. Obtained fresh PCS from attending physician dated within the transport period. Submitted with appeal citing administrative oversight in tracking the 60-day recertification window. Implemented internal tracking system to flag PCS expiration 14 days before due date.\n\nWe respectfully request reprocessing and payment of $980. The patient care report, physician documentation, and applicable medical-necessity criteria are attached.\n\nSincerely,\nAmbra Revenue Recovery — Appeals Team",
+    "payer_notes": [
+      {
+        "date": "2026-09-03",
+        "channel": "call",
+        "text": "Called Medicare (Novitas MAC) provider services. Representative confirmed the denial (CO-16) is documentation-based and directed us to file a first-level appeal with the PCR attached."
+      },
+      {
+        "date": "2026-09-07",
+        "channel": "portal",
+        "text": "First-level appeal uploaded to the Medicare (Novitas MAC) provider portal with the PCR and medical-necessity statement."
+      },
+      {
+        "date": "2026-09-20",
+        "channel": "remit",
+        "text": "Payer response received: Overturned on appeal, $710 recovered."
+      }
+    ]
   },
-
   {
     "id": "D-021",
     "cluster": "cigna_level_of_service",
@@ -473,9 +1349,9 @@
     "resolution_date": "2026-07-15",
     "service_type": "ALS-2",
     "cpt_code": "A0433",
-    "billed_amount": 2800.00,
-    "denied_amount": 2800.00,
-    "paid_after_appeal": 1400.00,
+    "billed_amount": 2800.0,
+    "denied_amount": 2800.0,
+    "paid_after_appeal": 1400.0,
     "carc_code": "CO-50",
     "rarc_code": "N381",
     "denial_reason_text": "Services not medically necessary. Level of service billed (ALS-2) exceeds the level of service supported by documentation.",
@@ -484,7 +1360,51 @@
     "appeal_strategy": "Submitted detailed procedure log: (1) endotracheal intubation, (2) IV epinephrine administration x3 doses, (3) mechanical ventilation management, (4) cardiac monitoring with 12-lead interpretation, (5) post-ROSC targeted temperature management initiated. Attached rhythm strips and medication administration record. Cited Cigna's own ALS-2 coverage criteria.",
     "appeal_outcome": "partially_overturned",
     "days_to_appeal": 7,
-    "region": "CT"
+    "region": "CT",
+    "timeline": [
+      {
+        "date": "2026-06-05",
+        "kind": "claim",
+        "title": "Claim submitted",
+        "detail": "ALS-2 transport (A0433) billed to Cigna for $2,800."
+      },
+      {
+        "date": "2026-06-24",
+        "kind": "denial",
+        "title": "Denial received — CO-50",
+        "detail": "Services not medically necessary. Level of service billed (ALS-2) exceeds the level of service supported by documentation."
+      },
+      {
+        "date": "2026-07-01",
+        "kind": "appeal",
+        "title": "Appeal filed",
+        "detail": "First-level appeal submitted 7 days after the denial, with the PCR and supporting documentation attached."
+      },
+      {
+        "date": "2026-07-15",
+        "kind": "resolution",
+        "title": "Partially overturned on appeal",
+        "detail": "$1,400 recovered of $2,800 denied."
+      }
+    ],
+    "appeal_letter": "Date: 2026-07-01\nTo: Cigna — Appeals Department\nRe: Denial of ALS-2 transport · CPT A0433 · DOS 2026-06-05 · CO-50\n\nTo whom it may concern,\n\nWe are formally appealing the denial of the above claim, denied with the reason: \"Services not medically necessary. Level of service billed (ALS-2) exceeds the level of service supported by documentation.\"\n\nThe transport was medically necessary and properly documented. Submitted detailed procedure log: (1) endotracheal intubation, (2) IV epinephrine administration x3 doses, (3) mechanical ventilation management, (4) cardiac monitoring with 12-lead interpretation, (5) post-ROSC targeted temperature management initiated. Attached rhythm strips and medication administration record. Cited Cigna's own ALS-2 coverage criteria.\n\nWe respectfully request reprocessing and payment of $2,800. The patient care report, physician documentation, and applicable medical-necessity criteria are attached.\n\nSincerely,\nAmbra Revenue Recovery — Appeals Team",
+    "payer_notes": [
+      {
+        "date": "2026-06-25",
+        "channel": "call",
+        "text": "Called Cigna provider services. Representative confirmed the denial (CO-50) is documentation-based and directed us to file a first-level appeal with the PCR attached."
+      },
+      {
+        "date": "2026-07-01",
+        "channel": "portal",
+        "text": "First-level appeal uploaded to the Cigna provider portal with the PCR and medical-necessity statement."
+      },
+      {
+        "date": "2026-07-15",
+        "channel": "remit",
+        "text": "Payer response received: Partially overturned on appeal, $1,400 recovered."
+      }
+    ]
   },
   {
     "id": "D-022",
@@ -496,8 +1416,8 @@
     "resolution_date": "2026-08-18",
     "service_type": "ALS-1 Emergency",
     "cpt_code": "A0427",
-    "billed_amount": 1900.00,
-    "denied_amount": 700.00,
+    "billed_amount": 1900.0,
+    "denied_amount": 700.0,
     "paid_after_appeal": 0,
     "carc_code": "CO-50",
     "rarc_code": "N381",
@@ -507,7 +1427,51 @@
     "appeal_strategy": "Reviewed case internally. Agreed with payer assessment — no ALS interventions were performed, no ALS assessment beyond BLS scope was required. Accepted downgrade to BLS Emergency (A0428). Flagged crew for documentation training on appropriate level-of-service coding.",
     "appeal_outcome": "accepted_downgrade",
     "days_to_appeal": 3,
-    "region": "CT"
+    "region": "CT",
+    "timeline": [
+      {
+        "date": "2026-07-12",
+        "kind": "claim",
+        "title": "Claim submitted",
+        "detail": "ALS-1 Emergency transport (A0427) billed to Cigna for $1,900."
+      },
+      {
+        "date": "2026-07-31",
+        "kind": "denial",
+        "title": "Denial received — CO-50",
+        "detail": "Level of service downgraded. Documentation supports BLS Emergency, not ALS-1 Emergency."
+      },
+      {
+        "date": "2026-08-03",
+        "kind": "appeal",
+        "title": "Appeal filed",
+        "detail": "First-level appeal submitted 3 days after the denial, with the PCR and supporting documentation attached."
+      },
+      {
+        "date": "2026-08-18",
+        "kind": "resolution",
+        "title": "Accepted downgrade and rebilled",
+        "detail": "$700 written off."
+      }
+    ],
+    "appeal_letter": null,
+    "payer_notes": [
+      {
+        "date": "2026-08-01",
+        "channel": "call",
+        "text": "Called Cigna provider services. Representative confirmed the denial (CO-50) is documentation-based and directed us to file a first-level appeal with the PCR attached."
+      },
+      {
+        "date": "2026-08-03",
+        "channel": "portal",
+        "text": "First-level appeal uploaded to the Cigna provider portal with the PCR and medical-necessity statement."
+      },
+      {
+        "date": "2026-08-18",
+        "channel": "note",
+        "text": "Reviewed case internally. Agreed with payer assessment — no ALS interventions were performed, no ALS assessment beyond BLS scope was required. Accepted downgrade to BLS Emergency (A0428). Flagged crew for documentation training on appropriate level-of-service coding."
+      }
+    ]
   },
   {
     "id": "D-023",
@@ -519,9 +1483,9 @@
     "resolution_date": "2026-09-10",
     "service_type": "ALS-1 Emergency",
     "cpt_code": "A0427",
-    "billed_amount": 1900.00,
-    "denied_amount": 1900.00,
-    "paid_after_appeal": 1350.00,
+    "billed_amount": 1900.0,
+    "denied_amount": 1900.0,
+    "paid_after_appeal": 1350.0,
     "carc_code": "CO-50",
     "rarc_code": "N381",
     "denial_reason_text": "Level of service not supported by documentation. ALS assessment or intervention not documented.",
@@ -530,7 +1494,51 @@
     "appeal_strategy": "Submitted appeal citing: (1) 12-lead ECG was performed (ALS assessment) but omitted from narrative — attached ECG strip, (2) IV access with saline lock is an ALS intervention, (3) differential diagnosis of subarachnoid hemorrhage required ALS-level assessment and readiness for rapid sequence intubation if patient deteriorated. Cited clinical decision-making complexity requiring paramedic-level assessment.",
     "appeal_outcome": "overturned",
     "days_to_appeal": 5,
-    "region": "CT"
+    "region": "CT",
+    "timeline": [
+      {
+        "date": "2026-08-05",
+        "kind": "claim",
+        "title": "Claim submitted",
+        "detail": "ALS-1 Emergency transport (A0427) billed to Cigna for $1,900."
+      },
+      {
+        "date": "2026-08-23",
+        "kind": "denial",
+        "title": "Denial received — CO-50",
+        "detail": "Level of service not supported by documentation. ALS assessment or intervention not documented."
+      },
+      {
+        "date": "2026-08-28",
+        "kind": "appeal",
+        "title": "Appeal filed",
+        "detail": "First-level appeal submitted 5 days after the denial, with the PCR and supporting documentation attached."
+      },
+      {
+        "date": "2026-09-10",
+        "kind": "resolution",
+        "title": "Overturned on appeal",
+        "detail": "$1,350 recovered of $1,900 denied."
+      }
+    ],
+    "appeal_letter": "Date: 2026-08-28\nTo: Cigna — Appeals Department\nRe: Denial of ALS-1 Emergency transport · CPT A0427 · DOS 2026-08-05 · CO-50\n\nTo whom it may concern,\n\nWe are formally appealing the denial of the above claim, denied with the reason: \"Level of service not supported by documentation. ALS assessment or intervention not documented.\"\n\nThe transport was medically necessary and properly documented. Submitted appeal citing: (1) 12-lead ECG was performed (ALS assessment) but omitted from narrative — attached ECG strip, (2) IV access with saline lock is an ALS intervention, (3) differential diagnosis of subarachnoid hemorrhage required ALS-level assessment and readiness for rapid sequence intubation if patient deteriorated. Cited clinical decision-making complexity requiring paramedic-level assessment.\n\nWe respectfully request reprocessing and payment of $1,900. The patient care report, physician documentation, and applicable medical-necessity criteria are attached.\n\nSincerely,\nAmbra Revenue Recovery — Appeals Team",
+    "payer_notes": [
+      {
+        "date": "2026-08-24",
+        "channel": "call",
+        "text": "Called Cigna provider services. Representative confirmed the denial (CO-50) is documentation-based and directed us to file a first-level appeal with the PCR attached."
+      },
+      {
+        "date": "2026-08-28",
+        "channel": "portal",
+        "text": "First-level appeal uploaded to the Cigna provider portal with the PCR and medical-necessity statement."
+      },
+      {
+        "date": "2026-09-10",
+        "channel": "remit",
+        "text": "Payer response received: Overturned on appeal, $1,350 recovered."
+      }
+    ]
   },
   {
     "id": "D-024",
@@ -542,9 +1550,9 @@
     "resolution_date": "2026-09-25",
     "service_type": "ALS-1 Emergency",
     "cpt_code": "A0427",
-    "billed_amount": 1900.00,
-    "denied_amount": 1900.00,
-    "paid_after_appeal": 1350.00,
+    "billed_amount": 1900.0,
+    "denied_amount": 1900.0,
+    "paid_after_appeal": 1350.0,
     "carc_code": "CO-50",
     "rarc_code": "N381",
     "denial_reason_text": "Documentation does not support ALS-1 Emergency level of service.",
@@ -553,9 +1561,52 @@
     "appeal_strategy": "Submitted appeal emphasizing: (1) anaphylaxis is a life-threatening emergency requiring ALS monitoring regardless of pre-arrival treatment, (2) EMS administered two additional medications (diphenhydramine IV, epinephrine IM) which are ALS-level interventions, (3) biphasic anaphylaxis risk required continuous ALS monitoring during transport, (4) cited Cigna's own clinical policy on anaphylaxis management. Attached medication administration record and vital sign trending.",
     "appeal_outcome": "overturned",
     "days_to_appeal": 4,
-    "region": "CT"
+    "region": "CT",
+    "timeline": [
+      {
+        "date": "2026-08-20",
+        "kind": "claim",
+        "title": "Claim submitted",
+        "detail": "ALS-1 Emergency transport (A0427) billed to Cigna for $1,900."
+      },
+      {
+        "date": "2026-09-07",
+        "kind": "denial",
+        "title": "Denial received — CO-50",
+        "detail": "Documentation does not support ALS-1 Emergency level of service."
+      },
+      {
+        "date": "2026-09-11",
+        "kind": "appeal",
+        "title": "Appeal filed",
+        "detail": "First-level appeal submitted 4 days after the denial, with the PCR and supporting documentation attached."
+      },
+      {
+        "date": "2026-09-25",
+        "kind": "resolution",
+        "title": "Overturned on appeal",
+        "detail": "$1,350 recovered of $1,900 denied."
+      }
+    ],
+    "appeal_letter": "Date: 2026-09-11\nTo: Cigna — Appeals Department\nRe: Denial of ALS-1 Emergency transport · CPT A0427 · DOS 2026-08-20 · CO-50\n\nTo whom it may concern,\n\nWe are formally appealing the denial of the above claim, denied with the reason: \"Documentation does not support ALS-1 Emergency level of service.\"\n\nThe transport was medically necessary and properly documented. Submitted appeal emphasizing: (1) anaphylaxis is a life-threatening emergency requiring ALS monitoring regardless of pre-arrival treatment, (2) EMS administered two additional medications (diphenhydramine IV, epinephrine IM) which are ALS-level interventions, (3) biphasic anaphylaxis risk required continuous ALS monitoring during transport, (4) cited Cigna's own clinical policy on anaphylaxis management. Attached medication administration record and vital sign trending.\n\nWe respectfully request reprocessing and payment of $1,900. The patient care report, physician documentation, and applicable medical-necessity criteria are attached.\n\nSincerely,\nAmbra Revenue Recovery — Appeals Team",
+    "payer_notes": [
+      {
+        "date": "2026-09-08",
+        "channel": "call",
+        "text": "Called Cigna provider services. Representative confirmed the denial (CO-50) is documentation-based and directed us to file a first-level appeal with the PCR attached."
+      },
+      {
+        "date": "2026-09-11",
+        "channel": "portal",
+        "text": "First-level appeal uploaded to the Cigna provider portal with the PCR and medical-necessity statement."
+      },
+      {
+        "date": "2026-09-25",
+        "channel": "remit",
+        "text": "Payer response received: Overturned on appeal, $1,350 recovered."
+      }
+    ]
   },
-
   {
     "id": "D-025",
     "cluster": "scattered",
@@ -566,8 +1617,8 @@
     "resolution_date": "2026-08-02",
     "service_type": "ALS-1 Emergency",
     "cpt_code": "A0427",
-    "billed_amount": 1850.00,
-    "denied_amount": 1850.00,
+    "billed_amount": 1850.0,
+    "denied_amount": 1850.0,
     "paid_after_appeal": 0,
     "carc_code": "CO-29",
     "rarc_code": "N576",
@@ -577,7 +1628,51 @@
     "appeal_strategy": "Submitted appeal with proof of original submission within timely filing window. Original claim was submitted on day 45 but rejected for invalid subscriber ID. Corrected claim was resubmitted on day 98. Attached original submission confirmation and rejection notice showing the delay was due to payer-side rejection, not agency delay.",
     "appeal_outcome": "denied",
     "days_to_appeal": 5,
-    "region": "NJ"
+    "region": "NJ",
+    "timeline": [
+      {
+        "date": "2026-06-30",
+        "kind": "claim",
+        "title": "Claim submitted",
+        "detail": "ALS-1 Emergency transport (A0427) billed to UnitedHealthcare for $1,850."
+      },
+      {
+        "date": "2026-07-18",
+        "kind": "denial",
+        "title": "Denial received — CO-29",
+        "detail": "Timely filing limit exceeded. Claim received after the filing deadline."
+      },
+      {
+        "date": "2026-07-23",
+        "kind": "appeal",
+        "title": "Appeal filed",
+        "detail": "First-level appeal submitted 5 days after the denial, with the PCR and supporting documentation attached."
+      },
+      {
+        "date": "2026-08-02",
+        "kind": "resolution",
+        "title": "Appeal upheld — denial stands",
+        "detail": "$1,850 written off."
+      }
+    ],
+    "appeal_letter": "Date: 2026-07-23\nTo: UnitedHealthcare — Appeals Department\nRe: Denial of ALS-1 Emergency transport · CPT A0427 · DOS 2026-06-30 · CO-29\n\nTo whom it may concern,\n\nWe are formally appealing the denial of the above claim, denied with the reason: \"Timely filing limit exceeded. Claim received after the filing deadline.\"\n\nThe transport was medically necessary and properly documented. Submitted appeal with proof of original submission within timely filing window. Original claim was submitted on day 45 but rejected for invalid subscriber ID. Corrected claim was resubmitted on day 98. Attached original submission confirmation and rejection notice showing the delay was due to payer-side rejection, not agency delay.\n\nWe respectfully request reprocessing and payment of $1,850. The patient care report, physician documentation, and applicable medical-necessity criteria are attached.\n\nSincerely,\nAmbra Revenue Recovery — Appeals Team",
+    "payer_notes": [
+      {
+        "date": "2026-07-19",
+        "channel": "call",
+        "text": "Called UnitedHealthcare provider services. Representative confirmed the denial (CO-29) is documentation-based and directed us to file a first-level appeal with the PCR attached."
+      },
+      {
+        "date": "2026-07-23",
+        "channel": "portal",
+        "text": "First-level appeal uploaded to the UnitedHealthcare provider portal with the PCR and medical-necessity statement."
+      },
+      {
+        "date": "2026-08-02",
+        "channel": "remit",
+        "text": "Payer response received: Appeal upheld — denial stands."
+      }
+    ]
   },
   {
     "id": "D-026",
@@ -589,8 +1684,8 @@
     "resolution_date": "2026-08-15",
     "service_type": "ALS-1 Emergency",
     "cpt_code": "A0427",
-    "billed_amount": 1800.00,
-    "denied_amount": 1800.00,
+    "billed_amount": 1800.0,
+    "denied_amount": 1800.0,
     "paid_after_appeal": 0,
     "carc_code": "CO-18",
     "rarc_code": null,
@@ -600,7 +1695,40 @@
     "appeal_strategy": "Verified that original claim was paid. This was a duplicate submission error from the billing system. No appeal needed — confirmed payment on original claim. Flagged billing system to prevent duplicate submissions.",
     "appeal_outcome": "no_appeal_needed",
     "days_to_appeal": 0,
-    "region": "PA"
+    "region": "PA",
+    "timeline": [
+      {
+        "date": "2026-07-15",
+        "kind": "claim",
+        "title": "Claim submitted",
+        "detail": "ALS-1 Emergency transport (A0427) billed to Aetna for $1,800."
+      },
+      {
+        "date": "2026-08-02",
+        "kind": "denial",
+        "title": "Denial received — CO-18",
+        "detail": "Duplicate claim/service. An identical claim has already been processed."
+      },
+      {
+        "date": "2026-08-15",
+        "kind": "resolution",
+        "title": "Closed — no appeal needed",
+        "detail": "$1,800 written off."
+      }
+    ],
+    "appeal_letter": null,
+    "payer_notes": [
+      {
+        "date": "2026-08-03",
+        "channel": "call",
+        "text": "Called Aetna provider services. Representative confirmed the denial (CO-18) is documentation-based and directed us to file a first-level appeal with the PCR attached."
+      },
+      {
+        "date": "2026-08-15",
+        "channel": "note",
+        "text": "Verified that original claim was paid. This was a duplicate submission error from the billing system. No appeal needed — confirmed payment on original claim. Flagged billing system to prevent duplicate submissions."
+      }
+    ]
   },
   {
     "id": "D-027",
@@ -612,9 +1740,9 @@
     "resolution_date": "2026-09-12",
     "service_type": "BLS Emergency",
     "cpt_code": "A0428",
-    "billed_amount": 1200.00,
-    "denied_amount": 1200.00,
-    "paid_after_appeal": 850.00,
+    "billed_amount": 1200.0,
+    "denied_amount": 1200.0,
+    "paid_after_appeal": 850.0,
     "carc_code": "CO-50",
     "rarc_code": "N386",
     "denial_reason_text": "Not medically necessary. Documentation does not support emergency ambulance transport.",
@@ -623,7 +1751,51 @@
     "appeal_strategy": "Attempted appeal citing patient's 911 call and reported pain level. Denied on second review. Payer position: non-acute back pain in an ambulatory patient does not meet medical necessity criteria for emergency ambulance transport. Patient should have used private vehicle or non-emergency transport. Reviewed with crew — this was a patient-convenience transport that should have been documented differently.",
     "appeal_outcome": "denied",
     "days_to_appeal": 5,
-    "region": "NJ"
+    "region": "NJ",
+    "timeline": [
+      {
+        "date": "2026-08-08",
+        "kind": "claim",
+        "title": "Claim submitted",
+        "detail": "BLS Emergency transport (A0428) billed to Anthem BCBS for $1,200."
+      },
+      {
+        "date": "2026-08-26",
+        "kind": "denial",
+        "title": "Denial received — CO-50",
+        "detail": "Not medically necessary. Documentation does not support emergency ambulance transport."
+      },
+      {
+        "date": "2026-08-31",
+        "kind": "appeal",
+        "title": "Appeal filed",
+        "detail": "First-level appeal submitted 5 days after the denial, with the PCR and supporting documentation attached."
+      },
+      {
+        "date": "2026-09-12",
+        "kind": "resolution",
+        "title": "Appeal upheld — denial stands",
+        "detail": "$850 recovered of $1,200 denied."
+      }
+    ],
+    "appeal_letter": "Date: 2026-08-31\nTo: Anthem BCBS — Appeals Department\nRe: Denial of BLS Emergency transport · CPT A0428 · DOS 2026-08-08 · CO-50\n\nTo whom it may concern,\n\nWe are formally appealing the denial of the above claim, denied with the reason: \"Not medically necessary. Documentation does not support emergency ambulance transport.\"\n\nThe transport was medically necessary and properly documented. Attempted appeal citing patient's 911 call and reported pain level. Denied on second review. Payer position: non-acute back pain in an ambulatory patient does not meet medical necessity criteria for emergency ambulance transport. Patient should have used private vehicle or non-emergency transport. Reviewed with crew — this was a patient-convenience transport that should have been documented differently.\n\nWe respectfully request reprocessing and payment of $1,200. The patient care report, physician documentation, and applicable medical-necessity criteria are attached.\n\nSincerely,\nAmbra Revenue Recovery — Appeals Team",
+    "payer_notes": [
+      {
+        "date": "2026-08-27",
+        "channel": "call",
+        "text": "Called Anthem BCBS provider services. Representative confirmed the denial (CO-50) is documentation-based and directed us to file a first-level appeal with the PCR attached."
+      },
+      {
+        "date": "2026-08-31",
+        "channel": "portal",
+        "text": "First-level appeal uploaded to the Anthem BCBS provider portal with the PCR and medical-necessity statement."
+      },
+      {
+        "date": "2026-09-12",
+        "channel": "remit",
+        "text": "Payer response received: Appeal upheld — denial stands, $850 recovered."
+      }
+    ]
   },
   {
     "id": "D-028",
@@ -635,9 +1807,9 @@
     "resolution_date": "2026-10-02",
     "service_type": "BLS Emergency",
     "cpt_code": "A0428",
-    "billed_amount": 1300.00,
-    "denied_amount": 1300.00,
-    "paid_after_appeal": 920.00,
+    "billed_amount": 1300.0,
+    "denied_amount": 1300.0,
+    "paid_after_appeal": 920.0,
     "carc_code": "CO-16",
     "rarc_code": "N479",
     "denial_reason_text": "Missing information needed for adjudication. Patient insurance information does not match records on file.",
@@ -646,6 +1818,50 @@
     "appeal_strategy": "Obtained correct member ID from patient. Resubmitted claim with updated insurance information. Claim processed and paid on resubmission. Flagged process: verify member ID at time of billing for patients with recent plan changes.",
     "appeal_outcome": "corrected_resubmitted",
     "days_to_appeal": 3,
-    "region": "CT"
+    "region": "CT",
+    "timeline": [
+      {
+        "date": "2026-09-01",
+        "kind": "claim",
+        "title": "Claim submitted",
+        "detail": "BLS Emergency transport (A0428) billed to Cigna for $1,300."
+      },
+      {
+        "date": "2026-09-18",
+        "kind": "denial",
+        "title": "Denial received — CO-16",
+        "detail": "Missing information needed for adjudication. Patient insurance information does not match records on file."
+      },
+      {
+        "date": "2026-09-21",
+        "kind": "appeal",
+        "title": "Appeal filed",
+        "detail": "First-level appeal submitted 3 days after the denial, with the PCR and supporting documentation attached."
+      },
+      {
+        "date": "2026-10-02",
+        "kind": "resolution",
+        "title": "Corrected and resubmitted",
+        "detail": "$920 recovered of $1,300 denied."
+      }
+    ],
+    "appeal_letter": null,
+    "payer_notes": [
+      {
+        "date": "2026-09-19",
+        "channel": "call",
+        "text": "Called Cigna provider services. Representative confirmed the denial (CO-16) is documentation-based and directed us to file a first-level appeal with the PCR attached."
+      },
+      {
+        "date": "2026-09-21",
+        "channel": "portal",
+        "text": "First-level appeal uploaded to the Cigna provider portal with the PCR and medical-necessity statement."
+      },
+      {
+        "date": "2026-10-02",
+        "channel": "note",
+        "text": "Obtained correct member ID from patient. Resubmitted claim with updated insurance information. Claim processed and paid on resubmission. Flagged process: verify member ID at time of billing for patients with recent plan changes."
+      }
+    ]
   }
 ]
