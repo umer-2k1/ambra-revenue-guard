@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { AlertTriangle } from 'lucide-react'
+import { AlertTriangle, ChevronRight } from 'lucide-react'
 import { Card } from '@/components/ui/card'
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from '@/components/ui/table'
 import { Badge } from '@/components/ui/badge'
@@ -7,6 +7,7 @@ import { Alert, AlertDescription } from '@/components/ui/alert'
 import { Skeleton } from '@/components/ui/skeleton'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import { getDenials, getDenialStats } from '@/api'
+import DenialDetail from '@/components/DenialDetail'
 
 const outcomeVariant = (o = '') => {
   if (o === 'overturned') return 'green'
@@ -30,6 +31,7 @@ function Stat({ value, label }) {
 export default function DenialsTable() {
   const [denials, setDenials] = useState(null)
   const [stats, setStats] = useState(null)
+  const [selected, setSelected] = useState(null)
 
   useEffect(() => {
     getDenials().then(setDenials).catch(() => setDenials([]))
@@ -53,7 +55,7 @@ export default function DenialsTable() {
         <div className="px-6 pb-2 pt-6">
           <h2 className="text-base">Denial cases</h2>
           <p className="text-sm text-muted-foreground">
-            Resolved denials across {stats ? Object.keys(stats.by_payer).length : 5} payers — hover a CARC for the payer's reason.
+            Resolved denials across {stats ? Object.keys(stats.by_payer).length : 5} payers — click any row to open the full case file.
           </p>
         </div>
 
@@ -74,11 +76,16 @@ export default function DenialsTable() {
                 <TableHead>CARC</TableHead>
                 <TableHead className="text-right">Denied</TableHead>
                 <TableHead>Outcome</TableHead>
+                <TableHead className="w-8" />
               </TableRow>
             </TableHeader>
             <TableBody>
               {denials.map((d) => (
-                <TableRow key={d.id} className="even:bg-secondary/25">
+                <TableRow
+                  key={d.id}
+                  onClick={() => setSelected(d)}
+                  className="cursor-pointer even:bg-secondary/25"
+                >
                   <TableCell className="font-semibold text-primary">{d.id}</TableCell>
                   <TableCell>
                     <Badge variant="payer">{d.payer}</Badge>
@@ -97,6 +104,9 @@ export default function DenialsTable() {
                   <TableCell>
                     <Badge variant={outcomeVariant(d.appeal_outcome)}>{pretty(d.appeal_outcome)}</Badge>
                   </TableCell>
+                  <TableCell className="text-muted-foreground">
+                    <ChevronRight className="size-4" />
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -112,6 +122,8 @@ export default function DenialsTable() {
           separate pipelines.
         </AlertDescription>
       </Alert>
+
+      <DenialDetail denial={selected} onClose={() => setSelected(null)} />
     </div>
   )
 }
