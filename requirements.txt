@@ -1,0 +1,9 @@
+# Ambra — Denial-to-Prevention Feedback Loop (backend)
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+openai>=1.40.0            # DeepSeek + Groq (both OpenAI-compatible)
+qdrant-client>=1.10.0     # local vector store (no server needed)
+google-genai>=1.0.0       # Gemini embeddings (current SDK)
+pydantic>=2.7.0
+python-dotenv>=1.0.0
+sse-starlette>=2.1.0      # Server-Sent Events
