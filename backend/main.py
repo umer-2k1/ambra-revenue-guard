@@ -21,6 +21,9 @@ from database import (
     reset_analysis,
 )
 from extraction_agent import run_analysis
+from demo_claim import DEMO_CLAIM
+from models import ScoreRequest
+from scoring_agent import score_claim
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
@@ -104,6 +107,25 @@ def read_rule(rule_id: str):
     if rule is None:
         return JSONResponse(status_code=404, content={"error": f"Rule {rule_id} not found"})
     return rule
+
+
+# ── Scoring ──────────────────────────────────────────────────────────────────
+@app.get("/api/demo-claim")
+def get_demo_claim() -> dict:
+    return DEMO_CLAIM
+
+
+@app.post("/api/score")
+async def score_claim_endpoint(request: ScoreRequest):
+    try:
+        return await score_claim(
+            narrative=request.narrative,
+            service_type=request.service_type,
+            cpt_code=request.cpt_code,
+            payer=request.payer,
+        )
+    except ValueError as exc:
+        return JSONResponse(status_code=400, content={"error": str(exc)})
 
 
 # ── Status / reset ───────────────────────────────────────────────────────────
