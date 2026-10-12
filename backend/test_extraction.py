@@ -17,6 +17,8 @@ from models import RuleDraft
 from vector_store import close_client, get_collection_counts, init_vector_store, reset_vectors
 
 FAKE_DRAFT = RuleDraft(
+    plain_title="Explain why a paramedic was needed, not just a ride.",
+    plain_summary="The insurer rejects advanced-ambulance bills when the chart never says a basic crew could not have done the job.",
     rule_title="Test prevention rule",
     payer_pattern="*",
     cpt_pattern="A0427",

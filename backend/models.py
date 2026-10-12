@@ -38,6 +38,8 @@ class ExtractedRule(BaseModel):
     rule_id: str
     source_denials: list[str]
     source_count: int
+    plain_title: str
+    plain_summary: str
     payer_pattern: str
     cpt_pattern: str
     carc_pattern: str
@@ -98,6 +100,8 @@ class AnalysisProgress(BaseModel):
 class RuleDraft(BaseModel):
     """The LLM's raw extraction output for one cluster."""
 
+    plain_title: str
+    plain_summary: str
     rule_title: str
     payer_pattern: str
     cpt_pattern: str

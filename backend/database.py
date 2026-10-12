@@ -49,6 +49,8 @@ CREATE TABLE IF NOT EXISTS prevention_rules (
     rule_id             TEXT PRIMARY KEY,
     source_denials      TEXT NOT NULL,
     source_count        INTEGER,
+    plain_title         TEXT,
+    plain_summary       TEXT,
     payer_pattern       TEXT,
     cpt_pattern         TEXT,
     carc_pattern        TEXT,
@@ -128,6 +130,11 @@ def init_db() -> None:
             conn,
             "denial_cases",
             {"timeline": "TEXT", "appeal_letter": "TEXT", "payer_notes": "TEXT"},
+        )
+        _ensure_columns(
+            conn,
+            "prevention_rules",
+            {"plain_title": "TEXT", "plain_summary": "TEXT"},
         )
 
 
@@ -209,8 +216,8 @@ def insert_rule(rule: dict) -> None:
     """Insert (or replace) an extracted prevention rule."""
     payload = {k: (_dump(v) if k in _RULE_JSON_FIELDS else v) for k, v in rule.items()}
     columns = [
-        "rule_id", "source_denials", "source_count", "payer_pattern",
-        "cpt_pattern", "carc_pattern", "service_pattern", "rule_title",
+        "rule_id", "source_denials", "source_count", "plain_title", "plain_summary",
+        "payer_pattern", "cpt_pattern", "carc_pattern", "service_pattern", "rule_title",
         "risk_description", "required_elements", "recommended_phrases",
         "confidence", "severity", "avg_denied_amount",
     ]

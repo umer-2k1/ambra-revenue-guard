@@ -38,7 +38,9 @@ DENIAL CASES:
 
 Respond with ONLY valid JSON in this exact format, no other text:
 {
-  "rule_title": "One-line summary of the rule, max 80 chars",
+  "plain_title": "Plain-English headline any smart non-specialist understands, max 70 chars. No acronyms. Example: 'Explain why the patient needed a paramedic, not just a stretcher ride.'",
+  "plain_summary": "1-2 sentences in simple words: why this causes denials and what it costs. No acronyms. Example: 'This insurer rejects advanced-ambulance bills when the chart never says a basic crew could not have handled it.'",
+  "rule_title": "Technical one-line summary for an EMS billing expert, max 80 chars",
   "payer_pattern": "Payer name this applies to, or '*' for all payers",
   "cpt_pattern": "CPT code this applies to, or 'A042*' for wildcard",
   "carc_pattern": "Primary CARC code, e.g. 'CO-16'",
@@ -52,6 +54,7 @@ Respond with ONLY valid JSON in this exact format, no other text:
 }
 
 Rules for extraction:
+- plain_title / plain_summary: write for a non-expert (investor, judge, executive). Plain words, no codes or acronyms.
 - required_elements: List EVERY specific documentation element needed. Be precise.
   Bad: "proper documentation"
   Good: "explicit statement that patient's condition required ALS-level intervention"
