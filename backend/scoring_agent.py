@@ -141,6 +141,7 @@ def _normalize(draft: ScoreDraft, matching: list[dict]) -> ClaimScoreResult:
         rules_checked=len(matching),
         rules_matched=len(flags),
         top_recommendation=top,
+        plain_recommendation=(draft.plain_recommendation or "").strip(),
     )
 
 

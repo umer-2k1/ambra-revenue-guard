@@ -56,12 +56,24 @@ function Result({ result, onReset }) {
         </div>
       </div>
 
-      {result.top_recommendation && (
+      {(result.top_recommendation || result.plain_recommendation) && (
         <Alert variant="warm" className="mt-5">
           <Sparkles className="mt-0.5 text-accent" />
           <AlertDescription>
-            <span className="font-semibold text-primary">Top recommendation: </span>
-            {result.top_recommendation}
+            {result.top_recommendation && (
+              <>
+                <span className="font-semibold text-primary">Top recommendation: </span>
+                {result.top_recommendation}
+              </>
+            )}
+            {result.plain_recommendation && (
+              <div className="mt-3 rounded-lg border border-border bg-card px-3 py-2">
+                <div className="mb-1 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
+                  For non-techs
+                </div>
+                <div className="text-sm leading-relaxed text-foreground/80">{result.plain_recommendation}</div>
+              </div>
+            )}
           </AlertDescription>
         </Alert>
       )}

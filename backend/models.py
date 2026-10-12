@@ -75,6 +75,7 @@ class ClaimScoreResult(BaseModel):
     rules_checked: int
     rules_matched: int
     top_recommendation: str = ""
+    plain_recommendation: str = ""
 
 
 class ScoreRequest(BaseModel):
@@ -133,3 +134,4 @@ class ScoreDraft(BaseModel):
     risk_score: int
     flags: list[FlagDraft] = []
     top_recommendation: str = ""
+    plain_recommendation: str = ""

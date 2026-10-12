@@ -99,7 +99,8 @@ Respond with ONLY valid JSON in this exact format, no other text:
       "estimated_denial_risk": 1847.00
     }
   ],
-  "top_recommendation": "Single most important thing to fix before submitting"
+  "top_recommendation": "Single most important thing to fix before submitting, for a billing expert",
+  "plain_recommendation": "The same point in 1-2 short sentences of PLAIN ENGLISH with NO codes or acronyms, so a non-expert (investor, judge) instantly gets it. Example: 'This trip looks like an ordinary car ride, not an ambulance ride, so the insurer will refuse to pay unless the chart explains why a real ambulance was needed.'"
 }
 
 Scoring rules:
@@ -112,4 +113,5 @@ Scoring rules:
 - suggestion must be specific and actionable, not generic advice
   Bad: "add more documentation"
   Good: "Add vital signs (BP, HR, SpO2, RR) and GCS score to justify ALS-level assessment"
-- If no rules match or no issues found, return risk_score 0 and an empty flags array"""
+- If no rules match or no issues found, return risk_score 0 and an empty flags array
+- plain_recommendation: rewrite the top recommendation in everyday words. No codes, no acronyms, no payer-speak. Assume the reader knows nothing about EMS or insurance billing."""
