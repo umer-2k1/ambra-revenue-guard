@@ -7,3 +7,5 @@ google-genai>=1.0.0       # Gemini embeddings (current SDK)
 pydantic>=2.7.0
 python-dotenv>=1.0.0
 sse-starlette>=2.1.0      # Server-Sent Events
+langgraph>=0.2.50         # agentic workflow orchestration
+langchain-openai>=0.2.0   # ChatOpenAI (works with DeepSeek + Groq base_urls)
