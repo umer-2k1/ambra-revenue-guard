@@ -14,6 +14,7 @@ Progress is pushed with LangGraph's custom stream writer, so
 """
 from __future__ import annotations
 
+import asyncio
 import json
 import operator
 from typing import Annotated, Any, Optional, TypedDict
@@ -77,6 +78,14 @@ async def extract_rule_from_cluster(
     )
 
 
+def _store_cluster(rule: dict, cases: list[dict]) -> None:
+    """Blocking storage work, run off the event loop via ``asyncio.to_thread``."""
+    insert_rule(rule)
+    for case in cases:
+        add_denial_embedding(case)
+    add_rule_embedding(rule)
+
+
 # ── Graph nodes ──────────────────────────────────────────────────────────────
 async def identify_node(state: AnalysisState) -> dict:
     denials = get_all_denials()
@@ -134,10 +143,9 @@ async def process_cluster_node(state: AnalysisState) -> dict:
         )
         return {"idx": idx + 1}
 
-    insert_rule(rule.model_dump())
-    for case in cases:
-        add_denial_embedding(case)
-    add_rule_embedding(rule.model_dump())
+    # Storage (SQLite + embeddings + Qdrant) is blocking I/O - keep it off the
+    # event loop so status polls and other requests stay responsive.
+    await asyncio.to_thread(_store_cluster, rule.model_dump(), cases)
 
     _emit(
         {

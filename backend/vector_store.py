@@ -162,12 +162,29 @@ def query_similar_rules(claim_text: str, n_results: int = 5) -> list[dict]:
 
 
 def get_collection_counts() -> dict:
-    """Return the point count in each collection."""
+    """Return the point count in each collection (hits the store)."""
     client = get_client()
     return {
         DENIAL_COLLECTION: client.count(DENIAL_COLLECTION).count,
         RULE_COLLECTION: client.count(RULE_COLLECTION).count,
     }
+
+
+# Counts are cached so the frequently-polled /api/status endpoint never talks to
+# Qdrant on the hot path (which contended with the analysis coroutine).
+_counts_cache: dict = {DENIAL_COLLECTION: 0, RULE_COLLECTION: 0}
+
+
+def refresh_counts() -> dict:
+    """Query the store once and update the cache."""
+    global _counts_cache
+    _counts_cache = get_collection_counts()
+    return dict(_counts_cache)
+
+
+def cached_counts() -> dict:
+    """Return the last known counts without touching the store."""
+    return dict(_counts_cache)
 
 
 def reset_vectors() -> None:
