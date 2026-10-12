@@ -92,3 +92,40 @@ class AnalysisProgress(BaseModel):
     message: str
     progress: float  # 0.0 - 1.0
     rule: Optional[ExtractedRule] = None
+
+
+# ── LLM output schemas (what the model returns, before we add IDs) ────────────
+class RuleDraft(BaseModel):
+    """The LLM's raw extraction output for one cluster."""
+
+    rule_title: str
+    payer_pattern: str
+    cpt_pattern: str
+    carc_pattern: str
+    service_pattern: str
+    risk_description: str
+    required_elements: list[str]
+    recommended_phrases: list[str]
+    confidence: float
+    severity: str
+    avg_denied_amount: float
+
+
+class FlagDraft(BaseModel):
+    """One flag as returned by the scoring LLM."""
+
+    rule_id: str
+    rule_title: str
+    risk_level: str
+    missing_element: str
+    suggestion: str
+    estimated_denial_risk: float = 0.0
+
+
+class ScoreDraft(BaseModel):
+    """The LLM's raw scoring output."""
+
+    overall_risk: str
+    risk_score: int
+    flags: list[FlagDraft] = []
+    top_recommendation: str = ""
