@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ambra — Denial-to-Prevention · Wireframes</title>
+<style>
+  :root{
+    --dark:#5C0A05; --orange:#FE4311; --warm:#F8F4F1; --card:#EEE7DE;
+    --border:#DBD0C2; --muted:#999; --high:#DC2626; --med:#F59E0B; --low:#10B981;
+    --ink:#111;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--warm);color:var(--ink);
+    font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:14px;line-height:1.45}
+  .wrap{max-width:1180px;margin:0 auto;padding:32px 24px 80px}
+  h1{font-size:34px;line-height:1.1;color:var(--dark);margin:0 0 6px}
+  h2{font-size:22px;margin:44px 0 4px;color:var(--ink)}
+  h2 .n{color:var(--orange)}
+  .sub{color:rgba(0,0,0,.55);margin:0 0 8px}
+  .hint{font-size:12px;color:var(--muted)}
+  hr{border:none;border-top:1px solid var(--border);margin:28px 0}
+
+  /* ---------- flow diagram ---------- */
+  .flow{display:flex;align-items:stretch;gap:10px;flex-wrap:wrap;margin:18px 0}
+  .fnode{flex:1;min-width:150px;background:#fff;border:1px solid var(--border);border-radius:16px;
+    padding:14px 16px;position:relative}
+  .fnode .t{font-weight:600;color:var(--dark)}
+  .fnode .d{font-size:12px;color:rgba(0,0,0,.55);margin-top:2px}
+  .fnode .tag{position:absolute;top:-9px;left:14px;background:var(--orange);color:#fff;
+    font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px}
+  .arrow{display:flex;align-items:center;color:var(--orange);font-size:22px;font-weight:700}
+  .loop{margin-top:10px;border:1px dashed var(--border);border-radius:14px;padding:10px 14px;
+    color:rgba(0,0,0,.6);background:#fff}
+  .loop b{color:var(--dark)}
+
+  /* ---------- browser frame ---------- */
+  .frame{background:#fff;border:1px solid var(--border);border-radius:18px;overflow:hidden;
+    box-shadow:0 1px 3px rgba(0,0,0,.06);margin:14px 0 6px}
+  .bar{height:38px;background:var(--card);display:flex;align-items:center;gap:6px;padding:0 14px;border-bottom:1px solid var(--border)}
+  .dot{width:9px;height:9px;border-radius:50%;background:var(--border)}
+  .url{margin-left:10px;font-size:11px;color:var(--muted);background:#fff;border:1px solid var(--border);
+    border-radius:20px;padding:3px 12px}
+
+  /* nav */
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 22px;border-bottom:1px solid var(--border)}
+  .logo{font-weight:700;color:var(--dark);font-size:16px}
+  .logo .star{color:var(--orange)}
+  .tabs{display:flex;gap:6px}
+  .tab{border:1px solid var(--border);border-radius:50px;padding:7px 16px;font-size:12px;font-weight:500;color:var(--dark);background:#fff}
+  .tab.active{background:var(--dark);color:#fff;border-color:var(--dark)}
+  .status{font-size:11px;font-weight:600;color:var(--orange);border:1px solid var(--border);border-radius:50px;padding:5px 12px;background:#fff}
+
+  .body{padding:20px 22px 26px}
+  .sectionlabel{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:2px 0 10px}
+
+  /* stats */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .stat{background:#fff;border:1px solid var(--border);border-radius:16px;padding:14px 16px}
+  .stat .v{font-size:26px;font-weight:700;color:var(--orange);line-height:1}
+  .stat .l{font-size:11px;color:var(--muted);margin-top:6px}
+
+  /* table */
+  table{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:4px}
+  th{text-align:left;color:var(--muted);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.04em;
+     padding:8px 10px;border-bottom:1px solid var(--border)}
+  td{padding:9px 10px;border-bottom:1px solid #f1ece6}
+  tr:nth-child(even) td{background:#fbf8f5}
+  .id{font-weight:600;color:var(--dark)}
+
+  .badge{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:50px;font-size:11px;font-weight:600}
+  .b-payer{background:var(--card);color:#6b5b4b}
+  .b-green{background:#D1FAE5;color:#059669}
+  .b-red{background:#FEE2E2;color:var(--high)}
+  .b-amber{background:#FEF3C7;color:#B45309}
+  .b-gray{background:#EEF0F2;color:#5b6672}
+  .b-high{background:#FEE2E2;color:var(--high)}
+  .b-med{background:#FEF3C7;color:#B45309}
+  .b-low{background:#D1FAE5;color:#059669}
+  .b-outline{border:1px solid var(--border);background:#fff;color:#6b5b4b}
+
+  .alert{display:flex;gap:10px;align-items:flex-start;background:var(--card);border:1px solid var(--border);
+    border-radius:14px;padding:12px 16px;margin-top:16px;font-size:12.5px;color:#5b4a3a}
+
+  /* analyze */
+  .center{text-align:center;padding:14px 0}
+  .brain{width:54px;height:54px;border-radius:50%;background:var(--card);display:inline-flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:10px}
+  .btn{display:inline-flex;align-items:center;gap:8px;border:none;border-radius:50px;padding:11px 26px;font-weight:600;font-size:13px;cursor:default}
+  .btn.primary{background:var(--dark);color:#fff}
+  .btn.accent{background:var(--orange);color:#fff}
+  .btn.outline{background:#fff;color:var(--dark);border:1px solid var(--border)}
+  .steps{display:inline-block;text-align:left;margin:14px 0 4px;color:rgba(0,0,0,.6);font-size:12.5px}
+  .steps li{margin:4px 0}
+
+  .progress{height:8px;background:var(--card);border-radius:20px;overflow:hidden;margin:6px 0 4px}
+  .progress>i{display:block;height:100%;width:60%;background:var(--orange);border-radius:20px}
+  .feed{border:1px solid var(--border);border-radius:14px;padding:12px 14px;height:250px;overflow:hidden;background:#fff}
+  .feed .line{padding:5px 0;font-size:12.5px;color:rgba(0,0,0,.72);border-bottom:1px dashed #f0ebe4}
+  .feed .ok{color:#059669;font-weight:700}
+  .feed .run{color:var(--orange);font-weight:700}
+  .mini{border:1px solid var(--border);border-left:3px solid var(--high);border-radius:10px;padding:8px 12px;margin:6px 0;background:#fff}
+
+  /* layout helpers */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .stack>*{margin-top:14px}
+  .rulecard{border:1px solid var(--border);border-radius:16px;padding:16px 18px;background:#fff}
+  .rulecard h3{margin:2px 0 8px;font-size:16px}
+  .kv{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px}
+  .meta{font-size:12px;color:var(--muted)}
+  ul.req{margin:6px 0 12px;padding-left:18px;font-size:12.5px;color:rgba(0,0,0,.72)}
+  ul.req li{margin:3px 0}
+  .quote{background:var(--warm);border-left:3px solid var(--orange);border-radius:8px;padding:10px 12px;
+    font-style:italic;font-size:12.5px;color:#4a3f36}
+
+  .formrow{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+  .field label{display:block;font-size:11px;color:var(--muted);margin-bottom:5px;text-transform:uppercase;letter-spacing:.04em}
+  .select{border:1px solid var(--border);border-radius:10px;padding:10px 12px;background:#fff;font-size:13px;display:flex;justify-content:space-between;color:var(--ink)}
+  .select span{color:var(--muted)}
+  .ta{border:1px solid var(--border);border-radius:12px;padding:14px;background:#fff;font-size:13px;color:rgba(0,0,0,.72);min-height:150px;margin-top:4px}
+
+  .riskhero{display:flex;align-items:center;gap:20px;border:1px solid var(--border);border-radius:16px;padding:18px 20px;background:#fff}
+  .riskbadge{width:92px;height:92px;border-radius:50%;background:#FEE2E2;color:var(--high);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:700}
+  .riskbadge .big{font-size:20px}
+  .riskbadge .sm{font-size:10px;letter-spacing:.1em}
+  .score{font-size:30px;font-weight:700;color:var(--dark)}
+  .flag{border:1px solid var(--border);border-left:4px solid var(--high);border-radius:14px;padding:14px 16px;background:#fff;margin-top:12px}
+  .fix{background:var(--warm);border-radius:10px;padding:10px 12px;font-size:12.5px;margin-top:10px;color:#4a3f36}
+  .fix b{color:var(--dark)}
+
+  /* annotations */
+  .anno{font-size:12px;color:#7a6a5a;background:#fff7f0;border:1px dashed #f0c9b6;border-radius:10px;padding:8px 12px;margin-top:10px}
+  .anno b{color:var(--orange)}
+  .legend{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:10px}
+  .legend div{background:#fff;border:1px solid var(--border);border-radius:10px;padding:10px 12px;font-size:12px}
+  code{background:var(--card);border-radius:5px;padding:1px 6px;font-size:11.5px;color:#5b4a3a}
+  .caption{font-size:12px;color:var(--muted);margin-top:6px}
+  .statepill{display:inline-block;font-size:11px;font-weight:700;color:var(--orange);border:1px solid var(--border);border-radius:50px;padding:3px 10px;margin-bottom:8px;background:#fff}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1><span class="star" style="color:var(--orange)">✦</span> Ambra — Denial-to-Prevention Feedback Loop</h1>
+  <p class="sub">Wireframes &amp; flow · 4 screens · localhost demo (no auth, no onboarding)</p>
+  <p class="hint">Palette: dark #5C0A05 · orange #FE4311 · warm #F8F4F1 · card #EEE7DE · border #DBD0C2. Components shown are shadcn/ui (Card, Table, Badge, Tabs, Progress, ScrollArea, Alert, Select, Textarea, Skeleton, Tooltip).</p>
+
+  <!-- ============ FLOW ============ -->
+  <h2>0 · The flow</h2>
+  <p class="sub">One linear path the founder walks in the video. Everything is live — analysis, rules and scoring all computed on the spot.</p>
+  <div class="flow">
+    <div class="fnode"><span class="tag">30s</span><div class="t">1 · Denials</div><div class="d">28 resolved cases, raw. "This knowledge is trapped."</div></div>
+    <div class="arrow">→</div>
+    <div class="fnode"><span class="tag">60s</span><div class="t">2 · Analyze</div><div class="d">Click → clusters → LLM extracts rules → stores in SQLite + Qdrant. Live SSE feed.</div></div>
+    <div class="arrow">→</div>
+    <div class="fnode"><span class="tag">30s</span><div class="t">3 · Knowledge Base</div><div class="d">5 prevention rules as cards — the system's memory.</div></div>
+    <div class="arrow">→</div>
+    <div class="fnode"><span class="tag">90s</span><div class="t">4 · Score Claim</div><div class="d">Pre-filled PCR → risk score + flags + fixes. THE MAIN EVENT.</div></div>
+  </div>
+  <div class="loop">⟳ <b>Reset &amp; re-analyze</b> clears rules + embeddings and returns to Screen 2, so the demo can be recorded again from a clean slate. Seed denial cases are never deleted.</div>
+
+  <hr/>
+
+  <!-- ============ SCREEN 1 ============ -->
+  <h2><span class="n">1</span> · Denials <span class="caption">— the pile of resolved cases</span></h2>
+  <div class="frame">
+    <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">localhost:5173 — Denials</span></div>
+    <div class="nav">
+      <div class="logo"><span class="star">✦</span> Ambra</div>
+      <div class="tabs">
+        <div class="tab active">Denials</div><div class="tab">Analyze</div><div class="tab">Knowledge Base</div><div class="tab">Score Claim</div>
+      </div>
+      <div class="status">0 rules</div>
+    </div>
+    <div class="body">
+      <div class="stats">
+        <div class="stat"><div class="v">28</div><div class="l">DENIAL CASES</div></div>
+        <div class="stat"><div class="v">$36,570</div><div class="l">TOTAL DENIED</div></div>
+        <div class="stat"><div class="v">5</div><div class="l">PAYERS</div></div>
+        <div class="stat"><div class="v">71%</div><div class="l">RECOVERED ON APPEAL</div></div>
+      </div>
+      <div class="sectionlabel" style="margin-top:22px">Denial cases</div>
+      <table>
+        <thead><tr><th>ID</th><th>Payer</th><th>Service</th><th>CPT</th><th>CARC</th><th>Denied</th><th>Outcome</th></tr></thead>
+        <tbody>
+          <tr><td class="id">D-001</td><td><span class="badge b-payer">UnitedHealthcare</span></td><td>ALS-1 Emergency</td><td>A0427</td><td>CO-16</td><td>$1,850</td><td><span class="badge b-green">Overturned</span></td></tr>
+          <tr><td class="id">D-002</td><td><span class="badge b-payer">UnitedHealthcare</span></td><td>ALS-1 Emergency</td><td>A0427</td><td>CO-16</td><td>$1,850</td><td><span class="badge b-green">Overturned</span></td></tr>
+          <tr><td class="id">D-003</td><td><span class="badge b-payer">UnitedHealthcare</span></td><td>ALS-1 Emergency</td><td>A0427</td><td>CO-50</td><td>$1,850</td><td><span class="badge b-green">Overturned</span></td></tr>
+          <tr><td class="id">D-007</td><td><span class="badge b-payer">Aetna</span></td><td>BLS Non-Emergency</td><td>A0425</td><td>CO-197</td><td>$950</td><td><span class="badge b-green">Overturned</span></td></tr>
+          <tr><td class="id">D-014</td><td><span class="badge b-payer">Anthem BCBS</span></td><td>ALS-1 Emergency</td><td>A0427</td><td>CO-4</td><td>$580</td><td><span class="badge b-amber">Partial</span></td></tr>
+          <tr><td class="id">D-025</td><td><span class="badge b-payer">UnitedHealthcare</span></td><td>ALS-1 Emergency</td><td>A0427</td><td>CO-29</td><td>$1,850</td><td><span class="badge b-red">Denied</span></td></tr>
+          <tr><td class="id" colspan="7" style="color:var(--muted)">… 22 more rows (scrollable) — Tooltip reveals full denial reason on hover</td></tr>
+        </tbody>
+      </table>
+      <div class="alert">⚠️ <div><b>This knowledge is trapped in resolved cases.</b> When an appeal is won, the lesson never flows back — Scribe and Denials run as separate pipelines.</div></div>
+    </div>
+  </div>
+  <div class="anno"><b>shadcn used:</b> Card (stats) · Table · Badge (payer / outcome variants) · Alert · Tooltip. Numbers are computed live from <code>/api/denials/stats</code>, never hard-coded.</div>
+
+  <hr/>
+
+  <!-- ============ SCREEN 2 ============ -->
+  <h2><span class="n">2</span> · Analyze <span class="caption">— watch the system learn</span></h2>
+
+  <div class="grid2">
+    <div>
+      <div class="frame">
+        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">Analyze</span></div>
+        <div class="body">
+          <div class="statepill">STATE A · READY</div>
+          <div class="center">
+            <div class="brain">🧠</div>
+            <div style="font-size:18px;font-weight:600;color:var(--dark)">Ready to Analyze</div>
+            <div class="meta" style="margin-top:4px">28 denial cases • 5 payers • $36,570 denied</div>
+            <ul class="steps">
+              <li>1. Cluster similar denial patterns</li>
+              <li>2. Extract prevention rules with AI</li>
+              <li>3. Store rules in vector memory</li>
+            </ul>
+            <div style="margin-top:12px"><span class="btn primary">Analyze Denials</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="anno"><b>shadcn:</b> Card · Button (pill) · Badge. Button disables while running.</div>
+    </div>
+
+    <div>
+      <div class="frame">
+        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">Analyze</span></div>
+        <div class="body">
+          <div class="statepill">STATE B · RUNNING (SSE)</div>
+          <div class="progress"><i></i></div>
+          <div class="meta" style="text-align:right">60% · analyzing cluster 4 of 5</div>
+          <div class="feed">
+            <div class="line"><span class="ok">✓</span> Loaded 28 denial cases</div>
+            <div class="line"><span class="ok">✓</span> Identified 5 denial patterns</div>
+            <div class="line"><span class="ok">✓</span> Cluster 1/5: uhc_medical_necessity (6 cases)</div>
+            <div class="mini"><b>Rule R-001</b> — UHC ALS-1 requires transport necessity language<br/><span class="badge b-high">HIGH</span> <span class="meta">confidence 92% • 6 denials</span></div>
+            <div class="line"><span class="ok">✓</span> Cluster 2/5: aetna_prior_auth (5 cases)</div>
+            <div class="line"><span class="ok">✓</span> Cluster 3/5: anthem_mileage (4 cases)</div>
+            <div class="line"><span class="run">●</span> Cluster 4/5: medicare_documentation (5 cases) — analyzing…</div>
+          </div>
+        </div>
+      </div>
+      <div class="anno"><b>shadcn:</b> Progress · ScrollArea (auto-scroll) · Skeleton while waiting · Badge. Streams via <code>fetch()</code> + <code>ReadableStream</code> parsing SSE.</div>
+    </div>
+  </div>
+
+  <div class="frame">
+    <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">Analyze</span></div>
+    <div class="body">
+      <div class="statepill">STATE C · COMPLETE</div>
+      <div class="alert" style="background:#D1FAE5;border-color:#a7e3c6;color:#065f46;margin-top:0">
+        ✅ <div><b>Analysis complete — 5 prevention rules learned</b><br/><span class="meta">24 denial embeddings + 5 rule embeddings stored in vector memory.</span></div>
+      </div>
+      <div style="display:flex;gap:10px;margin-top:14px">
+        <span class="btn primary">View Knowledge Base →</span>
+        <span class="btn outline">⟳ Reset &amp; re-analyze</span>
+      </div>
+    </div>
+  </div>
+  <div class="anno"><b>shadcn:</b> Alert (success) · Button. If rules already exist on load, the page opens directly to State C.</div>
+
+  <hr/>
+
+  <!-- ============ SCREEN 3 ============ -->
+  <h2><span class="n">3</span> · Knowledge Base <span class="caption">— the system's memory</span></h2>
+  <div class="frame">
+    <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">Knowledge Base</span></div>
+    <div class="nav">
+      <div class="logo"><span class="star">✦</span> Ambra</div>
+      <div class="tabs"><div class="tab">Denials</div><div class="tab">Analyze</div><div class="tab active">Knowledge Base</div><div class="tab">Score Claim</div></div>
+      <div class="status">5 rules</div>
+    </div>
+    <div class="body">
+      <div class="meta" style="margin-bottom:12px"><b style="color:var(--dark);font-size:15px">Knowledge Base</b> · 5 rules learned from 24 denials</div>
+      <div class="stack">
+        <div class="rulecard">
+          <div class="kv"><span class="id" style="font-size:13px">R-001</span> <span class="badge b-high">HIGH</span> <span class="meta">confidence 92%</span></div>
+          <h3>UHC ALS-1 requires explicit transport necessity language</h3>
+          <div class="kv">
+            <span class="badge b-outline">Payer: UnitedHealthcare</span>
+            <span class="badge b-outline">CPT: A0427</span>
+            <span class="badge b-outline">CARC: CO-16</span>
+            <span class="badge b-outline">ALS-1 Emergency</span>
+          </div>
+          <div class="meta">Based on 6 denials · Avg denied <span style="color:var(--orange);font-weight:700">$1,850</span></div>
+          <div class="sectionlabel" style="margin-top:14px">Required elements</div>
+          <ul class="req">
+            <li>Explicit statement that the patient's condition required ALS-level transport</li>
+            <li>Statement of why BLS, wheelchair van, or private vehicle was insufficient</li>
+            <li>Documented ALS interventions / monitoring performed en route</li>
+          </ul>
+          <div class="sectionlabel">Recommended phrases</div>
+          <div class="quote">"Patient's condition required ALS-level transport due to [intervention] which could not be provided by BLS; patient was unable to be transported by private vehicle or wheelchair van."</div>
+        </div>
+        <div class="rulecard" style="opacity:.75">
+          <div class="kv"><span class="id" style="font-size:13px">R-002</span> <span class="badge b-high">HIGH</span> <span class="meta">confidence 88%</span></div>
+          <h3>Aetna BLS non-emergency requires prior authorization before transport</h3>
+          <div class="meta">… remaining details (collapsible)</div>
+        </div>
+        <div class="meta" style="text-align:center">… R-003, R-004, R-005 (stacked full-width cards)</div>
+      </div>
+    </div>
+  </div>
+  <div class="anno"><b>shadcn:</b> Card · Badge · Separator · ScrollArea. Each card is expandable; empty state = "No rules yet — run analysis first."</div>
+
+  <hr/>
+
+  <!-- ============ SCREEN 4 ============ -->
+  <h2><span class="n">4</span> · Score Claim <span class="caption">— catch the denial before submission</span></h2>
+
+  <div class="grid2">
+    <div>
+      <div class="frame">
+        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">Score Claim</span></div>
+        <div class="body">
+          <div class="statepill">STATE A · FORM (pre-filled)</div>
+          <div class="formrow">
+            <div class="field"><label>Service type</label><div class="select">ALS-1 Emergency <span>▾</span></div></div>
+            <div class="field"><label>Payer</label><div class="select">UnitedHealthcare <span>▾</span></div></div>
+            <div class="field"><label>CPT code</label><div class="select">A0427 <span>▾</span></div></div>
+          </div>
+          <div class="field" style="margin-top:14px"><label>PCR narrative</label></div>
+          <div class="ta">Dispatched to 742 Evergreen Terrace for a 67-year-old male experiencing chest pain. Patient found sitting in recliner, alert and oriented x4, stating "my chest hurts." Patient reports pain started approximately 2 hours ago, rates it 7/10, substernal, non-radiating. Administered aspirin 324mg PO. Transported patient to Memorial General Hospital without incident. Patient remained stable during transport. Care transferred to ED staff.</div>
+          <div style="text-align:center;margin-top:14px"><span class="btn primary">🛡 Score Claim</span></div>
+        </div>
+      </div>
+      <div class="anno"><b>shadcn:</b> Select · Textarea · Button. Loaded from <code>/api/demo-claim</code>, fully editable.</div>
+    </div>
+
+    <div>
+      <div class="frame">
+        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">Score Claim</span></div>
+        <div class="body">
+          <div class="statepill">STATE B · RESULT</div>
+          <div class="riskhero">
+            <div class="riskbadge"><span class="big">HIGH</span><span class="sm">RISK</span></div>
+            <div>
+              <div class="score">82<span style="font-size:15px;color:var(--muted)">/100</span></div>
+              <div class="meta">3 issues found · 5 rules checked</div>
+            </div>
+          </div>
+          <div class="alert" style="margin-top:12px">
+            <span>💡</span><div><b>Top recommendation:</b> Add an explicit transport-necessity statement before submitting.</div>
+          </div>
+          <div class="flag">
+            <div class="kv"><span class="badge b-high">HIGH</span> <b>Missing transport necessity language</b></div>
+            <div class="meta">Rule R-001 · based on 6 similar denials · est. risk <span style="color:var(--orange);font-weight:700">$1,850</span></div>
+            <div class="fix"><b>Fix:</b> Add — "Patient's condition of [chest pain] required ALS-level transport due to need for continuous cardiac monitoring; patient was not stable for BLS or private vehicle."</div>
+          </div>
+          <div class="flag">
+            <div class="kv"><span class="badge b-high">HIGH</span> <b>No vital signs documented</b></div>
+            <div class="meta">Rule R-005 · based on 4 similar denials · est. risk <span style="color:var(--orange);font-weight:700">$700</span></div>
+            <div class="fix"><b>Fix:</b> Document BP, HR, SpO2, RR and GCS to justify ALS-level assessment.</div>
+          </div>
+          <div style="text-align:center;margin-top:14px"><span class="btn outline">Score another claim</span></div>
+        </div>
+      </div>
+      <div class="anno"><b>shadcn:</b> Badge (risk) · Alert · Card · Skeleton (while scoring) · Separator. Risk color: HIGH red · MEDIUM amber · LOW green.</div>
+    </div>
+  </div>
+
+  <hr/>
+
+  <!-- ============ LEGEND ============ -->
+  <h2>Component map (shadcn/ui)</h2>
+  <div class="legend">
+    <div><code>Card / CardHeader / CardContent</code> — stats, rule &amp; flag panels</div>
+    <div><code>Table</code> — denials list</div>
+    <div><code>Badge</code> — severity, payer, outcome, CPT/CARC (+ custom variants)</div>
+    <div><code>Button</code> — pill CTA variants (primary dark, accent orange, outline)</div>
+    <div><code>Tabs</code> — the 4-screen navigation</div>
+    <div><code>Progress</code> — analysis bar</div>
+    <div><code>ScrollArea</code> — SSE live feed, long rule list</div>
+    <div><code>Alert</code> — risk flags, success + empty states</div>
+    <div><code>Select</code> — service / payer / CPT dropdowns</div>
+    <div><code>Textarea</code> — PCR narrative input</div>
+    <div><code>Skeleton</code> — loading while the LLM thinks</div>
+    <div><code>Tooltip</code> — CARC/CPT hints, truncated text</div>
+  </div>
+  <p class="caption" style="margin-top:14px">Icons: lucide-react (Brain, ShieldCheck, AlertTriangle, CheckCircle, Loader2, RefreshCw).</p>
+
+</div>
+</body>
+</html>
