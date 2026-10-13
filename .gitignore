@@ -9,8 +9,8 @@ venv/
 .env
 
 # Local data (generated at runtime — seed JSON IS tracked)
-data/ambra_demo.db
-data/qdrant_db/
+**/ambra_demo.db
+**/qdrant_db/
 
 # Frontend
 node_modules/

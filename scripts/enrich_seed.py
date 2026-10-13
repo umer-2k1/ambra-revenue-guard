@@ -19,7 +19,7 @@ import os
 from datetime import date, timedelta
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SEED = os.path.join(ROOT, "data", "seed_denials.json")
+SEED = os.path.join(ROOT, "backend", "data", "seed_denials.json")
 
 
 def money(n) -> str:

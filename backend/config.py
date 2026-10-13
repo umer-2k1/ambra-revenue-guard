@@ -3,13 +3,14 @@
 Everything that differs between environments (API keys, provider choice,
 storage paths) lives here so no other module reads ``os.environ`` directly.
 
+Paths resolve relative to the **backend directory** (``backend/``), so the
+backend is self-contained — important for deploying it as its own Vercel
+project with ``Root Directory = backend``.
+
 Two independent provider switches:
 
 * ``LLM_PROVIDER``       = ``deepseek`` (default) | ``groq``
 * ``EMBEDDING_PROVIDER`` = ``gemini``   (default) | ``groq``
-
-Both providers on each side are OpenAI-compatible / 768-dim, so switching is a
-one-line change in ``.env``.
 """
 from __future__ import annotations
 
@@ -17,34 +18,36 @@ import os
 
 from dotenv import load_dotenv
 
-# Project root = one level above this file's directory (backend/).
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BACKEND_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(BACKEND_DIR)  # repo root (when running from a checkout)
 
-# Load .env from the project root, then fall back to a .env in the cwd.
+# Load .env from the repo root, then backend/, then the cwd (first one wins).
 load_dotenv(os.path.join(BASE_DIR, ".env"))
+load_dotenv(os.path.join(BACKEND_DIR, ".env"))
 load_dotenv()
 
 
 def _path(env_key: str, default_rel: str) -> str:
-    """Resolve a possibly-relative path against the project root."""
+    """Resolve a possibly-relative path against the backend directory."""
     value = os.getenv(env_key, default_rel)
     if not os.path.isabs(value):
-        value = os.path.join(BASE_DIR, value)
+        value = os.path.join(BACKEND_DIR, value)
     return os.path.normpath(value)
 
 
-# ── Paths ────────────────────────────────────────────────────────────────────
+# ── Paths (relative to backend/) ─────────────────────────────────────────────
 DATABASE_PATH = _path("DATABASE_PATH", "data/ambra_demo.db")
-
-# Set DATABASE_URL to use Postgres (e.g. Neon) — required in the cloud, where
-# there is no persistent disk. Leave empty to use local SQLite at DATABASE_PATH.
-DATABASE_URL = os.getenv("DATABASE_URL", "").strip()
 QDRANT_PATH = _path("QDRANT_PATH", "data/qdrant_db")
-SEED_DATA_PATH = os.path.join(BASE_DIR, "data", "seed_denials.json")
+SEED_DATA_PATH = os.path.join(BACKEND_DIR, "data", "seed_denials.json")
 
-# ── Vector store mode ────────────────────────────────────────────────────────
-# Set QDRANT_URL (+ QDRANT_API_KEY) to use Qdrant Cloud or any Qdrant server.
-# Leave QDRANT_URL empty to fall back to the embedded local store at QDRANT_PATH.
+# ── Database ─────────────────────────────────────────────────────────────────
+# Set DATABASE_URL to use Postgres (e.g. Neon) — required in the cloud, where
+# there is no persistent disk. Empty -> local SQLite at DATABASE_PATH.
+DATABASE_URL = os.getenv("DATABASE_URL", "").strip()
+
+# ── Vector store ─────────────────────────────────────────────────────────────
+# Set QDRANT_URL (+ QDRANT_API_KEY) for Qdrant Cloud / any server. Empty ->
+# embedded local store at QDRANT_PATH (local dev only).
 QDRANT_URL = os.getenv("QDRANT_URL", "").strip()
 QDRANT_API_KEY = os.getenv("QDRANT_API_KEY", "").strip()
 
@@ -66,6 +69,16 @@ LLM_PROVIDER = os.getenv("LLM_PROVIDER", "deepseek").strip().lower()
 DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY", "").strip()
 DEEPSEEK_MODEL = os.getenv("DEEPSEEK_MODEL", "deepseek-chat").strip()
 DEEPSEEK_BASE_URL = os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com").strip()
+
+# ── CORS ─────────────────────────────────────────────────────────────────────
+# Comma-separated list of allowed browser origins (the Vercel frontend URL).
+CORS_ORIGINS = [
+    origin.strip()
+    for origin in os.getenv(
+        "CORS_ORIGINS", "http://localhost:5173,http://localhost:3000"
+    ).split(",")
+    if origin.strip()
+]
 
 
 def llm_settings() -> tuple[str, str, str]:

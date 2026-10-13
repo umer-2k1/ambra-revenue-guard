@@ -20,7 +20,7 @@ sys.path.insert(0, os.path.join(ROOT, "backend"))
 import config  # noqa: E402
 from database import IS_POSTGRES, get_status, insert_rule, insert_score  # noqa: E402
 
-SQLITE_PATH = os.path.join(ROOT, "data", "ambra_demo.db")
+SQLITE_PATH = os.path.join(ROOT, "backend", "data", "ambra_demo.db")
 RULE_JSON = ("source_denials", "required_elements", "recommended_phrases")
 SCORE_JSON = ("flags_detail", "rules_matched")
 
