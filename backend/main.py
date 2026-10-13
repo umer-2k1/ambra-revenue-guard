@@ -34,8 +34,8 @@ app = FastAPI(title="Ambra - Denial-to-Prevention Feedback Loop")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:3000"],
-    allow_credentials=True,
+    allow_origins=config.CORS_ORIGINS,
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -46,6 +46,12 @@ def _startup() -> None:
     init_vector_store()
     refresh_counts()
     print(f"[startup] vector store: {store_mode()} | LLM: {config.LLM_PROVIDER} | embeddings: {config.EMBEDDING_PROVIDER}")
+
+
+@app.get("/health")
+def health() -> dict:
+    """Liveness probe for hosting platforms (Render/Vercel health checks)."""
+    return {"status": "ok"}
 
 
 # ── Denials ──────────────────────────────────────────────────────────────────
