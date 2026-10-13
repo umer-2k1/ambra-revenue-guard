@@ -55,7 +55,7 @@ async def extract_rule_from_cluster(
     user_prompt = render(
         EXTRACTION_USER_PROMPT_TEMPLATE,
         n=len(cases),
-        cases_json=json.dumps(cases, indent=2),
+        cases_json=json.dumps(cases, indent=2, default=str),
     )
 
     draft: Optional[RuleDraft] = None

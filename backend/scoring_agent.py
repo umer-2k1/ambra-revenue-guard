@@ -193,7 +193,7 @@ async def score_claim(
         cpt_code=cpt_code,
         payer=payer,
         claim_narrative=narrative,
-        rules_json=json.dumps(matching, indent=2),
+        rules_json=json.dumps(matching, indent=2, default=str),
     )
 
     draft: ScoreDraft | None = None

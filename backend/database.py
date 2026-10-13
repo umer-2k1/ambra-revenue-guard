@@ -185,7 +185,7 @@ def _insert_ignore_sql(table: str, columns: list[str], pk: str) -> str:
 def _dump(value: Any) -> Optional[str]:
     if value is None or isinstance(value, str):
         return value
-    return json.dumps(value, ensure_ascii=False)
+    return json.dumps(value, ensure_ascii=False, default=str)
 
 
 def _load(value: Any) -> Any:
