@@ -126,6 +126,39 @@ A ~4-minute walkthrough. See the full user-flow diagram below.
 
 There is also a **Glossary** drawer (every code explained in plain English) and a **Reset & re-analyze** loop so the demo can be run again from a clean slate.
 
+### 5.1 Try these claims yourself (verified)
+
+On the **Score Claim** screen, set the payer / service / CPT as listed, paste the narrative, and click **Score Claim**. These were run against the live deployment:
+
+| # | Payer | Service | CPT | Verified result |
+|---|---|---|---|---|
+| 1 | UnitedHealthcare | ALS-1 Emergency | `A0427` | **HIGH 95** — 3 flags (missing ALS necessity, no itemized procedures, no mileage detail) |
+| 2 | Anthem BCBS | BLS Emergency | `A0428` | **MEDIUM 68** — 1 flag (mileage / address justification) |
+| 3 | UnitedHealthcare | ALS-1 Emergency | `A0427` | **LOW 15** — 1 low-severity flag (wants GPS/mapped route verification) |
+| — | *(the pre-filled demo claim)* | ALS-1 Emergency | `A0427` | **HIGH ~90** |
+
+*(Exact scores move a few points run-to-run — the model is live. The risk **band** is stable.)*
+
+**1 · HIGH — looks fine, gets caught.** A claim that reads normally but never says *why a paramedic was needed*:
+
+> Responded at 2:10 PM for a 45-year-old man with nausea and one episode of vomiting. He was sitting in a chair watching TV, said he felt better after drinking water, and had normal vital signs. He was not dizzy and could walk on his own. The nearest hospital is two miles away, but his family asked us to take him to City Medical Center, 15 miles away, because they know the staff there. He walked to the ambulance and walked into the hospital when we arrived.
+
+**2 · MEDIUM — a non-emergency that used an ambulance.** Ambulatory back pain, and it drove past a closer hospital:
+
+> At 9:40 AM we were called to a home for a 58-year-old woman with lower back pain that started four days ago. When we arrived she was up, dressed, and walking around the living room. She said the pain was a 4 out of 10 and "the same as yesterday." Her vital signs were normal. She sat on the stretcher by herself and was comfortable the whole ride. There is a hospital about six minutes from her house, but she asked to go to Riverside Medical Center because her back doctor works there, which is about 20 minutes away. She walked into the emergency department on her own.
+
+**3 · LOW — a complete, well-documented claim** (addresses, mileage, procedure count with times, condition code, nearest-facility justification, and why BLS was not enough):
+
+> At 03:05 we were dispatched to 412 Elm Court, Springfield, NJ 07081 for a 68-year-old man with crushing chest pain that began at 02:35. Pickup: 412 Elm Court, Springfield, NJ 07081. Destination: Memorial General Hospital, 900 Main Street, Newark, NJ 07102. Loaded distance: 6.2 miles. Memorial General Hospital is the nearest appropriate facility - the closest hospital with an operating cardiac catheterization lab. The two closer hospitals, Springfield Community and St. Anne's, have no cath lab and cannot treat a STEMI, so this was a documented bypass. On arrival at 03:11 he was pale, diaphoretic and short of breath, and he could not sit upright or ambulate safely. Vital signs: BP 148/90, HR 112, SpO2 93% on room air, RR 24, GCS 15. The patient could not be transported by a BLS crew, wheelchair van or private vehicle because he needed continuous cardiac monitoring and IV therapy. Three ALS procedures were performed: (1) a 12-lead ECG at 03:14 showed ST elevation; (2) IV access was established at 03:18; (3) medications were given - aspirin 324 mg PO at 03:20 and nitroglycerin 0.4 mg SL at 03:22, reducing pain from 8/10 to 3/10. Continuous cardiac monitoring ran from 03:14 to arrival. Condition code P1 applies: the patient was transported to the nearest appropriate facility for required medical services. We called ahead to activate the cath lab and arrived at 03:41.
+
+Or, from the command line:
+
+```bash
+curl -X POST https://ambra-revenue-guard.vercel.app/api/score \
+  -H 'Content-Type: application/json' \
+  -d '{"payer":"UnitedHealthcare","service_type":"ALS-1 Emergency","cpt_code":"A0427","narrative":"..."}'
+```
+
 ---
 
 ## 6. Architecture
