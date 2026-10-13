@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 560" width="980" height="560" font-family="Inter, Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="a5" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#8a7f78"/>
+    </marker>
+    <marker id="a5r" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#FE4311"/>
+    </marker>
+  </defs>
+  <rect width="980" height="560" fill="#FBF9F7"/>
+  <text x="30" y="42" font-size="21" font-weight="700" fill="#5C0A05">How a US Ambulance Claim Is Billed - and Where It Breaks</text>
+  <text x="30" y="64" font-size="12" fill="#8a7f78">The real-world lifecycle the system sits inside. The gap Ambra closes is at the very end.</text>
+
+  <!-- lifecycle -->
+  <rect x="30" y="95" width="150" height="90" rx="12" fill="#FFFFFF" stroke="#DBD0C2"/>
+  <text x="105" y="128" font-size="12" font-weight="600" fill="#5C0A05" text-anchor="middle">1. Call</text>
+  <text x="105" y="148" font-size="11" fill="#8a7f78" text-anchor="middle">911 emergency or</text>
+  <text x="105" y="163" font-size="11" fill="#8a7f78" text-anchor="middle">scheduled transfer</text>
+
+  <rect x="196" y="95" width="150" height="90" rx="12" fill="#FFFFFF" stroke="#DBD0C2"/>
+  <text x="271" y="128" font-size="12" font-weight="600" fill="#5C0A05" text-anchor="middle">2. Transport</text>
+  <text x="271" y="148" font-size="11" fill="#8a7f78" text-anchor="middle">crew treats and drives</text>
+  <text x="271" y="163" font-size="11" fill="#8a7f78" text-anchor="middle">BLS or ALS level</text>
+
+  <rect x="362" y="95" width="160" height="90" rx="12" fill="#FFFFFF" stroke="#DBD0C2"/>
+  <text x="442" y="128" font-size="12" font-weight="600" fill="#5C0A05" text-anchor="middle">3. Documentation</text>
+  <text x="442" y="148" font-size="11" fill="#8a7f78" text-anchor="middle">the PCR / run sheet -</text>
+  <text x="442" y="163" font-size="11" fill="#8a7f78" text-anchor="middle">this is what payers read</text>
+
+  <rect x="538" y="95" width="150" height="90" rx="12" fill="#FFFFFF" stroke="#DBD0C2"/>
+  <text x="613" y="128" font-size="12" font-weight="600" fill="#5C0A05" text-anchor="middle">4. Coding</text>
+  <text x="613" y="148" font-size="11" fill="#8a7f78" text-anchor="middle">CPT level of service,</text>
+  <text x="613" y="163" font-size="11" fill="#8a7f78" text-anchor="middle">diagnosis, modifiers</text>
+
+  <rect x="704" y="95" width="150" height="90" rx="12" fill="#FFFFFF" stroke="#DBD0C2"/>
+  <text x="779" y="128" font-size="12" font-weight="600" fill="#5C0A05" text-anchor="middle">5. Claim filed</text>
+  <text x="779" y="148" font-size="11" fill="#8a7f78" text-anchor="middle">submitted to payer</text>
+  <text x="779" y="163" font-size="11" fill="#8a7f78" text-anchor="middle">(UHC, Aetna, Medicare...)</text>
+
+  <rect x="30" y="210" width="200" height="90" rx="12" fill="#FFFFFF" stroke="#DBD0C2"/>
+  <text x="130" y="243" font-size="12" font-weight="600" fill="#5C0A05" text-anchor="middle">6. Adjudication</text>
+  <text x="130" y="263" font-size="11" fill="#8a7f78" text-anchor="middle">payer reviews the claim</text>
+  <text x="130" y="278" font-size="11" fill="#8a7f78" text-anchor="middle">against its own rules</text>
+
+  <rect x="246" y="210" width="200" height="90" rx="12" fill="#EAF7EF" stroke="#B7E1C6"/>
+  <text x="346" y="243" font-size="12" font-weight="600" fill="#1E7A45" text-anchor="middle">PAID</text>
+  <text x="346" y="263" font-size="11" fill="#3f7a58" text-anchor="middle">claim is reimbursed</text>
+  <text x="346" y="278" font-size="11" fill="#3f7a58" text-anchor="middle">(the good path)</text>
+
+  <rect x="462" y="210" width="220" height="90" rx="12" fill="#FDECEC" stroke="#F3C3C3"/>
+  <text x="572" y="243" font-size="12" font-weight="600" fill="#B02A2A" text-anchor="middle">DENIED</text>
+  <text x="572" y="263" font-size="11" fill="#8f4a4a" text-anchor="middle">payer rejects it with a code</text>
+  <text x="572" y="278" font-size="11" fill="#8f4a4a" text-anchor="middle">(CARC: CO-16, CO-50, CO-197...)</text>
+
+  <rect x="698" y="210" width="156" height="90" rx="12" fill="#FFFFFF" stroke="#DBD0C2"/>
+  <text x="776" y="243" font-size="12" font-weight="600" fill="#5C0A05" text-anchor="middle">7. Appeal</text>
+  <text x="776" y="263" font-size="11" fill="#8a7f78" text-anchor="middle">denial team fights it;</text>
+  <text x="776" y="278" font-size="11" fill="#8a7f78" text-anchor="middle">often overturned</text>
+
+  <rect x="30" y="325" width="824" height="70" rx="12" fill="#EEE7DE" stroke="#DBD0C2"/>
+  <text x="52" y="352" font-size="13" font-weight="700" fill="#5C0A05">THE GAP: the lesson learned from winning an appeal never reaches the next chart.</text>
+  <text x="52" y="376" font-size="12" fill="#6b5b4b">So the same documentation gap causes the same denial again and again. That is what this project fixes.</text>
+
+  <!-- Ambra plugs in -->
+  <rect x="30" y="415" width="920" height="110" rx="14" fill="#FFFFFF" stroke="#FE4311" stroke-width="2"/>
+  <text x="52" y="444" font-size="13" font-weight="700" fill="#FE4311">WHERE THIS SYSTEM PLUGS IN</text>
+  <text x="52" y="470" font-size="12" fill="#3a2f2a">Reads the resolved denials (step 6-7), learns why each one was denied, and turns that into prevention rules.</text>
+  <text x="52" y="492" font-size="12" fill="#3a2f2a">Then, before step 5 (claim filed), it scores the new claim against those rules and flags the gaps while they can still be fixed.</text>
+  <text x="52" y="514" font-size="12" fill="#8a7f78">Result: the loop closes - resolved denials make the next claim better, so denial rates drop over time.</text>
+
+  <line x1="676" y1="836" x2="676" y2="836" stroke="none"/>
+</svg>

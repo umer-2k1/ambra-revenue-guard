@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 560" width="980" height="560" font-family="Inter, Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="a6" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#FE4311"/>
+    </marker>
+  </defs>
+  <rect width="980" height="560" fill="#FBF9F7"/>
+  <text x="30" y="42" font-size="21" font-weight="700" fill="#5C0A05">User Flow - The 4-Screen Demo</text>
+  <text x="30" y="64" font-size="12" fill="#8a7f78">What a reviewer sees, in order. Every screen is live - nothing is pre-baked.</text>
+
+  <!-- steps -->
+  <rect x="30" y="95" width="210" height="150" rx="14" fill="#FFFFFF" stroke="#DBD0C2" stroke-width="1.5"/>
+  <circle cx="60" cy="125" r="15" fill="#5C0A05"/><text x="60" y="130" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">1</text>
+  <text x="88" y="131" font-size="14" font-weight="700" fill="#5C0A05">Denials</text>
+  <text x="48" y="162" font-size="12" fill="#3a2f2a">The raw pile</text>
+  <text x="48" y="182" font-size="11" fill="#8a7f78">28 resolved cases, stats, and</text>
+  <text x="48" y="199" font-size="11" fill="#8a7f78">click-into-case-file detail</text>
+  <text x="48" y="216" font-size="11" fill="#8a7f78">(timeline, appeal, notes)</text>
+  <text x="48" y="235" font-size="11" fill="#8a7f78">"this knowledge is trapped"</text>
+
+  <rect x="262" y="95" width="210" height="150" rx="14" fill="#FFFFFF" stroke="#DBD0C2" stroke-width="1.5"/>
+  <circle cx="292" cy="125" r="15" fill="#FE4311"/><text x="292" y="130" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">2</text>
+  <text x="320" y="131" font-size="14" font-weight="700" fill="#5C0A05">Analyze</text>
+  <text x="280" y="162" font-size="12" fill="#3a2f2a">Watch it learn</text>
+  <text x="280" y="182" font-size="11" fill="#8a7f78">click Analyze -&gt; clusters -&gt;</text>
+  <text x="280" y="199" font-size="11" fill="#8a7f78">rules extracted live (SSE feed,</text>
+  <text x="280" y="216" font-size="11" fill="#8a7f78">progress bar, inline rule cards)</text>
+  <text x="280" y="235" font-size="11" fill="#8a7f78">finishes: "5 rules learned"</text>
+
+  <rect x="494" y="95" width="210" height="150" rx="14" fill="#FFFFFF" stroke="#DBD0C2" stroke-width="1.5"/>
+  <circle cx="524" cy="125" r="15" fill="#5C0A05"/><text x="524" y="130" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">3</text>
+  <text x="552" y="131" font-size="14" font-weight="700" fill="#5C0A05">Knowledge Base</text>
+  <text x="512" y="162" font-size="12" fill="#3a2f2a">The memory</text>
+  <text x="512" y="182" font-size="11" fill="#8a7f78">rule cards: plain-English</text>
+  <text x="512" y="199" font-size="11" fill="#8a7f78">headline + what to add, codes</text>
+  <text x="512" y="216" font-size="11" fill="#8a7f78">with hover meaning, and the</text>
+  <text x="512" y="235" font-size="11" fill="#8a7f78">denials that taught it</text>
+
+  <rect x="726" y="95" width="224" height="150" rx="14" fill="#FFFFFF" stroke="#FE4311" stroke-width="2"/>
+  <circle cx="756" cy="125" r="15" fill="#FE4311"/><text x="756" y="130" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">4</text>
+  <text x="784" y="131" font-size="14" font-weight="700" fill="#5C0A05">Score Claim</text>
+  <text x="744" y="162" font-size="12" fill="#3a2f2a">The payoff</text>
+  <text x="744" y="182" font-size="11" fill="#8a7f78">pre-filled PCR narrative,</text>
+  <text x="744" y="199" font-size="11" fill="#8a7f78">edit and score -&gt; risk + flags +</text>
+  <text x="744" y="216" font-size="11" fill="#8a7f78">dollar estimate + fix, plus a</text>
+  <text x="744" y="235" font-size="11" fill="#8a7f78">plain-English summary</text>
+
+  <line x1="240" y1="170" x2="261" y2="170" stroke="#FE4311" stroke-width="3" marker-end="url(#a6)"/>
+  <line x1="472" y1="170" x2="493" y2="170" stroke="#FE4311" stroke-width="3" marker-end="url(#a6)"/>
+  <line x1="704" y1="170" x2="725" y2="170" stroke="#FE4311" stroke-width="3" marker-end="url(#a6)"/>
+
+  <!-- drawers -->
+  <rect x="30" y="280" width="450" height="120" rx="12" fill="#FFFFFF" stroke="#DBD0C2"/>
+  <text x="52" y="306" font-size="13" font-weight="700" fill="#5C0A05">Case-file drawer (from any row or "taught by" chip)</text>
+  <text x="52" y="330" font-size="12" fill="#3a2f2a">Amounts - what the crew charted - why it was denied - what was missing</text>
+  <text x="52" y="350" font-size="12" fill="#3a2f2a">How the appeal team fixed it - case timeline - payer call/portal notes</text>
+  <text x="52" y="370" font-size="12" fill="#3a2f2a">The actual appeal letter that was sent</text>
+  <text x="52" y="390" font-size="11" fill="#8a7f78">Turns a single row into a complete, readable case file</text>
+
+  <rect x="500" y="280" width="450" height="120" rx="12" fill="#FFFFFF" stroke="#DBD0C2"/>
+  <text x="522" y="306" font-size="13" font-weight="700" fill="#5C0A05">Glossary drawer (header button)</text>
+  <text x="522" y="330" font-size="12" fill="#3a2f2a">Plain-English meanings for every code:</text>
+  <text x="522" y="350" font-size="12" fill="#3a2f2a">denial reasons (CARC), ambulance billing codes (CPT),</text>
+  <text x="522" y="370" font-size="12" fill="#3a2f2a">service levels, and terms (BLS, ALS, PCR, POV, PCS)</text>
+  <text x="522" y="390" font-size="11" fill="#8a7f78">Lets a non-expert read the whole product</text>
+
+  <!-- reset loop -->
+  <path d="M890 245 L920 245 L920 460 L120 460 L120 476" fill="none" stroke="#8a7f78" stroke-width="2" stroke-dasharray="7 5"/>
+  <rect x="330" y="452" width="300" height="36" rx="18" fill="#EEE7DE" stroke="#DBD0C2"/>
+  <text x="480" y="475" font-size="12" fill="#5C0A05" text-anchor="middle">Reset and re-analyze returns to screen 2</text>
+
+  <text x="30" y="530" font-size="12" fill="#8a7f78">Total: about 4 minutes. Screens 1-3 set up the story; screen 4 is the moment that lands.</text>
+</svg>

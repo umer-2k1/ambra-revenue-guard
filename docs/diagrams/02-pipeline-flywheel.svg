@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 560" width="980" height="560" font-family="Inter, Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow2" markerWidth="11" markerHeight="11" refX="9" refY="3.5" orient="auto">
+      <path d="M0,0 L9,3.5 L0,7 Z" fill="#FE4311"/>
+    </marker>
+  </defs>
+  <rect width="980" height="560" fill="#FBF9F7"/>
+  <text x="30" y="42" font-size="21" font-weight="700" fill="#5C0A05">The Denial-to-Prevention Feedback Loop</text>
+  <text x="30" y="64" font-size="12" fill="#8a7f78">Every resolved denial becomes a rule; every rule guards the next claim. The loop never stops learning.</text>
+
+  <!-- 4 stages -->
+  <rect x="30" y="110" width="205" height="150" rx="14" fill="#FFFFFF" stroke="#DBD0C2" stroke-width="1.5"/>
+  <circle cx="60" cy="140" r="15" fill="#5C0A05"/>
+  <text x="60" y="145" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">1</text>
+  <text x="88" y="146" font-size="14" font-weight="700" fill="#5C0A05">INGEST</text>
+  <text x="48" y="176" font-size="12" fill="#3a2f2a">Resolved denial cases</text>
+  <text x="48" y="196" font-size="12" fill="#8a7f78">payer, denial code, what the</text>
+  <text x="48" y="213" font-size="12" fill="#8a7f78">crew charted, what was missing,</text>
+  <text x="48" y="230" font-size="12" fill="#8a7f78">appeal + outcome + money</text>
+
+  <rect x="265" y="110" width="205" height="150" rx="14" fill="#FFFFFF" stroke="#DBD0C2" stroke-width="1.5"/>
+  <circle cx="295" cy="140" r="15" fill="#FE4311"/>
+  <text x="295" y="145" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">2</text>
+  <text x="323" y="146" font-size="14" font-weight="700" fill="#5C0A05">ANALYZE</text>
+  <text x="283" y="176" font-size="12" fill="#3a2f2a">Cluster + extract with LLM</text>
+  <text x="283" y="196" font-size="12" fill="#8a7f78">group similar denials, ask the</text>
+  <text x="283" y="213" font-size="12" fill="#8a7f78">model for ONE prevention rule</text>
+  <text x="283" y="230" font-size="12" fill="#8a7f78">per pattern</text>
+
+  <rect x="500" y="110" width="205" height="150" rx="14" fill="#FFFFFF" stroke="#DBD0C2" stroke-width="1.5"/>
+  <circle cx="530" cy="140" r="15" fill="#5C0A05"/>
+  <text x="530" y="145" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">3</text>
+  <text x="558" y="146" font-size="14" font-weight="700" fill="#5C0A05">REMEMBER</text>
+  <text x="518" y="176" font-size="12" fill="#3a2f2a">Store in memory</text>
+  <text x="518" y="196" font-size="12" fill="#8a7f78">structured rule in Postgres,</text>
+  <text x="518" y="213" font-size="12" fill="#8a7f78">semantic embedding in Qdrant</text>
+  <text x="518" y="230" font-size="12" fill="#8a7f78">so it matches on meaning</text>
+
+  <rect x="735" y="110" width="215" height="150" rx="14" fill="#FFFFFF" stroke="#DBD0C2" stroke-width="1.5"/>
+  <circle cx="765" cy="140" r="15" fill="#FE4311"/>
+  <text x="765" y="145" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">4</text>
+  <text x="793" y="146" font-size="14" font-weight="700" fill="#5C0A05">PREVENT</text>
+  <text x="753" y="176" font-size="12" fill="#3a2f2a">Score the next claim</text>
+  <text x="753" y="196" font-size="12" fill="#8a7f78">retrieve matching rules, catch</text>
+  <text x="753" y="213" font-size="12" fill="#8a7f78">the missing elements, quote the</text>
+  <text x="753" y="230" font-size="12" fill="#8a7f78">dollar risk, give the fix</text>
+
+  <!-- stage arrows -->
+  <line x1="235" y1="185" x2="264" y2="185" stroke="#FE4311" stroke-width="3" marker-end="url(#arrow2)"/>
+  <line x1="470" y1="185" x2="499" y2="185" stroke="#FE4311" stroke-width="3" marker-end="url(#arrow2)"/>
+  <line x1="705" y1="185" x2="734" y2="185" stroke="#FE4311" stroke-width="3" marker-end="url(#arrow2)"/>
+
+  <!-- loop back -->
+  <path d="M842 260 L842 330 L132 330 L132 292" fill="none" stroke="#FE4311" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#arrow2)"/>
+  <rect x="360" y="310" width="260" height="40" rx="20" fill="#5C0A05"/>
+  <text x="490" y="335" font-size="13" font-weight="600" fill="#fff" text-anchor="middle">more denials resolved -&gt; more rules learned</text>
+
+  <!-- outcome note -->
+  <rect x="30" y="400" width="920" height="60" rx="12" fill="#EEE7DE" stroke="#DBD0C2"/>
+  <text x="52" y="426" font-size="13" font-weight="600" fill="#5C0A05">Result: documentation gaps are caught BEFORE the claim is submitted, so denial rates fall over time.</text>
+  <text x="52" y="446" font-size="12" fill="#6b5b4b">The two products every EMS agency already runs - charting (Scribe) and appeals (Denials) - stop being separate pipelines and start feeding each other.</text>
+
+  <text x="30" y="500" font-size="12" fill="#8a7f78">In the demo: 28 resolved denials across 5 payers -&gt; 5 prevention rules -&gt; a new claim scored HIGH risk, caught before submission.</text>
+</svg>

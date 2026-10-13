@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 620" width="980" height="620" font-family="Inter, Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow3" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#8a7f78"/>
+    </marker>
+  </defs>
+  <rect width="980" height="620" fill="#FBF9F7"/>
+  <text x="30" y="42" font-size="21" font-weight="700" fill="#5C0A05">Backend Architecture</text>
+  <text x="30" y="64" font-size="12" fill="#8a7f78">Request flow through FastAPI, the two agents, and the storage/AI layers</text>
+
+  <!-- HTTP layer -->
+  <rect x="30" y="90" width="920" height="96" rx="14" fill="#FFFFFF" stroke="#DBD0C2"/>
+  <text x="52" y="116" font-size="12" font-weight="700" fill="#7a6a5a">HTTP LAYER - FastAPI (main.py)</text>
+  <rect x="52" y="126" width="150" height="44" rx="9" fill="#F8F4F1" stroke="#DBD0C2"/>
+  <text x="127" y="145" font-size="12" fill="#3a2f2a" text-anchor="middle">GET /api/denials</text>
+  <text x="127" y="161" font-size="11" fill="#8a7f78" text-anchor="middle">+ /stats /rules</text>
+  <rect x="214" y="126" width="170" height="44" rx="9" fill="#F8F4F1" stroke="#DBD0C2"/>
+  <text x="299" y="145" font-size="12" fill="#3a2f2a" text-anchor="middle">POST /api/analyze</text>
+  <text x="299" y="161" font-size="11" fill="#8a7f78" text-anchor="middle">SSE progress stream</text>
+  <rect x="396" y="126" width="150" height="44" rx="9" fill="#F8F4F1" stroke="#DBD0C2"/>
+  <text x="471" y="145" font-size="12" fill="#3a2f2a" text-anchor="middle">POST /api/score</text>
+  <text x="471" y="161" font-size="11" fill="#8a7f78" text-anchor="middle">risk assessment</text>
+  <rect x="558" y="126" width="180" height="44" rx="9" fill="#F8F4F1" stroke="#DBD0C2"/>
+  <text x="648" y="145" font-size="12" fill="#3a2f2a" text-anchor="middle">GET /api/status</text>
+  <text x="648" y="161" font-size="11" fill="#8a7f78" text-anchor="middle">/health /reset /demo-claim</text>
+  <text x="760" y="145" font-size="12" fill="#6b5b4b">CORS from env</text>
+  <text x="760" y="163" font-size="12" fill="#6b5b4b">validates + returns JSON</text>
+
+  <!-- Agents -->
+  <rect x="30" y="206" width="450" height="150" rx="14" fill="#FFFFFF" stroke="#DBD0C2"/>
+  <text x="52" y="232" font-size="12" font-weight="700" fill="#7a6a5a">EXTRACTION AGENT</text>
+  <text x="52" y="256" font-size="14" font-weight="700" fill="#5C0A05">LangGraph StateGraph</text>
+  <text x="52" y="280" font-size="12" fill="#3a2f2a">identify  -&gt;  process_cluster  -&gt;  finalize</text>
+  <text x="52" y="302" font-size="12" fill="#8a7f78">- groups denials, calls the LLM per cluster (1 retry)</text>
+  <text x="52" y="320" font-size="12" fill="#8a7f78">- stores rule + embeddings; streams progress via writer</text>
+  <text x="52" y="338" font-size="12" fill="#8a7f78">- blocking I/O pushed off the event loop (asyncio.to_thread)</text>
+
+  <rect x="500" y="206" width="450" height="150" rx="14" fill="#FFFFFF" stroke="#DBD0C2"/>
+  <text x="522" y="232" font-size="12" font-weight="700" fill="#7a6a5a">SCORING AGENT</text>
+  <text x="522" y="256" font-size="14" font-weight="700" fill="#5C0A05">retrieve -&gt; judge -&gt; guard</text>
+  <text x="522" y="280" font-size="12" fill="#3a2f2a">soft retrieval: vector union payer/CPT matches</text>
+  <text x="522" y="302" font-size="12" fill="#8a7f78">- LLM returns flags + suggestion + dollar risk</text>
+  <text x="522" y="320" font-size="12" fill="#8a7f78">- deterministic guard: risk never below what flags imply</text>
+  <text x="522" y="338" font-size="12" fill="#8a7f78">- returns expert + plain-English recommendation</text>
+
+  <!-- support modules -->
+  <rect x="30" y="372" width="920" height="86" rx="14" fill="#FFFFFF" stroke="#DBD0C2"/>
+  <text x="52" y="398" font-size="12" font-weight="700" fill="#7a6a5a">SHARED MODULES</text>
+  <rect x="52" y="408" width="170" height="36" rx="9" fill="#F8F4F1" stroke="#DBD0C2"/>
+  <text x="137" y="431" font-size="12" fill="#3a2f2a" text-anchor="middle">llm.py - ChatOpenAI</text>
+  <rect x="234" y="408" width="170" height="36" rx="9" fill="#F8F4F1" stroke="#DBD0C2"/>
+  <text x="319" y="431" font-size="12" fill="#3a2f2a" text-anchor="middle">prompts.py - templates</text>
+  <rect x="416" y="408" width="170" height="36" rx="9" fill="#F8F4F1" stroke="#DBD0C2"/>
+  <text x="501" y="431" font-size="12" fill="#3a2f2a" text-anchor="middle">embeddings.py - 768-d</text>
+  <rect x="598" y="408" width="160" height="36" rx="9" fill="#F8F4F1" stroke="#DBD0C2"/>
+  <text x="678" y="431" font-size="12" fill="#3a2f2a" text-anchor="middle">vector_store.py - Qdrant</text>
+  <rect x="770" y="408" width="160" height="36" rx="9" fill="#F8F4F1" stroke="#DBD0C2"/>
+  <text x="850" y="431" font-size="12" fill="#3a2f2a" text-anchor="middle">database.py - Postgres</text>
+
+  <!-- storage -->
+  <rect x="30" y="474" width="450" height="64" rx="14" fill="#FFFFFF" stroke="#DBD0C2"/>
+  <text x="52" y="500" font-size="13" font-weight="700" fill="#5C0A05">PostgreSQL (Neon)</text>
+  <text x="52" y="522" font-size="12" fill="#8a7f78">denial_cases, prevention_rules, claim_scores</text>
+  <rect x="500" y="474" width="450" height="64" rx="14" fill="#FFFFFF" stroke="#DBD0C2"/>
+  <text x="522" y="500" font-size="13" font-weight="700" fill="#5C0A05">Qdrant Cloud</text>
+  <text x="522" y="522" font-size="12" fill="#8a7f78">denial_narratives, rule_embeddings</text>
+
+  <line x1="255" y1="186" x2="255" y2="205" stroke="#8a7f78" stroke-width="2" marker-end="url(#arrow3)"/>
+  <line x1="725" y1="186" x2="725" y2="205" stroke="#8a7f78" stroke-width="2" marker-end="url(#arrow3)"/>
+  <line x1="255" y1="356" x2="255" y2="407" stroke="#8a7f78" stroke-width="2" marker-end="url(#arrow3)"/>
+  <line x1="725" y1="356" x2="725" y2="407" stroke="#8a7f78" stroke-width="2" marker-end="url(#arrow3)"/>
+  <line x1="255" y1="458" x2="255" y2="473" stroke="#8a7f78" stroke-width="2" marker-end="url(#arrow3)"/>
+  <line x1="725" y1="458" x2="725" y2="473" stroke="#8a7f78" stroke-width="2" marker-end="url(#arrow3)"/>
+</svg>

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 520" width="980" height="520" font-family="Inter, Segoe UI, Arial, sans-serif">
+  <rect width="980" height="520" fill="#FBF9F7"/>
+  <text x="30" y="42" font-size="21" font-weight="700" fill="#5C0A05">Data Model (Entity Relationships)</text>
+  <text x="30" y="64" font-size="12" fill="#8a7f78">Three relational tables in Postgres, plus two vector collections in Qdrant</text>
+
+  <!-- denial_cases -->
+  <rect x="30" y="95" width="290" height="230" rx="12" fill="#FFFFFF" stroke="#DBD0C2" stroke-width="1.5"/>
+  <rect x="30" y="95" width="290" height="34" rx="12" fill="#5C0A05"/>
+  <text x="46" y="117" font-size="13" font-weight="700" fill="#fff">denial_cases</text>
+  <text x="46" y="148" font-size="12" fill="#3a2f2a">id (PK)</text>
+  <text x="46" y="168" font-size="12" fill="#3a2f2a">cluster, payer, payer_id</text>
+  <text x="46" y="188" font-size="12" fill="#3a2f2a">claim_date, denial_date, resolution_date</text>
+  <text x="46" y="208" font-size="12" fill="#3a2f2a">service_type, cpt_code, carc_code, rarc_code</text>
+  <text x="46" y="228" font-size="12" fill="#3a2f2a">billed / denied / paid_after_appeal</text>
+  <text x="46" y="248" font-size="12" fill="#3a2f2a">denial_reason, pcr_excerpt, missing_element</text>
+  <text x="46" y="268" font-size="12" fill="#3a2f2a">appeal_strategy, appeal_outcome, days_to_appeal</text>
+  <text x="46" y="288" font-size="12" fill="#3a2f2a">timeline, appeal_letter, payer_notes</text>
+  <text x="46" y="308" font-size="11" fill="#8a7f78">28 rows - seeded from seed_denials.json</text>
+
+  <!-- prevention_rules -->
+  <rect x="345" y="95" width="290" height="230" rx="12" fill="#FFFFFF" stroke="#DBD0C2" stroke-width="1.5"/>
+  <rect x="345" y="95" width="290" height="34" rx="12" fill="#FE4311"/>
+  <text x="361" y="117" font-size="13" font-weight="700" fill="#fff">prevention_rules</text>
+  <text x="361" y="148" font-size="12" fill="#3a2f2a">rule_id (PK)</text>
+  <text x="361" y="168" font-size="12" fill="#3a2f2a">plain_title, plain_summary</text>
+  <text x="361" y="188" font-size="12" fill="#3a2f2a">rule_title, risk_description</text>
+  <text x="361" y="208" font-size="12" fill="#3a2f2a">payer_pattern, cpt_pattern, carc_pattern</text>
+  <text x="361" y="228" font-size="12" fill="#3a2f2a">service_pattern</text>
+  <text x="361" y="248" font-size="12" fill="#3a2f2a">required_elements, recommended_phrases</text>
+  <text x="361" y="268" font-size="12" fill="#3a2f2a">confidence, severity, avg_denied_amount</text>
+  <text x="361" y="288" font-size="12" fill="#3a2f2a">source_denials, source_count</text>
+  <text x="361" y="308" font-size="11" fill="#8a7f78">0 rows until Analyze runs, then 5</text>
+
+  <!-- claim_scores -->
+  <rect x="660" y="95" width="290" height="230" rx="12" fill="#FFFFFF" stroke="#DBD0C2" stroke-width="1.5"/>
+  <rect x="660" y="95" width="290" height="34" rx="12" fill="#5C0A05"/>
+  <text x="676" y="117" font-size="13" font-weight="700" fill="#fff">claim_scores</text>
+  <text x="676" y="148" font-size="12" fill="#3a2f2a">score_id (PK)</text>
+  <text x="676" y="168" font-size="12" fill="#3a2f2a">claim_narrative</text>
+  <text x="676" y="188" font-size="12" fill="#3a2f2a">service_type, cpt_code, payer</text>
+  <text x="676" y="208" font-size="12" fill="#3a2f2a">overall_risk, risk_score</text>
+  <text x="676" y="228" font-size="12" fill="#3a2f2a">flags_found, flags_detail</text>
+  <text x="676" y="248" font-size="12" fill="#3a2f2a">rules_matched</text>
+  <text x="676" y="268" font-size="12" fill="#3a2f2a">scored_at</text>
+  <text x="676" y="308" font-size="11" fill="#8a7f78">audit trail of every scored claim</text>
+
+  <!-- relationships -->
+  <line x1="320" y1="150" x2="344" y2="150" stroke="#8a7f78" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="325" y="140" font-size="10" fill="#8a7f78">sources</text>
+  <line x1="635" y1="150" x2="659" y2="150" stroke="#8a7f78" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="628" y="140" font-size="10" fill="#8a7f78">flags cite</text>
+
+  <!-- vector collections -->
+  <rect x="30" y="360" width="440" height="120" rx="12" fill="#FFFFFF" stroke="#DBD0C2" stroke-width="1.5"/>
+  <rect x="30" y="360" width="440" height="30" rx="12" fill="#EEE7DE"/>
+  <text x="46" y="380" font-size="12" font-weight="700" fill="#5C0A05">Qdrant - denial_narratives  (24 points)</text>
+  <text x="46" y="410" font-size="12" fill="#3a2f2a">vector: 768-d embedding of (denial_reason + PCR excerpt + missing element)</text>
+  <text x="46" y="432" font-size="12" fill="#8a7f78">payload: denial_id, payer, cpt_code, carc_code, appeal_outcome, cluster</text>
+  <text x="46" y="456" font-size="12" fill="#8a7f78">used to find denials that look like a new claim</text>
+
+  <rect x="490" y="360" width="460" height="120" rx="12" fill="#FFFFFF" stroke="#DBD0C2" stroke-width="1.5"/>
+  <rect x="490" y="360" width="460" height="30" rx="12" fill="#EEE7DE"/>
+  <text x="506" y="380" font-size="12" font-weight="700" fill="#5C0A05">Qdrant - rule_embeddings  (5 points)</text>
+  <text x="506" y="410" font-size="12" fill="#3a2f2a">vector: 768-d embedding of (rule title + risk description + required elements)</text>
+  <text x="506" y="432" font-size="12" fill="#8a7f78">payload: rule_id, payer_pattern, cpt_pattern, severity, confidence, source_count</text>
+  <text x="506" y="456" font-size="12" fill="#8a7f78">semantic search source for scoring a claim</text>
+</svg>
