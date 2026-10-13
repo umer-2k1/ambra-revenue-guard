@@ -35,6 +35,10 @@ def _path(env_key: str, default_rel: str) -> str:
 
 # ── Paths ────────────────────────────────────────────────────────────────────
 DATABASE_PATH = _path("DATABASE_PATH", "data/ambra_demo.db")
+
+# Set DATABASE_URL to use Postgres (e.g. Neon) — required in the cloud, where
+# there is no persistent disk. Leave empty to use local SQLite at DATABASE_PATH.
+DATABASE_URL = os.getenv("DATABASE_URL", "").strip()
 QDRANT_PATH = _path("QDRANT_PATH", "data/qdrant_db")
 SEED_DATA_PATH = os.path.join(BASE_DIR, "data", "seed_denials.json")
 

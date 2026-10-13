@@ -9,3 +9,4 @@ python-dotenv>=1.0.0
 sse-starlette>=2.1.0      # Server-Sent Events
 langgraph>=0.2.50         # agentic workflow orchestration
 langchain-openai>=0.2.0   # ChatOpenAI (works with DeepSeek + Groq base_urls)
+psycopg[binary]>=3.2.0    # Postgres (Neon) when DATABASE_URL is set
