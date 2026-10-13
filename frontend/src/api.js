@@ -1,6 +1,9 @@
-// Thin API client. `/api` is proxied to the FastAPI backend by Vite (see vite.config.js).
-
-const API_BASE = '/api'
+// Thin API client. In dev, `/api` is proxied to the backend by Vite
+// (see vite.config.js). In production (separate frontend/backend projects),
+// set VITE_API_BASE_URL to the backend origin, e.g. https://ambra-api.vercel.app
+const API_BASE = import.meta.env.VITE_API_BASE_URL
+  ? `${import.meta.env.VITE_API_BASE_URL.replace(/\/$/, '')}/api`
+  : '/api'
 
 async function getJSON(path) {
   const res = await fetch(`${API_BASE}${path}`)
