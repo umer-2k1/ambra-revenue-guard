@@ -1,6 +1,6 @@
 # YouTube thumbnails — Ambra demo
 
-Ten variants (01–05 original, 06–10 refined from 01), all **1280×720** (16:9), **PNG**, well under YouTube's 2 MB limit.
+Twelve variants (01–05 original, 06–12 refined from 01), all **1280×720** (16:9), **PNG**, well under YouTube's 2 MB limit.
 Every variant is checked programmatically for **text overlap** and canvas overflow — all clear.
 
 | # | File | EMS visual | Hook |
@@ -20,8 +20,10 @@ Every variant is checked programmatically for **text overlap** and canvas overfl
 | 08 | `08-denied-to-prevented.png` | DENIED → learns the rule → PREVENTED (risk colors) |
 | 09 | `09-loop-warm.png` | Light warm Ambra palette (high contrast alt to dark) |
 | 10 | `10-loop-rule-card.png` | Shows an actual learned IF/THEN rule card |
+| 11 | `11-flywheel-icons.png` | Flywheel from 07 with icons per step (document, magnifier, database, shield), glow rings |
+| 12 | `12-loop-in-out.png` | Centered loop: DENIED flows in, PREVENTED flows out |
 
-`_preview.png` is a contact sheet of all ten.
+`_preview.png` is a contact sheet of all twelve.
 
 ## Brand
 - Palette: dark `#5C0A05` / `#1A0B09`, orange `#FE4311`, warm `#F8F4F1`.
