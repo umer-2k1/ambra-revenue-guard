@@ -11,9 +11,9 @@
   <!-- Client -->
   <rect x="30" y="95" width="920" height="86" rx="14" fill="#EEE7DE" stroke="#DBD0C2"/>
   <text x="52" y="122" font-size="12" font-weight="700" fill="#7a6a5a">CLIENT</text>
-  <rect x="52" y="132" width="300" height="36" rx="10" fill="#FFFFFF" stroke="#DBD0C2"/>
-  <text x="72" y="155" font-size="13" fill="#3a2f2a">Browser - React app (Denials / Analyze / Knowledge Base / Score)</text>
-  <text x="380" y="155" font-size="12" fill="#8a7f78">served from Vercel CDN at ambra.umer2k1.com</text>
+  <rect x="52" y="132" width="620" height="36" rx="10" fill="#FFFFFF" stroke="#DBD0C2"/>
+  <text x="72" y="155" font-size="13" fill="#3a2f2a">Browser - React app: Denials / Analyze / Knowledge Base / Score</text>
+  <text x="700" y="155" font-size="12" fill="#8a7f78">served from the Vercel CDN</text>
 
   <!-- Frontend -->
   <rect x="30" y="196" width="920" height="86" rx="14" fill="#FFFFFF" stroke="#DBD0C2"/>

@@ -10,23 +10,20 @@
 
 1. [What this is (in one minute)](#1-what-this-is-in-one-minute)
 2. [Background: how ambulance billing works in the USA](#2-background-how-ambulance-billing-works-in-the-usa)
-3. [The problem: knowledge trapped in resolved denials](#3-the-problem-knowledge-trapped-in-resolved-denials)
-4. [The solution: a feedback loop](#4-the-solution-a-feedback-loop)
-5. [What the demo shows (4 screens)](#5-what-the-demo-shows-4-screens)
-6. [Architecture](#6-architecture)
-7. [The two agents, in detail](#7-the-two-agents-in-detail)
-8. [Data model](#8-data-model)
-9. [Screenshots](#9-screenshots)
-10. [Key code](#10-key-code)
-11. [API reference](#11-api-reference)
-12. [The seed data](#12-the-seed-data)
-13. [Coming from a clean machine: run it locally](#13-coming-from-a-clean-machine-run-it-locally)
-14. [Configuration](#14-configuration)
-15. [Deployment](#15-deployment)
-16. [Testing](#16-testing)
-17. [What this is NOT](#17-what-this-is-not)
-18. [Roadmap](#18-roadmap)
-19. [Glossary](#19-glossary)
+3. [The solution: a feedback loop](#3-the-solution-a-feedback-loop)
+4. [What the demo shows (4 screens)](#4-what-the-demo-shows-4-screens)
+5. [Architecture](#5-architecture)
+6. [The two agents, in detail](#6-the-two-agents-in-detail)
+7. [Data model](#7-data-model)
+8. [Screenshots](#8-screenshots)
+9. [API reference](#9-api-reference)
+10. [The seed data](#10-the-seed-data)
+11. [Coming from a clean machine: run it locally](#11-coming-from-a-clean-machine-run-it-locally)
+12. [Configuration](#12-configuration)
+13. [Deployment](#13-deployment)
+14. [Testing](#14-testing)
+15. [Roadmap](#15-roadmap)
+16. [Glossary](#16-glossary)
 
 ---
 
@@ -81,24 +78,7 @@ That second fact is the entire reason this project exists.
 
 ---
 
-## 3. The problem: knowledge trapped in resolved denials
-
-A typical agency has a pile of resolved denials like this:
-
-| | |
-|---|---|
-| **28** | resolved denial cases |
-| **$36,570** | total denied |
-| **5** | payers (UnitedHealthcare, Aetna, Anthem BCBS, Medicare, Cigna) |
-| **71%** | later overturned on appeal |
-
-When the appeal team wins one, it learns something genuinely valuable — *"this insurer rejects paramedic-level ambulance bills when the chart never explains why a basic crew wasn't enough."* But that lesson never flows back to the people writing the charts. So the **same gaps cause the same denials, repeatedly**, costing staff hours and delaying payment.
-
-**This is the gap between charting and denial management** — two pipelines that never talk.
-
----
-
-## 4. The solution: a feedback loop
+## 3. The solution: a feedback loop
 
 Four steps, and the last one feeds the first:
 
@@ -111,7 +91,7 @@ The design goal is authenticity: **nothing is pre-baked**. The clusters, the rul
 
 ---
 
-## 5. What the demo shows (4 screens)
+## 4. What the demo shows (4 screens)
 
 A ~4-minute walkthrough. See the full user-flow diagram below.
 
@@ -126,44 +106,11 @@ A ~4-minute walkthrough. See the full user-flow diagram below.
 
 There is also a **Glossary** drawer (every code explained in plain English) and a **Reset & re-analyze** loop so the demo can be run again from a clean slate.
 
-### 5.1 Try these claims yourself (verified)
-
-On the **Score Claim** screen, set the payer / service / CPT as listed, paste the narrative, and click **Score Claim**. These were run against the live deployment:
-
-| # | Payer | Service | CPT | Verified result |
-|---|---|---|---|---|
-| 1 | UnitedHealthcare | ALS-1 Emergency | `A0427` | **HIGH 95** — 3 flags (missing ALS necessity, no itemized procedures, no mileage detail) |
-| 2 | Anthem BCBS | BLS Emergency | `A0428` | **MEDIUM 68** — 1 flag (mileage / address justification) |
-| 3 | UnitedHealthcare | ALS-1 Emergency | `A0427` | **LOW 15** — 1 low-severity flag (wants GPS/mapped route verification) |
-| — | *(the pre-filled demo claim)* | ALS-1 Emergency | `A0427` | **HIGH ~90** |
-
-*(Exact scores move a few points run-to-run — the model is live. The risk **band** is stable.)*
-
-**1 · HIGH — looks fine, gets caught.** A claim that reads normally but never says *why a paramedic was needed*:
-
-> Responded at 2:10 PM for a 45-year-old man with nausea and one episode of vomiting. He was sitting in a chair watching TV, said he felt better after drinking water, and had normal vital signs. He was not dizzy and could walk on his own. The nearest hospital is two miles away, but his family asked us to take him to City Medical Center, 15 miles away, because they know the staff there. He walked to the ambulance and walked into the hospital when we arrived.
-
-**2 · MEDIUM — a non-emergency that used an ambulance.** Ambulatory back pain, and it drove past a closer hospital:
-
-> At 9:40 AM we were called to a home for a 58-year-old woman with lower back pain that started four days ago. When we arrived she was up, dressed, and walking around the living room. She said the pain was a 4 out of 10 and "the same as yesterday." Her vital signs were normal. She sat on the stretcher by herself and was comfortable the whole ride. There is a hospital about six minutes from her house, but she asked to go to Riverside Medical Center because her back doctor works there, which is about 20 minutes away. She walked into the emergency department on her own.
-
-**3 · LOW — a complete, well-documented claim** (addresses, mileage, procedure count with times, condition code, nearest-facility justification, and why BLS was not enough):
-
-> At 03:05 we were dispatched to 412 Elm Court, Springfield, NJ 07081 for a 68-year-old man with crushing chest pain that began at 02:35. Pickup: 412 Elm Court, Springfield, NJ 07081. Destination: Memorial General Hospital, 900 Main Street, Newark, NJ 07102. Loaded distance: 6.2 miles. Memorial General Hospital is the nearest appropriate facility - the closest hospital with an operating cardiac catheterization lab. The two closer hospitals, Springfield Community and St. Anne's, have no cath lab and cannot treat a STEMI, so this was a documented bypass. On arrival at 03:11 he was pale, diaphoretic and short of breath, and he could not sit upright or ambulate safely. Vital signs: BP 148/90, HR 112, SpO2 93% on room air, RR 24, GCS 15. The patient could not be transported by a BLS crew, wheelchair van or private vehicle because he needed continuous cardiac monitoring and IV therapy. Three ALS procedures were performed: (1) a 12-lead ECG at 03:14 showed ST elevation; (2) IV access was established at 03:18; (3) medications were given - aspirin 324 mg PO at 03:20 and nitroglycerin 0.4 mg SL at 03:22, reducing pain from 8/10 to 3/10. Continuous cardiac monitoring ran from 03:14 to arrival. Condition code P1 applies: the patient was transported to the nearest appropriate facility for required medical services. We called ahead to activate the cath lab and arrived at 03:41.
-
-Or, from the command line:
-
-```bash
-curl -X POST https://ambra-revenue-guard.vercel.app/api/score \
-  -H 'Content-Type: application/json' \
-  -d '{"payer":"UnitedHealthcare","service_type":"ALS-1 Emergency","cpt_code":"A0427","narrative":"..."}'
-```
-
 ---
 
-## 6. Architecture
+## 5. Architecture
 
-### 6.1 System architecture
+### 5.1 System architecture
 
 Two independently deployed projects, plus managed services:
 
@@ -180,9 +127,9 @@ Two independently deployed projects, plus managed services:
 | **Vector store** | **Qdrant Cloud** | Semantic search over denials and rules; supports local embedded mode for offline dev |
 | **Progress streaming** | **Server-Sent Events (SSE)** | One-way live updates (progress + extracted rules) with no websocket overhead |
 
-Both the LLM and the embeddings are behind a **one-line provider switch** (see [Configuration](#14-configuration)) — the prompts and code are provider-agnostic.
+Both the LLM and the embeddings are behind a **one-line provider switch** (see [Configuration](#12-configuration)) — the prompts and code are provider-agnostic.
 
-### 6.2 Backend architecture
+### 5.2 Backend architecture
 
 The backend is deliberately small and modular — one concern per file:
 
@@ -202,7 +149,7 @@ The backend is deliberately small and modular — one concern per file:
 | `scoring_agent.py` | Retrieval + scoring + the deterministic guard |
 | `demo_claim.py` | The Screen-4 narrative |
 
-### 6.3 Why these services
+### 5.3 Why these services
 
 - **Two Vercel projects from one repo** — the frontend and backend deploy independently (each with its own Root Directory), so they can scale and fail apart.
 - **Qdrant Cloud instead of a self-hosted vector DB** — no server to run, and the matching semantics (cosine over 768-dim vectors) are exactly what "find denials that look like this claim" needs.
@@ -211,9 +158,9 @@ The backend is deliberately small and modular — one concern per file:
 
 ---
 
-## 7. The two agents, in detail
+## 6. The two agents, in detail
 
-### 7.1 Extraction agent (learning)
+### 6.1 Extraction agent (learning)
 
 A LangGraph `StateGraph`:
 
@@ -227,11 +174,11 @@ START → identify → process_cluster (loops per cluster) → finalize → END
 
 Progress is pushed through LangGraph's **custom stream writer**, so the endpoint is a thin `async for` over `graph.astream(stream_mode="custom")`. Blocking storage work is pushed off the event loop with `asyncio.to_thread(...)` so status polling stays fast.
 
-**The prompt** asks for a single JSON rule per cluster, including both an expert-facing title and a **plain-English** headline/summary, with `required_elements` and `recommended_phrases`.
+The prompt asks for a single JSON rule per cluster, including both an expert-facing title and a **plain-English** headline/summary, with `required_elements` and `recommended_phrases`.
 
 ![Analysis sequence](docs/diagrams/07-sequence-analyze.svg)
 
-### 7.2 Scoring agent (prevention)
+### 6.2 Scoring agent (prevention)
 
 ![Scoring sequence](docs/diagrams/08-sequence-score.svg)
 
@@ -245,7 +192,7 @@ Progress is pushed through LangGraph's **custom stream writer**, so the endpoint
 
 ---
 
-## 8. Data model
+## 7. Data model
 
 Three relational tables plus two vector collections:
 
@@ -259,7 +206,7 @@ Three relational tables plus two vector collections:
 
 ---
 
-## 9. Screenshots
+## 8. Screenshots
 
 <!-- Drop the PNGs below into docs/screenshots/ and uncomment this block.
 
@@ -275,52 +222,7 @@ See [`docs/screenshots/`](docs/screenshots/) for the capture list. UI wireframes
 
 ---
 
-## 10. Key code
-
-**The LangGraph extraction node** (`backend/extraction_agent.py`) — stream a progress event, call the LLM with one retry, store off the event loop, stream the learned rule back:
-
-```python
-async def process_cluster_node(state):
-    ...
-    _emit({"step": "extracting", "message": f"Analyzing cluster {idx+1}/{total}...", ...})
-    rule = await extract_rule_from_cluster(name, cases, idx + 1)   # 1 retry inside
-    if rule is None:
-        _emit({"step": "error", ...}); return {"idx": idx + 1}
-    await asyncio.to_thread(_store_cluster, rule.model_dump(), cases)  # SQLite/Postgres + Qdrant
-    _emit({"step": "stored", "rule": rule.model_dump(), ...})
-    return {"idx": idx + 1, "rules": [rule.model_dump()]}
-```
-
-**The deterministic guard** (`backend/scoring_agent.py`) — the risk can never be lower than the flags imply:
-
-```python
-derived  = max((_RISK_ORDER.get(fl.risk_level, 0) for fl in flags), default=0)
-llm_rank = _RISK_ORDER.get((draft.overall_risk or "").lower(), 0)
-overall  = {0: "LOW", 1: "MEDIUM", 2: "HIGH"}[max(derived, llm_rank)]
-if overall == "HIGH":   score = max(score, 65)
-elif overall == "MEDIUM": score = max(score, 35)
-```
-
-**Soft retrieval** (`backend/scoring_agent.py`) — vector hits **unioned** with exact payer/CPT matches:
-
-```python
-for hit in query_similar_rules(claim_text, n_results=top_k):   # semantics
-    by_id[hit["rule_id"]] = _full_rule(hit["rule_id"], matched_by="vector")
-for rule in get_all_rules():                                    # deterministic
-    if _payer_match(rule["payer_pattern"], payer) or _cpt_match(rule["cpt_pattern"], cpt_code):
-        by_id.setdefault(rule["rule_id"], {**rule, "matched_by": "filter"})
-```
-
-**Schema definition** (`backend/database.py`) — one schema, two backends (SQLite locally, Postgres in the cloud):
-
-```python
-IS_POSTGRES = bool(DATABASE_URL)
-_FLOAT = "DOUBLE PRECISION" if IS_POSTGRES else "REAL"   # chosen per backend
-```
-
----
-
-## 11. API reference
+## 9. API reference
 
 | Method | Path | Description |
 |---|---|---|
@@ -339,7 +241,7 @@ Interactive docs at `http://localhost:8000/docs`.
 
 ---
 
-## 12. The seed data
+## 10. The seed data
 
 28 realistic resolved denials across five payer-specific patterns plus four scattered one-offs (which the system correctly ignores). The data follows real US EMS-billing conventions: HCPCS ambulance codes (`A0425`–`A0434`), CARC/RARC denial codes (`CO-16`, `CO-50`, `CO-197`…), Medicare **PCS** rules, **condition codes P1–P7**, and origin/destination modifiers (`SH`). File: [`backend/data/seed_denials.json`](backend/data/seed_denials.json).
 
@@ -356,7 +258,7 @@ Each case also carries a **case file** — `timeline`, `appeal_letter` and `paye
 
 ---
 
-## 13. Coming from a clean machine: run it locally
+## 11. Coming from a clean machine: run it locally
 
 **Prerequisites:** Python 3.13+, Node 20+ with **pnpm** (`corepack enable pnpm`), and API keys.
 
@@ -382,7 +284,7 @@ Then open the app → **Analyze** → **Knowledge Base** → **Score Claim**. To
 
 ---
 
-## 14. Configuration
+## 12. Configuration
 
 Everything lives in `.env` (gitignored). Provider switches:
 
@@ -401,7 +303,7 @@ Everything lives in `.env` (gitignored). Provider switches:
 
 ---
 
-## 15. Deployment
+## 13. Deployment
 
 Deployed as **two Vercel projects from this one repo**, told apart by their **Root Directory**:
 
@@ -414,7 +316,7 @@ The live instance runs at **https://ambra.umer2k1.com**.
 
 ---
 
-## 16. Testing
+## 14. Testing
 
 Offline smoke tests (no API keys needed — the LLM and embeddings are stubbed):
 
@@ -426,26 +328,16 @@ Offline smoke tests (no API keys needed — the LLM and embeddings are stubbed):
 
 ---
 
-## 17. What this is NOT
-
-- **Not** a replacement for Ambra's production products (appeal letters, IVR agent, NEMSIS validation).
-- **Not** production software — it runs as a **single-user demo**; `/api/analyze` and `/api/reset` mutate shared state, and there is deliberately **no login, signup or onboarding**.
-- **Not** a live feed — analysis is triggered on demand and streamed in real time for the demo.
-- **Not** real patient data — the 28 cases are synthetic but follow real coding conventions.
-
----
-
-## 18. Roadmap
+## 15. Roadmap
 
 - Track time saved and dollars recovered as an explicit KPI.
 - Feed newly resolved denials back in automatically (close the loop in production).
 - Plain-English lines for every flag (not just the top recommendation).
 - Per-tenant data isolation + auth before any multi-user use.
-- Swap the demo's reset-and-reanalyze flow for an incremental "learn from this one denial" action.
 
 ---
 
-## 19. Glossary
+## 16. Glossary
 
 | Term | Meaning |
 |---|---|
