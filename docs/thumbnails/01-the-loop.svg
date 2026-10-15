@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" font-family="'Inter','Helvetica Neue',Arial,sans-serif">
+  <defs>
+    <marker id="a" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#FE4311"/>
+    </marker>
+  </defs>
+  <rect width="1280" height="720" fill="#1A0B09"/>
+  <rect x="0" y="0" width="1280" height="10" fill="#FE4311"/>
+
+  <text x="64" y="78" font-size="30" font-weight="800" fill="#FFFFFF">✦ Ambra</text>
+  <text x="1216" y="78" font-size="22" font-weight="600" fill="#c9b7b3" text-anchor="end">Denial → Prevention</text>
+
+  <text x="64" y="176" font-size="56" font-weight="900" fill="#FFFFFF">EVERY DENIAL TEACHES A RULE</text>
+
+  <rect x="64" y="250" width="262" height="164" rx="18" fill="#2A1512" stroke="#43221C" stroke-width="2"/>
+  <text x="92" y="300" font-size="24" font-weight="800" fill="#FE4311">01</text>
+  <text x="92" y="356" font-size="30" font-weight="800" fill="#FFFFFF">INGEST</text>
+  <text x="92" y="392" font-size="18" fill="#c9b7b3">resolved denials</text>
+
+  <rect x="358" y="250" width="262" height="164" rx="18" fill="#2A1512" stroke="#43221C" stroke-width="2"/>
+  <text x="386" y="300" font-size="24" font-weight="800" fill="#FE4311">02</text>
+  <text x="386" y="356" font-size="30" font-weight="800" fill="#FFFFFF">ANALYZE</text>
+  <text x="386" y="392" font-size="18" fill="#c9b7b3">extract the rules</text>
+
+  <rect x="652" y="250" width="262" height="164" rx="18" fill="#2A1512" stroke="#43221C" stroke-width="2"/>
+  <text x="680" y="300" font-size="24" font-weight="800" fill="#FE4311">03</text>
+  <text x="680" y="356" font-size="30" font-weight="800" fill="#FFFFFF">REMEMBER</text>
+  <text x="680" y="392" font-size="18" fill="#c9b7b3">vector memory</text>
+
+  <rect x="946" y="250" width="262" height="164" rx="18" fill="#FE4311" stroke="#FE4311" stroke-width="2"/>
+  <text x="974" y="300" font-size="24" font-weight="800" fill="#3a0f0a">04</text>
+  <text x="974" y="356" font-size="30" font-weight="800" fill="#FFFFFF">PREVENT</text>
+  <text x="974" y="392" font-size="18" fill="#4a1710">score the claim</text>
+
+  <line x1="1176" y1="474" x2="120" y2="474" stroke="#FE4311" stroke-width="3" stroke-dasharray="12 9" marker-end="url(#a)"/>
+  <text x="640" y="518" font-size="22" font-weight="600" fill="#FE4311" text-anchor="middle">more denials resolved → fewer future denials</text>
+
+  <text x="64" y="622" font-size="34" font-weight="900" fill="#FFFFFF">DENIAL → PREVENTION LOOP</text>
+</svg>
