@@ -106,6 +106,9 @@
 - ❌ Apologising for anything ("it's just a demo", "sorry it's slow") — narrate confidently.
 
 ## Optional extra beats (only if you want a longer cut)
+
+> **Companion: [`docs/DEMO-EXAMPLE.md`](DEMO-EXAMPLE.md)** — a fully scripted "combined claim" segment (a *blend* of the non-emergency cases + the distance/destination cases) with the exact narrative to paste and the **verified** result. That's the strongest proof that the system generalises rather than matching exact old denials.
+
 Run these on **Score Claim** to show the system **grades**, not just shouts:
 
 | Paste this narrative… | Set payer / service / CPT | You get |
