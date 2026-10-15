@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" font-family="'Inter','Helvetica Neue',Arial,sans-serif">
+  <defs>
+    <radialGradient id="glow" cx="75%" cy="55%" r="45%">
+      <stop offset="0" stop-color="#FE4311" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#FE4311" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="a" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#FE4311"/>
+    </marker>
+  </defs>
+  <rect width="1280" height="720" fill="#1A0B09"/>
+  <rect width="1280" height="720" fill="url(#glow)"/>
+  <rect x="0" y="0" width="1280" height="10" fill="#FE4311"/>
+
+  <text x="64" y="78" font-size="30" font-weight="800" fill="#FFFFFF">✦ Ambra</text>
+
+  <text x="64" y="220" font-size="84" font-weight="900" fill="#FFFFFF">EVERY DENIAL</text>
+  <text x="64" y="310" font-size="84" font-weight="900" fill="#FE4311">TEACHES</text>
+  <text x="64" y="400" font-size="84" font-weight="900" fill="#FE4311">A RULE</text>
+
+  <text x="64" y="470" font-size="28" fill="#F8F4F1">Resolved denials become rules</text>
+  <text x="64" y="508" font-size="28" fill="#F8F4F1">that catch the next claim.</text>
+
+  <rect x="64" y="566" width="340" height="58" rx="29" fill="#FE4311"/>
+  <text x="234" y="603" font-size="24" font-weight="800" fill="#FFFFFF" text-anchor="middle">DENIAL → PREVENTION</text>
+
+  <circle cx="960" cy="400" r="180" fill="none" stroke="#43221C" stroke-width="2"/>
+  <path d="M1036.1,236.9 A180,180 0 0 1 1123.1,323.9" fill="none" stroke="#FE4311" stroke-width="5" marker-end="url(#a)"/>
+  <path d="M1123.1,476.1 A180,180 0 0 1 1036.1,563.1" fill="none" stroke="#FE4311" stroke-width="5" marker-end="url(#a)"/>
+  <path d="M883.9,563.1 A180,180 0 0 1 796.9,476.1" fill="none" stroke="#FE4311" stroke-width="5" marker-end="url(#a)"/>
+  <path d="M796.9,323.9 A180,180 0 0 1 883.9,236.9" fill="none" stroke="#FE4311" stroke-width="5" marker-end="url(#a)"/>
+
+  <circle cx="960" cy="220" r="58" fill="#2A1512" stroke="#FE4311" stroke-width="3"/>
+  <text x="960" y="215" font-size="16" font-weight="800" fill="#FE4311" text-anchor="middle">01</text>
+  <text x="960" y="240" font-size="20" font-weight="800" fill="#FFFFFF" text-anchor="middle">INGEST</text>
+
+  <circle cx="1140" cy="400" r="58" fill="#2A1512" stroke="#FE4311" stroke-width="3"/>
+  <text x="1140" y="395" font-size="16" font-weight="800" fill="#FE4311" text-anchor="middle">02</text>
+  <text x="1140" y="420" font-size="19" font-weight="800" fill="#FFFFFF" text-anchor="middle">ANALYZE</text>
+
+  <circle cx="960" cy="580" r="58" fill="#2A1512" stroke="#FE4311" stroke-width="3"/>
+  <text x="960" y="575" font-size="16" font-weight="800" fill="#FE4311" text-anchor="middle">03</text>
+  <text x="960" y="600" font-size="18" font-weight="800" fill="#FFFFFF" text-anchor="middle">REMEMBER</text>
+
+  <circle cx="780" cy="400" r="58" fill="#FE4311"/>
+  <text x="780" y="395" font-size="16" font-weight="800" fill="#3a0f0a" text-anchor="middle">04</text>
+  <text x="780" y="420" font-size="19" font-weight="800" fill="#FFFFFF" text-anchor="middle">PREVENT</text>
+
+  <text x="960" y="396" font-size="34" font-weight="900" fill="#FFFFFF" text-anchor="middle">THE</text>
+  <text x="960" y="436" font-size="34" font-weight="900" fill="#FE4311" text-anchor="middle">LOOP</text>
+</svg>

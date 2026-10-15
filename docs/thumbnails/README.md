@@ -1,6 +1,6 @@
 # YouTube thumbnails — Ambra demo
 
-Five variants, all **1280×720** (16:9), **PNG**, well under YouTube's 2 MB limit.
+Ten variants (01–05 original, 06–10 refined from 01), all **1280×720** (16:9), **PNG**, well under YouTube's 2 MB limit.
 Every variant is checked programmatically for **text overlap** and canvas overflow — all clear.
 
 | # | File | EMS visual | Hook |
@@ -11,7 +11,17 @@ Every variant is checked programmatically for **text overlap** and canvas overfl
 | 04 | `04-star-of-life.png` | Star of Life | **Learn from every denial** + the loop |
 | 05 | `05-ambulance-hero.png` | Ambulance (hero) | **Denial → Prevention** — one denial, one rule |
 
-`_preview.png` is a contact sheet of all five.
+### Refined from 01 (same loop concept, more polish)
+
+| # | File | What's new |
+|---|---|---|
+| 06 | `06-loop-bold.png` | Huge two-tone headline, glow, LIVE DEMO badge, arrows between steps |
+| 07 | `07-loop-flywheel.png` | Circular flywheel diagram beside the headline |
+| 08 | `08-denied-to-prevented.png` | DENIED → learns the rule → PREVENTED (risk colors) |
+| 09 | `09-loop-warm.png` | Light warm Ambra palette (high contrast alt to dark) |
+| 10 | `10-loop-rule-card.png` | Shows an actual learned IF/THEN rule card |
+
+`_preview.png` is a contact sheet of all ten.
 
 ## Brand
 - Palette: dark `#5C0A05` / `#1A0B09`, orange `#FE4311`, warm `#F8F4F1`.
