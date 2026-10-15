@@ -2,7 +2,7 @@
 
 > A working prototype that turns every **resolved** ambulance-insurance denial into a **reusable prevention rule**, then uses those rules to catch documentation gaps in the **next** claim before it is ever submitted.
 
-**Live demo:** https://ambra.umer2k1.com · **Backend API:** https://ambra-revenue-guard.vercel.app
+**Live demo:** https://ambra.umer2k1.com
 
 ---
 
