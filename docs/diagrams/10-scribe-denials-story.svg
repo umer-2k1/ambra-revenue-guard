@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 800" width="1000" height="800" font-family="'Excalifont','Virgil','Chalkboard SE','Comic Sans MS','Segoe Print',Inter,Arial,sans-serif">
+  <defs>
+    <marker id="arw" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8 Z" fill="#FE4311"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="800" fill="#FFFDF9"/>
+
+  <text x="50" y="56" font-size="27" font-weight="700" fill="#5C0A05">Scribe and Denials - and the piece that is missing</text>
+  <text x="50" y="84" font-size="15" fill="#8a7f78">Two products. Both good. One gap between them.</text>
+
+  <!-- Scribe -->
+  <rect x="50" y="120" width="410" height="200" rx="18" fill="#FFFFFF" stroke="#5C0A05" stroke-width="2.5"/>
+  <text x="78" y="162" font-size="22" font-weight="700" fill="#5C0A05">Scribe</text>
+  <text x="78" y="188" font-size="14" fill="#FE4311">for documentation</text>
+  <line x1="78" y1="202" x2="432" y2="202" stroke="#DBD0C2" stroke-width="1.5"/>
+  <text x="78" y="232" font-size="15" fill="#3a2f2a">The medic talks. Scribe writes it down.</text>
+  <text x="78" y="258" font-size="15" fill="#3a2f2a">Out comes the patient's chart -</text>
+  <text x="78" y="284" font-size="15" fill="#3a2f2a">which becomes the claim sent to the insurer.</text>
+
+  <!-- Denials -->
+  <rect x="540" y="120" width="410" height="200" rx="18" fill="#FFFFFF" stroke="#5C0A05" stroke-width="2.5"/>
+  <text x="568" y="162" font-size="22" font-weight="700" fill="#5C0A05">Denials</text>
+  <text x="568" y="188" font-size="14" fill="#FE4311">for handling rejected claims</text>
+  <line x1="568" y1="202" x2="922" y2="202" stroke="#DBD0C2" stroke-width="1.5"/>
+  <text x="568" y="232" font-size="15" fill="#3a2f2a">The insurer says no. Denials writes the</text>
+  <text x="568" y="258" font-size="15" fill="#3a2f2a">appeal, works the phones, and gets the</text>
+  <text x="568" y="284" font-size="15" fill="#3a2f2a">claim overturned.</text>
+
+  <!-- no connection -->
+  <line x1="460" y1="220" x2="540" y2="220" stroke="#b0a49b" stroke-width="2.5" stroke-dasharray="7 7"/>
+  <text x="500" y="212" font-size="18" font-weight="700" fill="#c0392b" text-anchor="middle">x</text>
+
+  <!-- the gap -->
+  <rect x="50" y="348" width="900" height="96" rx="16" fill="#FFF3EF" stroke="#FE4311" stroke-width="2"/>
+  <text x="76" y="380" font-size="16" font-weight="700" fill="#FE4311">Both are great on their own. But right now, they do not talk to each other.</text>
+  <text x="76" y="408" font-size="15" fill="#5b4a3a">So when Denials wins an appeal, that lesson stays inside that one claim. Nobody tells the next person.</text>
+  <text x="76" y="432" font-size="15" fill="#5b4a3a">The same mistake gets denied again - and it costs the same money, again.</text>
+
+  <!-- arrow down -->
+  <line x1="500" y1="448" x2="500" y2="486" stroke="#FE4311" stroke-width="3" marker-end="url(#arw)"/>
+
+  <!-- what we built -->
+  <rect x="50" y="492" width="900" height="272" rx="18" fill="#FFFFFF" stroke="#FE4311" stroke-width="2.5"/>
+  <text x="78" y="530" font-size="22" font-weight="700" fill="#5C0A05">What we are building</text>
+  <text x="78" y="556" font-size="15" fill="#3a2f2a">We take the resolved denials you already have, and turn them into something that prevents the next one.</text>
+
+  <rect x="78" y="578" width="270" height="122" rx="12" fill="#F8F4F1" stroke="#DBD0C2"/>
+  <text x="96" y="606" font-size="15" font-weight="700" fill="#FE4311">1. Learn</text>
+  <text x="96" y="632" font-size="13" fill="#3a2f2a">We read every resolved denial and</text>
+  <text x="96" y="652" font-size="13" fill="#3a2f2a">work out the real reason it was</text>
+  <text x="96" y="672" font-size="13" fill="#3a2f2a">denied.</text>
+
+  <rect x="365" y="578" width="270" height="122" rx="12" fill="#F8F4F1" stroke="#DBD0C2"/>
+  <text x="383" y="606" font-size="15" font-weight="700" fill="#FE4311">2. Remember</text>
+  <text x="383" y="632" font-size="13" fill="#3a2f2a">We save each one as a simple</text>
+  <text x="383" y="652" font-size="13" fill="#3a2f2a">prevention rule - so the system gets</text>
+  <text x="383" y="672" font-size="13" fill="#3a2f2a">smarter with every denial.</text>
+
+  <rect x="652" y="578" width="270" height="122" rx="12" fill="#F8F4F1" stroke="#DBD0C2"/>
+  <text x="670" y="606" font-size="15" font-weight="700" fill="#FE4311">3. Prevent</text>
+  <text x="670" y="632" font-size="13" fill="#3a2f2a">Before a new claim is sent, we check</text>
+  <text x="670" y="652" font-size="13" fill="#3a2f2a">it against those rules and point out</text>
+  <text x="670" y="672" font-size="13" fill="#3a2f2a">exactly what is missing.</text>
+
+  <line x1="348" y1="639" x2="364" y2="639" stroke="#FE4311" stroke-width="2.5" marker-end="url(#arw)"/>
+  <line x1="635" y1="639" x2="651" y2="639" stroke="#FE4311" stroke-width="2.5" marker-end="url(#arw)"/>
+
+  <text x="78" y="726" font-size="16" font-weight="700" fill="#5C0A05">The point:</text>
+  <text x="162" y="726" font-size="16" fill="#5C0A05">every denial you resolve makes the next claim stronger.</text>
+  <text x="78" y="750" font-size="14" font-style="italic" fill="#8a7f78">Denials feeds Scribe. Scribe prevents denials.</text>
+</svg>
