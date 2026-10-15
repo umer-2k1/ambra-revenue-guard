@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
-import { Brain, ChevronDown } from 'lucide-react'
+import { Brain, ChevronDown, Trash2 } from 'lucide-react'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { Skeleton } from '@/components/ui/skeleton'
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip'
-import { getRules } from '@/api'
+import { getRules, resetSystem } from '@/api'
 import { cn } from '@/lib/utils'
 import { carcMeaning, cptMeaning, serviceMeaning } from '@/lib/glossary'
 
@@ -129,14 +130,27 @@ function RuleCard({ rule, onOpenDenial }) {
   )
 }
 
-export default function KnowledgeBase({ status, onOpenDenial }) {
+export default function KnowledgeBase({ status, onOpenDenial, refreshStatus }) {
   const [rules, setRules] = useState(null)
+  const [deleting, setDeleting] = useState(false)
 
   useEffect(() => {
     if ((status?.total_rules ?? 0) >= 0) {
       getRules().then(setRules).catch(() => setRules([]))
     }
   }, [status?.total_rules])
+
+  async function deleteAll() {
+    if (!window.confirm('Delete all learned rules and embeddings? This clears the knowledge base.')) return
+    setDeleting(true)
+    try {
+      await resetSystem()
+      setRules([])
+      if (refreshStatus) await refreshStatus()
+    } finally {
+      setDeleting(false)
+    }
+  }
 
   if (!rules) {
     return (
@@ -164,12 +178,17 @@ export default function KnowledgeBase({ status, onOpenDenial }) {
 
   return (
     <div className="space-y-5">
-      <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-        <h2 className="text-lg">Knowledge Base</h2>
-        <span className="text-sm text-muted-foreground">
-          {rules.length} rules learned from {learnedFrom} denials
-        </span>
-        <span className="text-sm text-muted-foreground">· hover any dashed tag to see what the code means</span>
+      <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+        <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+          <h2 className="text-lg">Knowledge Base</h2>
+          <span className="text-sm text-muted-foreground">
+            {rules.length} rules learned from {learnedFrom} denials
+          </span>
+          <span className="text-sm text-muted-foreground">· hover any dashed tag to see what the code means</span>
+        </div>
+        <Button variant="outline" size="sm" onClick={deleteAll} disabled={deleting}>
+          <Trash2 className="size-4" /> Delete all
+        </Button>
       </div>
       <div className="space-y-4">
         {rules.map((rule) => (

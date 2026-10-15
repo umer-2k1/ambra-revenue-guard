@@ -101,7 +101,7 @@ export default function App() {
               />
             </TabsContent>
             <TabsContent value="knowledge">
-              <KnowledgeBase status={status} onOpenDenial={openDenial} />
+              <KnowledgeBase status={status} onOpenDenial={openDenial} refreshStatus={refreshStatus} />
             </TabsContent>
             <TabsContent value="score">
               <ScoreClaim status={status} />
