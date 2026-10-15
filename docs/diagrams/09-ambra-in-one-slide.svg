@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" width="1000" height="640" font-family="Inter, Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="ar" markerWidth="11" markerHeight="11" refX="9" refY="3.5" orient="auto">
+      <path d="M0,0 L9,3.5 L0,7 Z" fill="#FE4311"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="640" fill="#FFFFFF"/>
+  <text x="40" y="52" font-size="26" font-weight="800" fill="#5C0A05">Ambra - in one slide</text>
+  <text x="40" y="78" font-size="14" fill="#8a7f78">Say these five lines, top to bottom. Everything else is on the next screen.</text>
+
+  <!-- company banner -->
+  <rect x="40" y="100" width="920" height="66" rx="14" fill="#5C0A05"/>
+  <text x="64" y="128" font-size="16" font-weight="700" fill="#ffffff">Ambra911  -  AI billing for US ambulance (EMS) companies.</text>
+  <text x="64" y="150" font-size="13" fill="#f0d9d5">Two products today. They solve two different halves of the same problem.</text>
+
+  <!-- Scribe -->
+  <rect x="40" y="192" width="440" height="150" rx="14" fill="#FFFFFF" stroke="#DBD0C2" stroke-width="2"/>
+  <rect x="40" y="192" width="440" height="40" rx="14" fill="#EEE7DE"/>
+  <text x="64" y="219" font-size="15" font-weight="700" fill="#5C0A05">SCRIBE  -  the charting side</text>
+  <text x="64" y="258" font-size="13" fill="#3a2f2a">Turns the medic's voice into a patient chart,</text>
+  <text x="64" y="278" font-size="13" fill="#3a2f2a">then into a billing-ready claim.</text>
+  <text x="64" y="308" font-size="13" font-style="italic" fill="#8a7f78">"Scribe writes the claim."</text>
+  <text x="64" y="330" font-size="12" fill="#b0a49b">one-liner to say: it creates the bill</text>
+
+  <!-- Denials -->
+  <rect x="520" y="192" width="440" height="150" rx="14" fill="#FFFFFF" stroke="#DBD0C2" stroke-width="2"/>
+  <rect x="520" y="192" width="440" height="40" rx="14" fill="#EEE7DE"/>
+  <text x="544" y="219" font-size="15" font-weight="700" fill="#5C0A05">DENIALS  -  the fighting side</text>
+  <text x="544" y="258" font-size="13" fill="#3a2f2a">When an insurer rejects a claim, it writes the</text>
+  <text x="544" y="278" font-size="13" fill="#3a2f2a">appeal and gets it overturned.</text>
+  <text x="544" y="308" font-size="13" font-style="italic" fill="#8a7f78">"Denials wins the money back."</text>
+  <text x="544" y="330" font-size="12" fill="#b0a49b">one-liner to say: it recovers the bill</text>
+
+  <!-- gap -->
+  <line x1="480" y1="267" x2="520" y2="267" stroke="#FE4311" stroke-width="3" stroke-dasharray="6 5"/>
+  <text x="500" y="255" font-size="20" fill="#FE4311" text-anchor="middle">x</text>
+
+  <rect x="40" y="362" width="920" height="74" rx="14" fill="#FFF3EF" stroke="#FE4311" stroke-width="2"/>
+  <text x="64" y="390" font-size="14" font-weight="700" fill="#FE4311">THE GAP:  they do not talk to each other.</text>
+  <text x="64" y="414" font-size="13" fill="#5b4a3a">A won appeal teaches nothing to the next chart - so the same mistake gets denied again and again, forever.</text>
+
+  <!-- what we built -->
+  <rect x="40" y="456" width="920" height="150" rx="14" fill="#FFFFFF" stroke="#5C0A05" stroke-width="2"/>
+  <text x="64" y="486" font-size="15" font-weight="700" fill="#5C0A05">WHAT WE BUILT:  the bridge between them</text>
+
+  <rect x="64" y="502" width="270" height="84" rx="10" fill="#F8F4F1" stroke="#DBD0C2"/>
+  <text x="82" y="528" font-size="13" font-weight="700" fill="#FE4311">1. Learn</text>
+  <text x="82" y="550" font-size="12" fill="#3a2f2a">Read every resolved denial,</text>
+  <text x="82" y="568" font-size="12" fill="#3a2f2a">find why it was denied.</text>
+
+  <rect x="364" y="502" width="270" height="84" rx="10" fill="#F8F4F1" stroke="#DBD0C2"/>
+  <text x="382" y="528" font-size="13" font-weight="700" fill="#FE4311">2. Remember</text>
+  <text x="382" y="550" font-size="12" fill="#3a2f2a">Turn it into a prevention rule</text>
+  <text x="382" y="568" font-size="12" fill="#3a2f2a">stored in memory.</text>
+
+  <rect x="664" y="502" width="272" height="84" rx="10" fill="#F8F4F1" stroke="#DBD0C2"/>
+  <text x="682" y="528" font-size="13" font-weight="700" fill="#FE4311">3. Prevent</text>
+  <text x="682" y="550" font-size="12" fill="#3a2f2a">Score the next claim and</text>
+  <text x="682" y="568" font-size="12" fill="#3a2f2a">catch the gap before sending.</text>
+
+  <line x1="334" y1="544" x2="363" y2="544" stroke="#FE4311" stroke-width="2.5" marker-end="url(#ar)"/>
+  <line x1="634" y1="544" x2="663" y2="544" stroke="#FE4311" stroke-width="2.5" marker-end="url(#ar)"/>
+
+  <text x="500" y="626" font-size="14" font-weight="600" fill="#5C0A05" text-anchor="middle">Denials feeds Scribe. Scribe prevents denials. That is the loop.</text>
+</svg>
