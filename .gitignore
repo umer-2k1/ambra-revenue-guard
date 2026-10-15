@@ -19,3 +19,7 @@ dist/
 
 # OS
 .DS_Store
+
+# Personal demo material — kept locally, not part of the submitted repo
+docs/DEMO-SCRIPT.md
+docs/DEMO-EXAMPLE.md
