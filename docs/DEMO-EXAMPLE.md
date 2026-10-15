@@ -50,7 +50,7 @@ On the **Knowledge Base** tab, point at these rules:
 
 Then paste this narrative:
 
-> At 10:15 AM we were sent to 88 Birch Lane for a 58-year-old man with low back pain. He told us the pain started about three days ago after he lifted some boxes, and it has not changed since yesterday. He was standing at the door when we arrived and walked to the stretcher by himself. His vital signs were normal - BP 128/78, HR 76, oxygen saturation 98%, breathing rate 16. He rated the pain a 5 out of 10 and said ibuprofen at home had been helping. He asked us to take him to Riverside Medical Center because his back specialist works there. The closest hospital, Springfield General, is about five minutes from his house; Riverside is about 18 miles away. He stayed comfortable the whole ride and walked into the emergency department on his own.
+> Sent at 10:15 AM to 88 Birch Lane for a 58-year-old man with low back pain that started three days ago. He was standing at the door and walked to the stretcher himself. Vitals normal - BP 128/78, HR 76, SpO2 98%, RR 16 - and he rated the pain 5/10. He asked us to take him to Riverside Medical Center, 18 miles away, because his back specialist works there; the closest hospital, Springfield General, is about five minutes from his home. He was comfortable the whole ride and walked into the emergency department on his own.
 
 *This is deliberately a **blend**: a non-emergency back-pain transport (like D-027), taken to a
 farther hospital (like D-012), billed at ALS (like D-022) — but it is **not** a copy of any of them.*
@@ -60,7 +60,7 @@ farther hospital (like D-012), billed at ALS (like D-022) — but it is **not** 
 ## 4. The verified result
 
 ```
-HIGH · 92 / 100 · 3 flags of 5 rules checked
+HIGH · 90 / 100 · 3 flags of 5 rules checked
 ```
 
 | Flag | Rule | Severity | The gap |
@@ -94,7 +94,7 @@ paramedics actually did. That looks like a plain ride, not a paramedic call."*
 > patient who walked to the stretcher, taken 18 miles to a farther hospital, billed as advanced
 > life support.
 >
-> **HIGH — 92 out of 100. Three flags.** And look — they come from **three different rules**.
+> **HIGH — 90 out of 100. Three flags.** And look — they come from **three different rules**.
 > One says *you haven't proved why a paramedic was needed.* One says *you haven't listed the ALS
 > procedures.* And one says *you haven't justified the distance.*
 >
