@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" font-family="'Arial Black','Helvetica Neue',Arial,sans-serif">
+  <rect width="1280" height="720" fill="#5C0A05"/>
+
+  <text x="56" y="82" font-size="34" font-weight="700" fill="#FFFFFF">✦ Ambra</text>
+  <text x="56" y="150" font-size="64" font-weight="900" fill="#FFFFFF">SCRIBE <tspan fill="#FE4311">✕</tspan> DENIALS</text>
+  <text x="56" y="205" font-size="34" font-weight="700" fill="#c9b7b3">two products that never talked — until now</text>
+
+  <!-- Scribe block -->
+  <rect x="70" y="270" width="500" height="230" rx="24" fill="#FFFFFF"/>
+  <text x="104" y="332" font-size="46" font-weight="900" fill="#5C0A05">SCRIBE</text>
+  <text x="104" y="372" font-size="26" font-weight="700" fill="#FE4311">writes the chart</text>
+  <text x="104" y="428" font-size="24" fill="#3a2f2a">voice → PCR → billing-ready</text>
+  <text x="104" y="462" font-size="24" fill="#3a2f2a">claim, in under 2 minutes</text>
+
+  <!-- Denials block -->
+  <rect x="710" y="270" width="500" height="230" rx="24" fill="#FFFFFF"/>
+  <text x="744" y="332" font-size="46" font-weight="900" fill="#5C0A05">DENIALS</text>
+  <text x="744" y="372" font-size="26" font-weight="700" fill="#FE4311">fights the rejection</text>
+  <text x="744" y="428" font-size="24" fill="#3a2f2a">appeals written in 38 seconds</text>
+  <text x="744" y="462" font-size="24" fill="#3a2f2a">83% overturn rate</text>
+
+  <!-- broken link -->
+  <line x1="578" y1="385" x2="702" y2="385" stroke="#FE4311" stroke-width="10" stroke-dasharray="18 14"/>
+  <circle cx="640" cy="385" r="42" fill="#FE4311"/>
+  <text x="640" y="400" font-size="46" font-weight="900" fill="#FFFFFF" text-anchor="middle">✕</text>
+
+  <rect x="70" y="545" width="1140" height="115" rx="24" fill="#FE4311"/>
+  <text x="110" y="600" font-size="46" font-weight="900" fill="#FFFFFF">THE MISSING LINK: WHAT WE BUILT</text>
+  <text x="110" y="640" font-size="28" font-weight="700" fill="#FFFFFF">learn from every resolved denial · catch the next one first</text>
+</svg>

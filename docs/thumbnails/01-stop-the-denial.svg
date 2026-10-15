@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" font-family="'Arial Black','Helvetica Neue',Arial,sans-serif">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5C0A05"/>
+      <stop offset="100%" stop-color="#7A1209"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#g1)"/>
+  <polygon points="0,720 520,720 300,470 0,470" fill="#FE4311" opacity="0.16"/>
+
+  <!-- brand chip -->
+  <rect x="56" y="48" width="300" height="58" rx="29" fill="#FFFFFF" opacity="0.14"/>
+  <text x="82" y="90" font-size="34" font-weight="700" fill="#FFFFFF">✦ Ambra</text>
+  <text x="240" y="90" font-size="22" fill="#FE4311" font-weight="700">EMS</text>
+
+  <!-- headline -->
+  <text x="60" y="290" font-size="96" font-weight="900" fill="#FFFFFF">STOP THE</text>
+  <text x="52" y="440" font-size="150" font-weight="900" fill="#FE4311">DENIAL</text>
+  <text x="60" y="512" font-size="52" font-weight="700" fill="#FFFFFF">before you send the claim</text>
+
+  <!-- claim card with risk -->
+  <rect x="800" y="250" width="420" height="330" rx="24" fill="#FFFFFF"/>
+  <rect x="828" y="286" width="150" height="44" rx="22" fill="#FE4311"/>
+  <text x="852" y="318" font-size="24" font-weight="800" fill="#FFFFFF">HIGH RISK</text>
+  <text x="828" y="400" font-size="150" font-weight="900" fill="#5C0A05">90</text>
+  <text x="1020" y="400" font-size="52" font-weight="800" fill="#8a7f78">/100</text>
+  <rect x="828" y="440" width="364" height="26" rx="13" fill="#EEE7DE"/>
+  <rect x="828" y="440" width="330" height="26" rx="13" fill="#FE4311"/>
+  <text x="828" y="512" font-size="30" font-weight="700" fill="#5C0A05">3 gaps found</text>
+  <text x="828" y="552" font-size="30" font-weight="700" fill="#8a7f78">before submission</text>
+</svg>
