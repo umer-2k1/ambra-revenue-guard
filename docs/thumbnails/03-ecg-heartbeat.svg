@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" font-family="'Inter','Helvetica Neue',Arial,sans-serif">
+  <defs>
+    <g id="amb3">
+      <rect x="150" y="18" width="120" height="18" rx="9" fill="#141414"/>
+      <rect x="152" y="20" width="58" height="14" rx="7" fill="#E23B3B"/>
+      <rect x="210" y="20" width="58" height="14" rx="7" fill="#3B6BE2"/>
+      <rect x="20" y="38" width="300" height="120" rx="12" fill="#FFFFFF"/>
+      <rect x="20" y="116" width="300" height="26" fill="#FE4311"/>
+      <path d="M320 68 L402 68 L452 110 L452 158 L320 158 Z" fill="#FFFFFF"/>
+      <path d="M330 76 L398 76 L438 108 L330 108 Z" fill="#B9D2E6"/>
+      <circle cx="92" cy="162" r="26" fill="#141414"/><circle cx="92" cy="162" r="11" fill="#9a9a9a"/>
+      <circle cx="372" cy="162" r="26" fill="#141414"/><circle cx="372" cy="162" r="11" fill="#9a9a9a"/>
+    </g>
+  </defs>
+
+  <rect width="1280" height="720" fill="#0E0706"/>
+
+  <text x="64" y="78" font-size="30" font-weight="800" fill="#FFFFFF">✦ Ambra</text>
+  <text x="1216" y="78" font-size="22" font-weight="600" fill="#c9b7b3" text-anchor="end">from denial to prevention</text>
+
+  <text x="64" y="188" font-size="56" font-weight="900" fill="#FFFFFF">ONE DENIAL = ONE RULE</text>
+  <text x="64" y="234" font-size="24" font-weight="600" fill="#c9b7b3">so it never happens to the next claim</text>
+
+  <text x="270" y="304" font-size="24" font-weight="800" fill="#FE4311">DENIAL HERE</text>
+  <text x="660" y="304" font-size="24" font-weight="800" fill="#37C77E">CAUGHT HERE</text>
+
+  <path d="M64 404 L250 404 L272 404 L290 340 L312 470 L334 372 L352 404 L640 404 L662 404 L680 348 L700 462 L720 376 L738 404 L1160 404"
+        fill="none" stroke="#FE4311" stroke-width="5" stroke-linejoin="round"/>
+
+  <text x="64" y="648" font-size="28" font-weight="700" fill="#FFFFFF">every resolved denial becomes a prevention rule</text>
+
+  <use href="#amb3" transform="translate(944,470) scale(0.6)"/>
+</svg>

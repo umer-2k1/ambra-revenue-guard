@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" font-family="'Inter','Helvetica Neue',Arial,sans-serif">
+  <defs>
+    <marker id="ar4" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#FE4311"/>
+    </marker>
+    <g id="sol">
+      <polygon points="0,-190 141,-95 141,95 0,190 -141,95 -141,-95" fill="none" stroke="#FE4311" stroke-width="6" opacity="0.35"/>
+      <polygon points="0,-190 141,-95 141,95 0,190 -141,95 -141,-95" fill="none" stroke="#FE4311" stroke-width="6" opacity="0.35" transform="rotate(180)"/>
+      <line x1="0" y1="-120" x2="0" y2="120" stroke="#FE4311" stroke-width="6" opacity="0.35"/>
+      <circle cx="0" cy="-120" r="16" fill="none" stroke="#FE4311" stroke-width="6" opacity="0.35"/>
+    </g>
+  </defs>
+
+  <rect width="1280" height="720" fill="#1A0B09"/>
+  <rect x="0" y="0" width="1280" height="10" fill="#FE4311"/>
+
+  <text x="64" y="78" font-size="30" font-weight="800" fill="#FFFFFF">✦ Ambra</text>
+
+  <use href="#sol" transform="translate(1040,300)"/>
+
+  <text x="64" y="272" font-size="56" font-weight="900" fill="#FFFFFF">LEARN FROM</text>
+  <text x="64" y="344" font-size="56" font-weight="900" fill="#FE4311">EVERY DENIAL</text>
+  <text x="64" y="404" font-size="24" font-weight="600" fill="#c9b7b3">and catch the next one before it is denied</text>
+
+  <rect x="64" y="486" width="262" height="72" rx="16" fill="#2A1512" stroke="#43221C" stroke-width="2"/>
+  <text x="92" y="516" font-size="16" font-weight="800" fill="#FE4311">01</text>
+  <text x="92" y="544" font-size="26" font-weight="800" fill="#FFFFFF">INGEST</text>
+  <line x1="326" y1="522" x2="354" y2="522" stroke="#FE4311" stroke-width="3" marker-end="url(#ar4)"/>
+
+  <rect x="356" y="486" width="262" height="72" rx="16" fill="#2A1512" stroke="#43221C" stroke-width="2"/>
+  <text x="384" y="516" font-size="16" font-weight="800" fill="#FE4311">02</text>
+  <text x="384" y="544" font-size="26" font-weight="800" fill="#FFFFFF">ANALYZE</text>
+  <line x1="618" y1="522" x2="646" y2="522" stroke="#FE4311" stroke-width="3" marker-end="url(#ar4)"/>
+
+  <rect x="648" y="486" width="262" height="72" rx="16" fill="#2A1512" stroke="#43221C" stroke-width="2"/>
+  <text x="676" y="516" font-size="16" font-weight="800" fill="#FE4311">03</text>
+  <text x="676" y="544" font-size="26" font-weight="800" fill="#FFFFFF">REMEMBER</text>
+  <line x1="910" y1="522" x2="938" y2="522" stroke="#FE4311" stroke-width="3" marker-end="url(#ar4)"/>
+
+  <rect x="940" y="486" width="262" height="72" rx="16" fill="#FE4311" stroke="#FE4311" stroke-width="2"/>
+  <text x="968" y="516" font-size="16" font-weight="800" fill="#3a0f0a">04</text>
+  <text x="968" y="544" font-size="26" font-weight="800" fill="#FFFFFF">PREVENT</text>
+
+  <text x="64" y="656" font-size="26" font-weight="700" fill="#FFFFFF">the denial → prevention loop</text>
+</svg>

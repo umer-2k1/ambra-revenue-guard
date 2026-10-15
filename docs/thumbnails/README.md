@@ -1,22 +1,22 @@
 # YouTube thumbnails — Ambra demo
 
 Five variants, all **1280×720** (16:9), **PNG**, well under YouTube's 2 MB limit.
-Every variant was checked programmatically for **text overlap** and canvas overflow — all clear.
+Every variant is checked programmatically for **text overlap** and canvas overflow — all clear.
 
-| # | File | Style | Hook |
+| # | File | EMS visual | Hook |
 |---|---|---|---|
-| 01 | `01-the-loop.png` | Dark, 4-step flow | **Every denial teaches a rule** — the denial → prevention loop |
-| 02 | `02-denied-vs-prevented.png` | Light, split panels | **A denied claim, caught in time** — red vs green |
-| 03 | `03-83-percent.png` | Dark, big-number | **83% of appeals get overturned** (Ambra's own figure) |
-| 04 | `04-stop-paying-twice.png` | Minimal dark | **Stop paying for the same mistake twice** |
-| 05 | `05-catch-the-denial.png` | Warm, product UI | **Catch the denial before you send it** — with a 90/100 risk card |
+| 01 | `01-the-loop.png` | — | **Every denial teaches a rule** — the denial → prevention loop |
+| 02 | `02-ambulance-loop.png` | Ambulance | **Every denial teaches a rule** + the 4-step loop |
+| 03 | `03-ecg-heartbeat.png` | ECG line + ambulance | **One denial = one rule** — "DENIAL HERE / CAUGHT HERE" |
+| 04 | `04-star-of-life.png` | Star of Life | **Learn from every denial** + the loop |
+| 05 | `05-ambulance-hero.png` | Ambulance (hero) | **Denial → Prevention** — one denial, one rule |
 
 `_preview.png` is a contact sheet of all five.
 
 ## Brand
-- Palette: dark `#5C0A05`, orange `#FE4311`, warm `#F8F4F1`.
+- Palette: dark `#5C0A05` / `#1A0B09`, orange `#FE4311`, warm `#F8F4F1`.
 - Lockup: `✦ Ambra`.
-- Numbers are from Ambra's own site (83% overturn) and the demo (90/100).
+- EMS imagery is drawn in SVG (ambulance side view with light bar, ECG trace, Star of Life) — no stock photos, fully editable.
 
 ## Rules followed
 - 1280×720 · 16:9 · PNG · ≤ 2 MB ✔
@@ -35,5 +35,3 @@ for f in docs/thumbnails/*.svg; do
     --screenshot="${f%.svg}.png" "file://$PWD/$f"
 done
 ```
-
-Want a tighter guarantee before shipping? Run a text-overlap check over the SVGs first.
