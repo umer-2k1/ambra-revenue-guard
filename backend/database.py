@@ -120,7 +120,7 @@ class _Connection:
             import psycopg
             from psycopg.rows import dict_row
 
-            self._raw = psycopg.connect(DATABASE_URL, row_factory=dict_row)
+            self._raw = psycopg.connect(DATABASE_URL, row_factory=dict_row, connect_timeout=10)
         else:
             self._raw = sqlite3.connect(DATABASE_PATH)
             self._raw.row_factory = sqlite3.Row
@@ -371,6 +371,19 @@ def reset_analysis() -> None:
         conn.execute("DELETE FROM claim_scores")
 
 
-# Initialise on import so the app always has a usable database.
-init_db()
-load_seed_data()
+# Initialise on import, but never let a network/DB problem crash the whole
+# serverless function (that turns every route - including /health - into
+# FUNCTION_INVOCATION_FAILED). The error is kept and surfaced by /health.
+INIT_ERROR: Optional[Exception] = None
+try:
+    init_db()
+    load_seed_data()
+except Exception as exc:  # noqa: BLE001
+    INIT_ERROR = exc
+    print(f"[db] init failed: {type(exc).__name__}: {exc}")
+
+
+def ping_db() -> None:
+    """Cheap connectivity check used by /health."""
+    with _connect() as conn:
+        conn.execute("SELECT 1")

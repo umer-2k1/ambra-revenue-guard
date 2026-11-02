@@ -218,7 +218,7 @@ Three relational tables plus two vector collections:
 
 -->
 
-See [`docs/screenshots/`](docs/screenshots/) for the capture list. UI wireframes for all four screens live in [`docs/wireframes.html`](docs/wireframes.html).
+See [`docs/screenshots/`](docs/screenshots/) for the capture list. UI wireframes for all four screens live in [`docs/wireframes.html`](docs/wireframes.html). Demo presentation assets (YouTube thumbnails) are in [`docs/thumbnails/`](docs/thumbnails/).
 
 ---
 

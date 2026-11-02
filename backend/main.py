@@ -50,8 +50,32 @@ def _startup() -> None:
 
 @app.get("/health")
 def health() -> dict:
-    """Liveness probe for hosting platforms (Render/Vercel health checks)."""
-    return {"status": "ok"}
+    """Readiness probe: reports database + vector-store status (never crashes)."""
+    from database import INIT_ERROR, ping_db
+
+    db_ok = True
+    db_error = None
+    if INIT_ERROR is not None:
+        db_ok = False
+        db_error = f"init: {type(INIT_ERROR).__name__}: {str(INIT_ERROR)[:300]}"
+    else:
+        try:
+            ping_db()
+        except Exception as exc:  # noqa: BLE001
+            db_ok = False
+            db_error = f"{type(exc).__name__}: {str(exc)[:300]}"
+
+    return {
+        "status": "ok" if db_ok else "degraded",
+        "database": {
+            "ok": db_ok,
+            "url_set": bool(config.DATABASE_URL),
+            "error": db_error,
+        },
+        "vector_store": store_mode(),
+        "llm_provider": config.LLM_PROVIDER,
+        "embedding_provider": config.EMBEDDING_PROVIDER,
+    }
 
 
 # ── Denials ──────────────────────────────────────────────────────────────────
