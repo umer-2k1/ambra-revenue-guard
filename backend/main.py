@@ -41,10 +41,19 @@ app.add_middleware(
 )
 
 
+VECTOR_ERROR = None
+
+
 @app.on_event("startup")
 def _startup() -> None:
-    init_vector_store()
-    refresh_counts()
+    global VECTOR_ERROR
+    try:
+        init_vector_store()
+        refresh_counts()
+        VECTOR_ERROR = None
+    except Exception as exc:  # noqa: BLE001 - never abort startup
+        VECTOR_ERROR = exc
+        print(f"[startup] vector store init failed: {type(exc).__name__}: {exc}")
     print(f"[startup] vector store: {store_mode()} | LLM: {config.LLM_PROVIDER} | embeddings: {config.EMBEDDING_PROVIDER}")
 
 
@@ -72,7 +81,12 @@ def health() -> dict:
             "url_set": bool(config.DATABASE_URL),
             "error": db_error,
         },
-        "vector_store": store_mode(),
+        "vector_store": {
+            "mode": store_mode(),
+            "url_set": bool(config.QDRANT_URL),
+            "ok": VECTOR_ERROR is None,
+            "error": (f"{type(VECTOR_ERROR).__name__}: {str(VECTOR_ERROR)[:300]}" if VECTOR_ERROR else None),
+        },
         "llm_provider": config.LLM_PROVIDER,
         "embedding_provider": config.EMBEDDING_PROVIDER,
     }
