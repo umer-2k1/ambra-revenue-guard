@@ -28,7 +28,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from sse_starlette.sse import EventSourceResponse
-from vector_store import cached_counts, init_vector_store, refresh_counts, reset_vectors, store_mode
+from vector_store import cached_counts, get_collection_counts, init_vector_store, refresh_counts, reset_vectors, store_mode
 
 app = FastAPI(title="Ambra - Denial-to-Prevention Feedback Loop")
 
@@ -74,8 +74,17 @@ def health() -> dict:
             db_ok = False
             db_error = f"{type(exc).__name__}: {str(exc)[:300]}"
 
+    vs_ok = True
+    vs_error = None
+    vs_counts = None
+    try:
+        vs_counts = get_collection_counts()
+    except Exception as exc:  # noqa: BLE001
+        vs_ok = False
+        vs_error = f"{type(exc).__name__}: {str(exc)[:300]}"
+
     return {
-        "status": "ok" if db_ok else "degraded",
+        "status": "ok" if (db_ok and vs_ok) else "degraded",
         "database": {
             "ok": db_ok,
             "url_set": bool(config.DATABASE_URL),
@@ -84,8 +93,9 @@ def health() -> dict:
         "vector_store": {
             "mode": store_mode(),
             "url_set": bool(config.QDRANT_URL),
-            "ok": VECTOR_ERROR is None,
-            "error": (f"{type(VECTOR_ERROR).__name__}: {str(VECTOR_ERROR)[:300]}" if VECTOR_ERROR else None),
+            "ok": vs_ok,
+            "error": vs_error,
+            "collections": vs_counts,
         },
         "llm_provider": config.LLM_PROVIDER,
         "embedding_provider": config.EMBEDDING_PROVIDER,
